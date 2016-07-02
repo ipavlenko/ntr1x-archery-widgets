@@ -1,5 +1,3 @@
-Core = window.Core || {};
-
 (function($, Vue, Core) {
 
     Vue.component('default-items', {

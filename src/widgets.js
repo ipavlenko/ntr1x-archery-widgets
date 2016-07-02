@@ -45,11 +45,13 @@ var Widgets =
             return this;
         }
 
-        return Widgets.Palette.category(name, {
+        Widgets.Palette.category(name, {
             title: title,
             groups: groups,
             group: group,
         });
+
+        return Widgets.Palette.category(name);
     };
 
     Widgets.Group = function(category, name, title) {
@@ -70,11 +72,13 @@ var Widgets =
             return this;
         }
 
-        return category.group(name, {
+        category.group(name, {
             title: title,
             items: items,
             item: item,
         });
+
+        return category.group(name);
     };
 
     Widgets.Item = function(group, name, config) {
