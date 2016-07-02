@@ -25,43 +25,43 @@
 
     Widgets.Item(Widgets.ButtonsGroup, 'default-button-default', {
         mixins: [
-            WidgetItemMixin('default-button', 'Button', 'src/button/button-default.png'),
-            ButtonItemMixin('default', 'Default'),
+            Widgets.WidgetItemMixin('default-button', 'Button', 'src/button/button-default.png'),
+            Widgets.ButtonItemMixin('default', 'Default'),
         ],
     });
 
     Widgets.Item(Widgets.ButtonsGroup, 'default-button-success', {
         mixins: [
-            WidgetItemMixin('default-button', 'Button', 'src/button/button-success.png'),
-            ButtonItemMixin('success', 'Success'),
+            Widgets.WidgetItemMixin('default-button', 'Button', 'src/button/button-success.png'),
+            Widgets.ButtonItemMixin('success', 'Success'),
         ],
     });
 
     Widgets.Item(Widgets.ButtonsGroup, 'default-button-info', {
         mixins: [
-            WidgetItemMixin('default-button', 'Button', 'src/button/button-info.png'),
-            ButtonItemMixin('info', 'Info'),
+            Widgets.WidgetItemMixin('default-button', 'Button', 'src/button/button-info.png'),
+            Widgets.ButtonItemMixin('info', 'Info'),
         ],
     });
 
     Widgets.Item(Widgets.ButtonsGroup, 'default-button-warning', {
         mixins: [
-            WidgetItemMixin('default-button', 'Button', 'src/button/button-warning.png'),
-            ButtonItemMixin('warning', 'Warning'),
+            Widgets.WidgetItemMixin('default-button', 'Button', 'src/button/button-warning.png'),
+            Widgets.ButtonItemMixin('warning', 'Warning'),
         ],
     });
 
     Widgets.Item(Widgets.ButtonsGroup, 'default-button-danger', {
         mixins: [
-            WidgetItemMixin('default-button', 'Button', 'src/button/button-danger.png'),
-            ButtonItemMixin('danger', 'Danger'),
+            Widgets.WidgetItemMixin('default-button', 'Button', 'src/button/button-danger.png'),
+            Widgets.ButtonItemMixin('danger', 'Danger'),
         ],
     });
 
     Widgets.Item(Widgets.ButtonsGroup, 'default-button-link', {
         mixins: [
-            WidgetItemMixin('default-button', 'Button', 'src/button/button-link.png'),
-            ButtonItemMixin('link', 'Link'),
+            Widgets.WidgetItemMixin('default-button', 'Button', 'src/button/button-link.png'),
+            Widgets.ButtonItemMixin('link', 'Link'),
         ],
     });
 

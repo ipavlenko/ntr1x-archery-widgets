@@ -21,9 +21,23 @@ var Widgets =
             return this;
         }
 
+        var stub = function() {
+            return {
+                tag: 'default-stub',
+                _action: 'ignore',
+                props: [
+                    { name: 'title', type: 'string' }
+                ],
+                params: {
+                    title: { value: 'Drop here' },
+                }
+            };
+        }
+
         return {
             categories: categories,
             category: category,
+            stub: stub,
         };
     })();
 
@@ -83,6 +97,9 @@ var Widgets =
 
     Widgets.Item = function(group, name, config) {
 
+        group.item(name, config);
+
+        return group.item(name);
     };
 
     Widgets.Prop = function(name, title, type, tab, placeholder) {
@@ -94,6 +111,14 @@ var Widgets =
             placeholder: placeholder,
         };
     }
+
+    Widgets.Param = function(value, binding, strategy) {
+        return {
+            value: value || undefined,
+        }
+    }
+
+    Vue.service('palette', Widgets.Palette);
 
     return Widgets;
 
