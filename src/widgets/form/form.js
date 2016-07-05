@@ -4,65 +4,58 @@
     Widgets.ButtonsGroup = Widgets.Group(Widgets.FormCategory, 'default-form-buttons', 'Buttons');
     Widgets.InputsGroup = Widgets.Group(Widgets.FormCategory, 'default-form-inputs', 'Inputs');
 
-    Widgets.ButtonItemMixin = function(stereotype, title) {
+    Widgets.ButtonWidget = function(title, stereotype) {
 
-        return {
-            title: 'Button',
+        return Widgets.extend({
             tag: 'default-button',
-            mixins: [ Widgets.BoxMixin, Widgets.SizeMixin ],
+            mixins: [ Widgets.WidgetMixin, Widgets.BoxMixin, Widgets.SizeMixin ],
             props: [
+                { name: 'title', title: 'Title', type: 'string', tab: 'content' },
                 { name: 'type', title: 'Type', type: 'string', tab: 'data' },
                 { name: 'stereotype', title: 'Stereotype', type: 'string', tab: 'data' },
             ],
             params: {
                 margin:     Widgets.Param('15px'),
                 type:       Widgets.Param('button'),
-                title:      Widgets.Param(title || 'Default'),
-                stereotype: Widgets.Param(stereotype || 'default'),
+                title:      Widgets.Param(title),
+                stereotype: Widgets.Param(stereotype),
             },
-        };
+        });
     };
 
-    Widgets.Item(Widgets.ButtonsGroup, 'default-button-default', {
-        mixins: [
-            Widgets.WidgetItemMixin('default-button', 'Button', 'src/button/button-default.png'),
-            Widgets.ButtonItemMixin('default', 'Default'),
-        ],
+    Widgets.Item(Widgets.ButtonsGroup, 'button-default', {
+        thumbnail: '/assets/vendor/ntr1x-archery-widgets/src/widgets/form/button/button-default.png',
+        widget: Widgets.ButtonWidget('Default', 'default'),
     });
 
-    Widgets.Item(Widgets.ButtonsGroup, 'default-button-success', {
-        mixins: [
-            Widgets.WidgetItemMixin('default-button', 'Button', 'src/button/button-success.png'),
-            Widgets.ButtonItemMixin('success', 'Success'),
-        ],
+    Widgets.Item(Widgets.ButtonsGroup, 'button-primary', {
+        thumbnail: '/assets/vendor/ntr1x-archery-widgets/src/widgets/form/button/button-primary.png',
+        widget: Widgets.ButtonWidget('Primary', 'primary'),
     });
 
-    Widgets.Item(Widgets.ButtonsGroup, 'default-button-info', {
-        mixins: [
-            Widgets.WidgetItemMixin('default-button', 'Button', 'src/button/button-info.png'),
-            Widgets.ButtonItemMixin('info', 'Info'),
-        ],
+    Widgets.Item(Widgets.ButtonsGroup, 'button-success', {
+        thumbnail: '/assets/vendor/ntr1x-archery-widgets/src/widgets/form/button/button-success.png',
+        widget: Widgets.ButtonWidget('Success', 'success'),
     });
 
-    Widgets.Item(Widgets.ButtonsGroup, 'default-button-warning', {
-        mixins: [
-            Widgets.WidgetItemMixin('default-button', 'Button', 'src/button/button-warning.png'),
-            Widgets.ButtonItemMixin('warning', 'Warning'),
-        ],
+    Widgets.Item(Widgets.ButtonsGroup, 'button-info', {
+        thumbnail: '/assets/vendor/ntr1x-archery-widgets/src/widgets/form/button/button-info.png',
+        widget: Widgets.ButtonWidget('Info', 'info'),
     });
 
-    Widgets.Item(Widgets.ButtonsGroup, 'default-button-danger', {
-        mixins: [
-            Widgets.WidgetItemMixin('default-button', 'Button', 'src/button/button-danger.png'),
-            Widgets.ButtonItemMixin('danger', 'Danger'),
-        ],
+    Widgets.Item(Widgets.ButtonsGroup, 'button-warning', {
+        thumbnail: '/assets/vendor/ntr1x-archery-widgets/src/widgets/form/button/button-warning.png',
+        widget: Widgets.ButtonWidget('Warning', 'warning'),
     });
 
-    Widgets.Item(Widgets.ButtonsGroup, 'default-button-link', {
-        mixins: [
-            Widgets.WidgetItemMixin('default-button', 'Button', 'src/button/button-link.png'),
-            Widgets.ButtonItemMixin('link', 'Link'),
-        ],
+    Widgets.Item(Widgets.ButtonsGroup, 'button-danger', {
+        thumbnail: '/assets/vendor/ntr1x-archery-widgets/src/widgets/form/button/button-danger.png',
+        widget: Widgets.ButtonWidget('Danger', 'danger'),
+    });
+
+    Widgets.Item(Widgets.ButtonsGroup, 'button-link', {
+        thumbnail: '/assets/vendor/ntr1x-archery-widgets/src/widgets/form/button/button-link.png',
+        widget: Widgets.ButtonWidget('Link', 'link'),
     });
 
 })(jQuery, Vue, Core, Widgets);
