@@ -1,7 +1,7 @@
-<template id="default-button">
-    <default-box :bindings.sync="bindings" :class="'wg wg-default-button'">
-        <div class="form-group">
-            <button type="{{ bindings.type }}" class="btn btn-block" :class="{
+<template id="default-radio">
+    <default-box :bindings.sync="bindings" :class="'wg wg-default-radio'">
+        <div class="btn-group" data-toggle="buttons">
+            <label class="btn btn-default" v-for="item in bindings.items" :class="{
                     'btn-default': bindings.stereotype == 'default',
                     'btn-primary': bindings.stereotype == 'primary',
                     'btn-success': bindings.stereotype == 'success',
@@ -13,7 +13,9 @@
                 :style="{
                     height: bindings.height
                 }"
-            >{{ bindings.title }}</button>
+            >
+                <input type="radio" :name="bindings.name" :value="item.value" v-model="bindings.model.value"> {{ item.label }}
+            </label>
         </div>
     </default-box>
 </template>
