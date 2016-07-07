@@ -58,4 +58,27 @@
         widget: Widgets.ButtonWidget('Link', 'link'),
     });
 
+
+    Widgets.Item(Widgets.InputsGroup, 'default-form-inputs', 'Inputs');
+
+    Widgets.Item(Widgets.InputsGroup, 'input-text', {
+        thumbnail: '/assets/vendor/ntr1x-archery-widgets/src/widgets/form/input/text.png',
+        widget: Widgets.ButtonWidget('Text', 'text'),
+    });
+
+    Widgets.Item(Widgets.InputsGroup, 'input-textarea', {
+        thumbnail: '/assets/vendor/ntr1x-archery-widgets/src/widgets/form/input/textarea.png',
+        widget: Widgets.ButtonWidget('Textarea', 'textarea'),
+    });
+
+    Widgets.Item(Widgets.InputsGroup, 'input-radio', {
+        thumbnail: '/assets/vendor/ntr1x-archery-widgets/src/widgets/form/input/radio.png',
+        widget: Widgets.ButtonWidget('Radio', 'radio'),
+    });
+
+    Widgets.Item(Widgets.InputsGroup, 'input-checkbox', {
+        thumbnail: '/assets/vendor/ntr1x-archery-widgets/src/widgets/form/input/checkbox.png',
+        widget: Widgets.ButtonWidget('Checkbox', 'checkbox'),
+    });
+
 })(jQuery, Vue, Core, Widgets);
