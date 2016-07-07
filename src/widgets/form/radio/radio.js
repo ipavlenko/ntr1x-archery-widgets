@@ -5,9 +5,4 @@
         mixins: [ Core.WidgetMixin ],
     });
 
-    Vue.component('default-radio-input', {
-        template: '#default-radio-input',
-        mixins: [ Core.WidgetMixin ],
-    });
-
 })(jQuery, Vue, Core);

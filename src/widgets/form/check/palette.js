@@ -8,6 +8,16 @@
             props: [
                 { name: 'model', title: 'Model', type: 'string', tab: 'data', variable: true },
                 { name: 'stereotype', title: 'Stereotype', type: 'string', tab: 'data' },
+                {
+                    name: 'items', type: 'multiple', title: 'Items', tab: 'data',
+                    tabs: [
+                        { name: 'data', title: 'Data' },
+                    ],
+                    props: [
+                        { name: 'value', title: 'Value', type: 'string', tab: 'data' },
+                        { name: 'label', title: 'Label', type: 'string', tab: 'data' },
+                    ]
+                },
             ],
             params: {
                 margin:     Widgets.Param('15px 15px'),

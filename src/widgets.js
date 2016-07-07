@@ -132,8 +132,6 @@ var Widgets =
         if ('props' in config) result.props = result.props.concat(config.props);
         if ('params' in config) result.params = $.extend(true, result.params, config.params);
 
-        console.log(config, result);
-
         return result;
     };
 

@@ -5,9 +5,4 @@
         mixins: [ Core.WidgetMixin ],
     });
 
-    Vue.component('default-check-input', {
-        template: '#default-check-input',
-        mixins: [ Core.WidgetMixin ],
-    });
-
 })(jQuery, Vue, Core);

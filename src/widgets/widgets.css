@@ -1,0 +1,8 @@
+.wg.wg-widget {
+  position: relative;
+  overflow: auto;
+}
+.wg.wg-widget > .wg.wg-content {
+  position: relative;
+  overflow: auto;
+}
