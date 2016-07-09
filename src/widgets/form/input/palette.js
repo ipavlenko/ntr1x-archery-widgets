@@ -6,12 +6,13 @@
             tag: 'default-input-text',
             mixins: [ Widgets.WidgetMixin, Widgets.BoxMixin, Widgets.SizeMixin ],
             props: [
-                { name: 'model', title: 'Model', type: 'string', tab: 'data', 'variable': true },
-                { name: 'type', title: 'Type', type: 'string', tab: 'data' },
-                { name: 'label', title: 'Label', type: 'string', tab: 'data' },
-                { name: 'placeholder', title: 'Placeholder', type: 'string', tab: 'data' },
+                { name: 'model', title: 'Model', type: 'var', tab: 'data', variable: true },
+                { name: 'type', title: 'Type', type: 'string', tab: 'content' },
+                { name: 'label', title: 'Label', type: 'string', tab: 'content' },
+                { name: 'placeholder', title: 'Placeholder', type: 'string', tab: 'content' },
             ],
             params: {
+                model:      Widgets.Param({ value: '' }),
                 margin:     Widgets.Param('15px 15px'),
                 type:       Widgets.Param(type),
                 label:      Widgets.Param(label),
@@ -30,11 +31,12 @@
             tag: 'default-input-textarea',
             mixins: [ Widgets.WidgetMixin, Widgets.BoxMixin, Widgets.SizeMixin ],
             props: [
-                { name: 'model', title: 'Model', type: 'string', tab: 'data', 'variable': true },
+                { name: 'model', title: 'Model', type: 'var', tab: 'data', variable: true },
                 { name: 'label', title: 'Label', type: 'string', tab: 'data' },
                 { name: 'placeholder', title: 'Placeholder', type: 'string', tab: 'data' },
             ],
             params: {
+                model:          Widgets.Param({ value: '' }),
                 margin:         Widgets.Param('15px 15px'),
                 label:          Widgets.Param(label),
                 placeholder:    Widgets.Param(placeholder),
@@ -47,13 +49,13 @@
         widget: Widgets.TextareaWidget('Textarea', 'Type message here'),
     });
 
-    Widgets.RadioInputWidget = function(options) {
+    Widgets.RadioInputWidget = function(value, options) {
 
         return Widgets.extend({
             tag: 'default-input-radio',
             mixins: [ Widgets.WidgetMixin, Widgets.BoxMixin, Widgets.SizeMixin ],
             props: [
-                { name: 'model', title: 'Model', type: 'string', tab: 'data', variable: true },
+                { name: 'model', title: 'Model', type: 'var', tab: 'data', variable: true },
                 { name: 'stereotype', title: 'Stereotype', type: 'string', tab: 'data' },
                 {
                     name: 'items', type: 'multiple', title: 'Items', tab: 'data',
@@ -67,6 +69,7 @@
                 },
             ],
             params: {
+                model:      Widgets.Param({ value: value }),
                 margin:     Widgets.Param('15px 15px'),
                 items: {
                     value: options.map(function(option) {
@@ -82,19 +85,19 @@
 
     Widgets.Item(Widgets.InputsGroup, 'input-radio', {
         thumbnail: '/assets/vendor/ntr1x-archery-widgets/src/widgets/form/input/radio.png',
-        widget: Widgets.RadioInputWidget([
+        widget: Widgets.RadioInputWidget('1', [
             { value: '1', label: 'First' },
             { value: '2', label: 'Second' },
         ]),
     });
 
-    Widgets.CheckInputWidget = function(options) {
+    Widgets.CheckInputWidget = function(value, options) {
 
         return Widgets.extend({
             tag: 'default-input-checkbox',
             mixins: [ Widgets.WidgetMixin, Widgets.BoxMixin, Widgets.SizeMixin ],
             props: [
-                { name: 'model', title: 'Model', type: 'string', tab: 'data', variable: true },
+                { name: 'model', title: 'Model', type: 'var', tab: 'data', variable: true },
                 { name: 'stereotype', title: 'Stereotype', type: 'string', tab: 'data' },
                 {
                     name: 'items', type: 'multiple', title: 'Items', tab: 'data',
@@ -108,9 +111,7 @@
                 },
             ],
             params: {
-                model: {
-                    value: [],
-                },
+                model:      Widgets.Param({ value: value }),
                 margin:     Widgets.Param('15px 15px'),
                 items: {
                     value: options.map(function(option) {
@@ -126,7 +127,7 @@
 
     Widgets.Item(Widgets.InputsGroup, 'input-check', {
         thumbnail: '/assets/vendor/ntr1x-archery-widgets/src/widgets/form/input/checkbox.png',
-        widget: Widgets.CheckInputWidget([
+        widget: Widgets.CheckInputWidget([ '1' ], [
             { value: '1', label: 'First' },
             { value: '2', label: 'Second' },
         ]),

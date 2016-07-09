@@ -132,6 +132,21 @@ var Widgets =
         if ('props' in config) result.props = result.props.concat(config.props);
         if ('params' in config) result.params = $.extend(true, result.params, config.params);
 
+        function initParams(props, params) {
+
+            for (var i = 0; i < props.length; i++) {
+
+                var prop = props[i];
+                var param = params[prop.name] = params[prop.name] || { value: null }; // TODO Set a type-dependent initial value
+
+                if (prop.props) {
+                    initParams(prop, param);
+                }
+            }
+        }
+
+        initParams(result.props, result.params);
+
         return result;
     };
 

@@ -1,7 +1,7 @@
 <template id="default-check">
-    <default-box :bindings.sync="bindings" :class="'wg wg-default-check'">
-        <div class="btn-group" data-toggle="buttons">
-            <label class="btn btn-default" v-for="item in bindings.items" :class="{
+    <default-box :bindings.sync="bindings" class="wg wg-default-check">
+        <div class="btn-group">
+            <label class="btn" v-for="item in bindings.items" :class="{
                     'btn-default': bindings.stereotype == 'default',
                     'btn-primary': bindings.stereotype == 'primary',
                     'btn-success': bindings.stereotype == 'success',
@@ -9,6 +9,7 @@
                     'btn-warning': bindings.stereotype == 'warning',
                     'btn-danger': bindings.stereotype == 'danger',
                     'btn-link': bindings.stereotype == 'link',
+                    'active': bindings.model.value.indexOf(item.value) > -1,
                 }"
                 :style="{
                     height: bindings.height
