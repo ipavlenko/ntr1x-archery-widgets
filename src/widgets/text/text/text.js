@@ -1,7 +1,7 @@
 (function($, Vue, Core) {
 
-    Vue.component('default-h1-h6', {
-        template: '#default-h1-h6',
+    Vue.component('default-text', {
+        template: '#default-text',
         mixins: [ Core.WidgetMixin ],
     });
 

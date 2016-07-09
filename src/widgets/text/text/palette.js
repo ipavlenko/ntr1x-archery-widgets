@@ -59,4 +59,52 @@
         `),
     });
 
+    Widgets.Item(Widgets.BlocksGroup, 'block-default', {
+        thumbnail: '/assets/vendor/ntr1x-archery-widgets/src/widgets/text/text/block-default.png',
+        widget: Widgets.TextWidget('default', `
+            <h3>Lorem ipsum</h3>
+            <p>Etiam porta sem malesuada magna mollis euismod.</p>
+        `),
+    });
+
+    Widgets.Item(Widgets.BlocksGroup, 'block-primary', {
+        thumbnail: '/assets/vendor/ntr1x-archery-widgets/src/widgets/text/text/block-primary.png',
+        widget: Widgets.TextWidget('primary', `
+            <h3>Lorem ipsum</h3>
+            <p>Etiam porta sem malesuada magna mollis euismod.</p>
+        `),
+    });
+
+    Widgets.Item(Widgets.BlocksGroup, 'block-success', {
+        thumbnail: '/assets/vendor/ntr1x-archery-widgets/src/widgets/text/text/block-success.png',
+        widget: Widgets.TextWidget('success', `
+            <h3>Lorem ipsum</h3>
+            <p>Etiam porta sem malesuada magna mollis euismod.</p>
+        `),
+    });
+
+    Widgets.Item(Widgets.BlocksGroup, 'block-info', {
+        thumbnail: '/assets/vendor/ntr1x-archery-widgets/src/widgets/text/text/block-info.png',
+        widget: Widgets.TextWidget('info', `
+            <h3>Lorem ipsum</h3>
+            <p>Etiam porta sem malesuada magna mollis euismod.</p>
+        `),
+    });
+
+    Widgets.Item(Widgets.BlocksGroup, 'block-warning', {
+        thumbnail: '/assets/vendor/ntr1x-archery-widgets/src/widgets/text/text/block-warning.png',
+        widget: Widgets.TextWidget('warning', `
+            <h3>Lorem ipsum</h3>
+            <p>Etiam porta sem malesuada magna mollis euismod.</p>
+        `),
+    });
+
+    Widgets.Item(Widgets.BlocksGroup, 'block-danger', {
+        thumbnail: '/assets/vendor/ntr1x-archery-widgets/src/widgets/text/text/block-danger.png',
+        widget: Widgets.TextWidget('danger', `
+            <h3>Lorem ipsum</h3>
+            <p>Etiam porta sem malesuada magna mollis euismod.</p>
+        `),
+    });
+
 })(jQuery, Vue, Core, Widgets);

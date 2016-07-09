@@ -1,5 +1,31 @@
 <template id="default-text">
-    <default-box :bindings.sync="bindings" class="wg wg-default-text">
-        {{{ bindings.content }}}
-    </default-box>
+    <section class="wg wg-default-text" :id="bindings.id"
+        :class="{
+            'bg-default': bindings.stereotype == 'default',
+            'bg-primary': bindings.stereotype == 'primary',
+            'bg-success': bindings.stereotype == 'success',
+            'bg-info': bindings.stereotype == 'info',
+            'bg-warning': bindings.stereotype == 'warning',
+            'bg-danger': bindings.stereotype == 'danger',
+        }"
+        :style="{
+            'height': bindings.height,
+            'width': bindings.width,
+            'border': bindings.outerBorder,
+            'background': bindings.outerBackground,
+            'background-size': bindings.outerBackgroundSize,
+        }"
+    >
+        <div class="wg wg-content"
+            :style="{
+                'margin': bindings.margin,
+                'padding': bindings.padding,
+                'border': bindings.innerBorder,
+                'background': bindings.innerBackground,
+                'background-size': bindings.outerBackgroundSize,
+            }"
+        >
+            {{{ bindings.content }}}
+        </div>
+    </section>
 </template>
