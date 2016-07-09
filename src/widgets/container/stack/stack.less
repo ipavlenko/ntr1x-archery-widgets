@@ -29,6 +29,12 @@
             >.wg.wg-row {
 
                 display: table-row;
+                &.dragged {
+                    position: absolute;
+                    display: table;
+                    opacity: 0.5;
+                    z-index: 2000;
+                }
 
                 >.wg.wg-cell {
 
@@ -52,6 +58,41 @@
                         >.wg.wg-inner {
                             display: block;
                             margin: 1px 1px;
+                        }
+                    }
+                }
+
+                &.wg-row-placeholder{
+
+                    >.wg.wg-cell {
+
+                        >.wg.wg-inner {
+
+                            position: relative;
+                            overflow: visible;
+
+                            &:before {
+
+                                // content: "";
+                                // position: absolute;
+                                // width: 0;
+                                // height: 0;
+                                // border: 5px solid transparent;
+                                // border-top-color: red;
+                                // top: -6px;
+                                // margin-left: -5px;
+                                // border-bottom: none;
+
+                                content: "";
+                                position: absolute;
+                                width: 0;
+                                height: 0;
+                                border: 5px solid transparent;
+                                border-left-color: red;
+                                left: -5px;
+                                margin-top: -5px;
+                                border-right: none;
+                            }
                         }
                     }
                 }

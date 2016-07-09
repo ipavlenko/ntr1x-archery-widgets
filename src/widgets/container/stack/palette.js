@@ -5,6 +5,7 @@
         return Widgets.extend({
             tag: tag,
             mixins: [ Widgets.WidgetMixin, Widgets.BoxMixin ],
+            widgets: [],
         });
     };
 

@@ -116,6 +116,7 @@ var Widgets =
             tabs: [],
             props: [],
             params: {},
+            widgets: config.widgets || undefined,
         };
 
         if (config.mixins) {
