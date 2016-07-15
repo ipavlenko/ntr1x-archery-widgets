@@ -2,6 +2,167 @@
 
 .wg.wg-default-stack {
 
+    .wg.wg-content {
+
+    }
+
+    &.wg-default-stack-canvas {
+
+        >.wg.wg-sortable-content {
+
+            >.wg.wg-sortable-inner {
+
+                >.wg.wg-sortable-container {
+
+                    display: table;
+                    width: 100%;
+
+                    >.wg.wg-sortable-item {
+
+                        display: table-row;
+
+                        >.wg.wg-item-content {
+
+                            display: table-cell;
+                            vertical-align: top;
+
+                            >.wg.wg-inner {
+                                position: relative;
+                            }
+                        }
+
+                        &.dragged {
+                            position: absolute;
+                            display: table;
+                            opacity: 0.5;
+                            z-index: 2000;
+                        }
+                    }
+
+                    >.wg.wg-sortable-placeholder {
+
+                        display: table-row;
+
+                        >.wg.wg-placeholder-container {
+
+                            display: table-cell;
+
+                            >.wg.wg-placeholder-inner {
+
+                                position: relative;
+                                overflow: visible;
+
+                                &:before {
+
+                                    content: "";
+                                    position: absolute;
+                                    width: 0;
+                                    height: 0;
+                                    border: 5px solid transparent;
+                                    border-left-color: red;
+                                    left: -5px;
+                                    margin-top: -5px;
+                                    border-right: none;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    &.wg-default-stack-vertical {
+        >.wg.wg-sortable-content {
+            >.wg.wg-sortable-inner {
+                >.wg.wg-sortable-container {
+                    >.wg.wg-sortable-item {
+                        >.wg.wg-item-content {
+                            >.wg.wg-inner {
+
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    &.wg-default-stack-horisontal {
+
+        >.wg.wg-sortable-content {
+
+            >.wg.wg-sortable-inner {
+
+                display: table;
+                width: 100%;
+
+                >.wg.wg-sortable-container {
+
+                    display: table-row;
+
+                    >.wg.wg-sortable-item {
+
+                        display: table-cell;
+                        vertical-align: top;
+
+                        >.wg.wg-item-content {
+
+                            position: relative;
+                            overflow: visible;
+
+                            >.wg.wg-inner {
+                                position: relative;
+                                overflow: visible;
+                            }
+                        }
+
+                        &.dragged {
+                            position: absolute;
+                            display: table;
+                            opacity: 0.5;
+                            z-index: 2000;
+                        }
+                    }
+
+                    >.wg.wg-sortable-placeholder {
+
+                        display: table-cell;
+                        vertical-align: top;
+
+                        >.wg.wg-placeholder-container {
+
+                            position: relative;
+                            overflow: visible;
+
+                            >.wg.wg-placeholder-inner {
+
+                                position: relative;
+                                overflow: visible;
+
+                                &:before {
+
+                                    content: "";
+                                    position: absolute;
+                                    width: 0;
+                                    height: 0;
+                                    border: 5px solid transparent;
+                                    border-top-color: red;
+                                    top: -6px;
+                                    margin-left: -5px;
+                                    border-bottom: none;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.wg.wg-default-stack {
+
     >.wg.wg-content {
 
         >.wg.wg-table {
@@ -58,41 +219,6 @@
                         >.wg.wg-inner {
                             display: block;
                             margin: 1px 1px;
-                        }
-                    }
-                }
-
-                &.wg-row-placeholder{
-
-                    >.wg.wg-cell {
-
-                        >.wg.wg-inner {
-
-                            position: relative;
-                            overflow: visible;
-
-                            &:before {
-
-                                // content: "";
-                                // position: absolute;
-                                // width: 0;
-                                // height: 0;
-                                // border: 5px solid transparent;
-                                // border-top-color: red;
-                                // top: -6px;
-                                // margin-left: -5px;
-                                // border-bottom: none;
-
-                                content: "";
-                                position: absolute;
-                                width: 0;
-                                height: 0;
-                                border: 5px solid transparent;
-                                border-left-color: red;
-                                left: -5px;
-                                margin-top: -5px;
-                                border-right: none;
-                            }
                         }
                     }
                 }
@@ -161,3 +287,67 @@
         }
     }
 }
+
+.wg.wg-sortable-placeholder {
+    >.wg.wg-placeholder-container {
+        >.wg.wg-placeholder-inner {
+
+            position: relative;
+            overflow: visible;
+
+            &:before {
+
+                content: "";
+                position: absolute;
+                width: 0;
+                height: 0;
+                border: 5px solid transparent;
+            }
+        }
+    }
+}
+
+.wg.wg-sortable-container {
+    &.active {
+        border: 1px solid red;
+    }
+}
+
+// .wg.wg-table {
+//     >.wg.wg-sortable-placeholder {
+//         display: table-row;
+//         >.wg.wg-placeholder-container {
+//             display: table-cell;
+//             >.wg.wg-placeholder-inner {
+//                 position: relative;
+//                 overflow: visible;
+//                 &:before {
+//                     border-left-color: red;
+//                     left: -5px;
+//                     margin-top: -5px;
+//                     border-right: none;
+//                 }
+//             }
+//         }
+//     }
+// }
+
+// .wg.wg-row {
+//     >.wg.wg-sortable-placeholder {
+//         display: table-cell;
+//         >.wg.wg-placeholder-container {
+//             position: relative;
+//             overflow: visible;
+//             >.wg.wg-placeholder-inner {
+//                 position: relative;
+//                 overflow: visible;
+//                 &:before {
+//                     border-top-color: red;
+//                     top: -6px;
+//                     margin-left: -5px;
+//                     border-bottom: none;
+//                 }
+//             }
+//         }
+//     }
+// }

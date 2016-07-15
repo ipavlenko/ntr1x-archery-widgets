@@ -45,11 +45,24 @@ var Widgets =
             };
         }
 
+        function generateId(prefix) {
+
+            var ALPHABET = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+            var ID_LENGTH = 8;
+
+            var rtn = '';
+            for (var i = 0; i < ID_LENGTH; i++) {
+                rtn += ALPHABET.charAt(Math.floor(Math.random() * ALPHABET.length));
+            }
+            return prefix ? prefix + rtn : rtn;
+        }
+
         return {
             categories: categories,
             category: category,
             widget: widget,
             stub: stub,
+            generateId: generateId,
         };
     })();
 
