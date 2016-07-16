@@ -1,8 +1,12 @@
 .wg.wg-widget {
+  display: table;
   position: relative;
   overflow: auto;
 }
 .wg.wg-widget > .wg.wg-content {
   position: relative;
   overflow: auto;
+}
+.wg.wg-widget > .wg.wg-content > .form-group {
+  margin: 0px 0px;
 }
