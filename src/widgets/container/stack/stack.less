@@ -2,29 +2,40 @@
 
 .wg.wg-default-stack {
 
-    .wg.wg-content {
-
-    }
-
     &.wg-default-stack-canvas {
+
+        position: relative;
+        overflow: visible;
 
         >.wg.wg-sortable-content {
 
+            position: relative;
+            overflow: visible;
+
             >.wg.wg-sortable-inner {
+
+                position: relative;
+                overflow: visible;
 
                 >.wg.wg-sortable-container {
 
-                    display: table;
-                    width: 100%;
+                    // display: table;
+                    // width: 100%;
+                    position: relative;
+                    overflow: visible;
 
                     >.wg.wg-sortable-item {
 
-                        display: table-row;
+                        // display: table-row;
+                        position: relative;
+                        overflow: visible;
 
                         >.wg.wg-item-content {
 
-                            display: table-cell;
-                            vertical-align: top;
+                            // display: table-cell;
+                            // vertical-align: top;
+                            position: relative;
+                            overflow: visible;
 
                             >.wg.wg-inner {
                                 position: relative;
@@ -41,11 +52,15 @@
 
                     >.wg.wg-sortable-placeholder {
 
-                        display: table-row;
+                        // display: table-row;
+                        position: relative;
+                        overflow: visible;
 
                         >.wg.wg-placeholder-container {
 
-                            display: table-cell;
+                            // display: table-cell;
+                            position: relative;
+                            overflow: visible;
 
                             >.wg.wg-placeholder-inner {
 
@@ -73,13 +88,82 @@
     }
 
     &.wg-default-stack-vertical {
-        >.wg.wg-sortable-content {
-            >.wg.wg-sortable-inner {
-                >.wg.wg-sortable-container {
-                    >.wg.wg-sortable-item {
-                        >.wg.wg-item-content {
-                            >.wg.wg-inner {
 
+        padding-left: 25px;
+        maring-left: 25px;
+
+        >.wg.wg-sortable-content {
+
+            position: relative;
+            overflow: visible;
+
+            >.wg.wg-sortable-inner {
+
+                position: relative;
+                overflow: visible;
+
+                >.wg.wg-sortable-container {
+
+                    // display: table;
+                    // width: 100%;
+                    position: relative;
+                    overflow: visible;
+
+                    >.wg.wg-sortable-item {
+
+                        // display: table-row;
+                        position: relative;
+                        overflow: visible;
+
+                        >.wg.wg-item-content {
+
+                            // display: table-cell;
+                            // vertical-align: top;
+                            position: relative;
+                            overflow: visible;
+
+                            >.wg.wg-inner {
+                                position: relative;
+                            }
+                        }
+
+                        &.dragged {
+                            position: absolute;
+                            display: table;
+                            opacity: 0.5;
+                            z-index: 2000;
+                        }
+                    }
+
+                    >.wg.wg-sortable-placeholder {
+
+                        // display: table-row;
+                        position: relative;
+                        overflow: visible;
+
+                        >.wg.wg-placeholder-container {
+
+                            // display: table-cell;
+                            position: relative;
+                            overflow: visible;
+
+                            >.wg.wg-placeholder-inner {
+
+                                position: relative;
+                                overflow: visible;
+
+                                &:before {
+
+                                    content: "";
+                                    position: absolute;
+                                    width: 0;
+                                    height: 0;
+                                    border: 5px solid transparent;
+                                    border-left-color: red;
+                                    left: -5px;
+                                    margin-top: -5px;
+                                    border-right: none;
+                                }
                             }
                         }
                     }
@@ -90,7 +174,13 @@
 
     &.wg-default-stack-horisontal {
 
+        padding-left: 25px;
+        maring-left: 25px;
+
         >.wg.wg-sortable-content {
+
+            position: relative;
+            overflow: visible;
 
             >.wg.wg-sortable-inner {
 
@@ -308,6 +398,8 @@
 }
 
 .wg.wg-sortable-container {
+    box-sizing: border-box;
+    border: 1px solid transparent;
     &.active {
         border: 1px solid red;
     }

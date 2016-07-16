@@ -32,15 +32,15 @@ var Widgets =
             });
         }
 
-        var stub = function() {
+        var placeholder = function(content) {
             return {
                 tag: 'default-stub',
                 _action: 'ignore',
                 props: [
-                    { name: 'title', type: 'string' }
+                    { name: 'content', type: 'string' }
                 ],
                 params: {
-                    title: { value: 'Drop here' },
+                    content: { value: content },
                 }
             };
         }
@@ -61,7 +61,7 @@ var Widgets =
             categories: categories,
             category: category,
             widget: widget,
-            stub: stub,
+            placeholder: placeholder,
             generateId: generateId,
         };
     })();
