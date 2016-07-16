@@ -89,9 +89,6 @@
 
     &.wg-default-stack-vertical {
 
-        padding-left: 25px;
-        maring-left: 25px;
-
         >.wg.wg-sortable-content {
 
             position: relative;
@@ -173,9 +170,6 @@
     }
 
     &.wg-default-stack-horisontal {
-
-        padding-left: 25px;
-        maring-left: 25px;
 
         >.wg.wg-sortable-content {
 
@@ -399,9 +393,17 @@
 
 .wg.wg-sortable-container {
     box-sizing: border-box;
-    border: 1px solid transparent;
     &.active {
-        border: 1px solid red;
+        &:after {
+            content: "";
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            right: 0px;
+            bottom: 0px;
+            z-index: 10000;
+            outline: 1px solid red;
+        }
     }
 }
 

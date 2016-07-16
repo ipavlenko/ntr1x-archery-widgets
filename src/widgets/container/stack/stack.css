@@ -54,10 +54,6 @@
   margin-top: -5px;
   border-right: none;
 }
-.wg.wg-default-stack.wg-default-stack-vertical {
-  padding-left: 25px;
-  maring-left: 25px;
-}
 .wg.wg-default-stack.wg-default-stack-vertical > .wg.wg-sortable-content {
   position: relative;
   overflow: visible;
@@ -109,10 +105,6 @@
   left: -5px;
   margin-top: -5px;
   border-right: none;
-}
-.wg.wg-default-stack.wg-default-stack-horisontal {
-  padding-left: 25px;
-  maring-left: 25px;
 }
 .wg.wg-default-stack.wg-default-stack-horisontal > .wg.wg-sortable-content {
   position: relative;
@@ -252,8 +244,14 @@
 }
 .wg.wg-sortable-container {
   box-sizing: border-box;
-  border: 1px solid transparent;
 }
-.wg.wg-sortable-container.active {
-  border: 1px solid red;
+.wg.wg-sortable-container.active:after {
+  content: "";
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  z-index: 10000;
+  outline: 1px solid red;
 }
