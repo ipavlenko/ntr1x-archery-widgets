@@ -1,12 +1,21 @@
 (function($, Vue, Core, Widgets) {
 
-    Widgets.StubWidget = function(content) {
+    Widgets.StubWidget =
+    Widgets.Widget(Widgets.UtilGroup, Widgets.extend({}, {
+        name: 'default-stub',
+        tag: 'default-stub',
+        _action: 'ignore',
+        props: [
+            { name: 'content', type: 'string' }
+        ],
+        params: {
+            content: { value: '' },
+        }
+    }));
 
-        return Widgets.extend({
-            tag: 'default-stub',
-            props: [
-                { name: 'content', title: 'Content', type: 'rich', tab: 'content' },
-            ],
+    Widgets.StubWidgetFactory = function(content) {
+
+        return Widgets.extend(Widgets.StubWidget, {
             params: {
                 content:    Widgets.Param(content),
             },

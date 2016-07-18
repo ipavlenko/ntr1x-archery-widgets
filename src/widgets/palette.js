@@ -4,4 +4,7 @@
     Widgets.TextCategory = Widgets.Category('default-text', 'Text Elements');
     Widgets.ContainerCategory = Widgets.Category('default-container', 'Container Elements');
 
+    Widgets.UtilCategory = Widgets.Category('default-util', 'Util Elements', true);
+
+
 })(jQuery, Vue, Core, Widgets);

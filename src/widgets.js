@@ -8,13 +8,16 @@ var Widgets =
         var map = {};
         var arr = [];
 
-        var categories = function() { return arr; }
-        var category = function(name, category) {
+        var widgets = {};
 
-            if (name in map) {
-                return map[name];
+        var categories = function() { return arr; }
+        var category = function(n, category) {
+
+            if (n in map) {
+                return map[n];
             } else {
-                map[name] = category;
+                category.name = n;
+                map[n] = category;
                 arr.push(category);
             }
 
@@ -23,6 +26,11 @@ var Widgets =
 
         var widget = function(path) {
             var segments = path.split('/');
+            return this.category(segments[0]).group(segments[1]).widget(segments[2]);
+        }
+
+        var item = function(path) {
+            var segments = path.split('/');
             return $.extend(true, {}, this.category(segments[0]).group(segments[1]).item(segments[2]).widget, {
                 _action: 'create',
                 resource: {
@@ -30,19 +38,6 @@ var Widgets =
                     _action: 'create'
                 },
             });
-        }
-
-        var placeholder = function(content) {
-            return {
-                tag: 'default-stub',
-                _action: 'ignore',
-                props: [
-                    { name: 'content', type: 'string' }
-                ],
-                params: {
-                    content: { value: content },
-                }
-            };
         }
 
         function generateId(prefix) {
@@ -61,7 +56,8 @@ var Widgets =
             categories: categories,
             category: category,
             widget: widget,
-            placeholder: placeholder,
+            item: item,
+            placeholder: function(content) { return Widgets.StubWidgetFactory(content) },
             generateId: generateId,
         };
     })();
@@ -72,12 +68,13 @@ var Widgets =
         var arr = [];
 
         var groups = function() { return arr; }
-        var group = function(name, group) {
+        var group = function(n, group) {
 
-            if (name in map) {
-                return map[name];
+            if (n in map) {
+                return map[n];
             } else {
-                map[name] = group;
+                group.name = `${name}/${n}`;
+                map[n] = group;
                 arr.push(group);
             }
 
@@ -85,7 +82,6 @@ var Widgets =
         }
 
         Widgets.Palette.category(name, {
-            name: name,
             title: title,
             groups: groups,
             group: group,
@@ -94,43 +90,79 @@ var Widgets =
         return Widgets.Palette.category(name);
     };
 
-    Widgets.Group = function(category, name, title) {
+    Widgets.Group = function(category, name, title, ignore) {
 
         var map = {};
         var arr = [];
 
         var items = function() { return arr; }
-        var item = function(name, item) {
+        var item = function(n, item) {
 
-            if (name in map) {
-                return map[name];
+            if (n in map) {
+                return map[n];
             } else {
-                map[name] = item;
+                item.name = `${this.name}/${n}`;
+                map[n] = item;
                 arr.push(item);
             }
 
             return this;
         }
 
+        var w_map = {};
+        var w_arr = [];
+
+        var widgets = function() { return w_arr; }
+        var widget = function(n, widget) {
+
+            if (n in w_map) {
+                return w_map[n];
+            } else {
+                widget.name = `${this.name}/${n}`;
+                w_map[n] = widget;
+                w_arr.push(widget);
+            }
+
+            return this;
+        }
+
         category.group(name, {
-            name: name,
             title: title,
             items: items,
             item: item,
+            widgets: widgets,
+            widget: widget,
+            ignore: ignore,
         });
 
         return category.group(name);
     };
 
-    Widgets.extend = function(config) {
+    Widgets.Widget = function(group, config) {
 
-        var result = {
-            tag: config.tag,
-            tabs: [],
-            props: [],
-            params: {},
-            widgets: config.widgets || undefined,
-        };
+        var name = config.name;
+
+        group.widget(config.name, config);
+
+        return group.widget(name);
+    }
+
+    Widgets.extend = function(original, config) {
+
+        var result = JSON.parse(JSON.stringify(
+            Object.assign({
+                name: null,
+                tag: null,
+                tabs: [],
+                props: [],
+                params: {},
+                widgets: [],
+            }, original)
+        ));
+
+        if ('name' in config) result.name = config.name;
+        if ('tag' in config) result.tag = config.tag;
+        if ('_action' in config) result._action = config._action;
 
         if (config.mixins) {
 
@@ -164,13 +196,11 @@ var Widgets =
         return result;
     };
 
-    Widgets.Item = function(group, name, config) {
+    Widgets.Item = function(group, config) {
 
-        group.item(name, {
-            name: name,
-            thumbnail: config.thumbnail,
-            widget: config.widget,
-        });
+        var name = config.name;
+
+        group.item(config.name, config);
 
         return group.item(name);
     };
