@@ -62,7 +62,7 @@ var Widgets =
         };
     })();
 
-    Widgets.Category = function(name, title) {
+    Widgets.Category = function(name, title, ignore) {
 
         var map = {};
         var arr = [];
@@ -85,12 +85,13 @@ var Widgets =
             title: title,
             groups: groups,
             group: group,
+            ignore: ignore,
         });
 
         return Widgets.Palette.category(name);
     };
 
-    Widgets.Group = function(category, name, title, ignore) {
+    Widgets.Group = function(category, name, title) {
 
         var map = {};
         var arr = [];
@@ -132,7 +133,6 @@ var Widgets =
             item: item,
             widgets: widgets,
             widget: widget,
-            ignore: ignore,
         });
 
         return category.group(name);
