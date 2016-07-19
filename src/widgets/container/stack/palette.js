@@ -1,22 +1,31 @@
 (function($, Vue, Core, Widgets) {
 
-    Widgets.StackWidget = function(tag) {
+    Widgets.StackHorisontalWidget =
+    Widgets.Widget(Widgets.StackGroup, Widgets.extend({}, {
+        name: 'default-stack-horisontal',
+        tag: 'default-stack-horisontal',
+        mixins: [ Widgets.WidgetMixin, Widgets.BoxMixin ],
+        widgets: [],
+    }));
 
-        return Widgets.extend({
-            tag: tag,
-            mixins: [ Widgets.WidgetMixin, Widgets.BoxMixin ],
-            widgets: [],
-        });
-    };
-
-    Widgets.Item(Widgets.StackGroup, 'stack-horisontal', {
+    Widgets.Item(Widgets.StackGroup, {
+        name: 'stack-horisontal',
         thumbnail: '/assets/vendor/ntr1x-archery-widgets/src/widgets/container/stack/stack-horisontal.png',
-        widget: Widgets.StackWidget('default-stack-horisontal'),
+        widget: Widgets.StackHorisontalWidget,
     });
 
-    Widgets.Item(Widgets.StackGroup, 'stack-vertical', {
+    Widgets.StackVerticalWidget =
+    Widgets.Widget(Widgets.StackGroup, Widgets.extend({}, {
+        name: 'default-stack-vertical',
+        tag: 'default-stack-vertical',
+        mixins: [ Widgets.WidgetMixin, Widgets.BoxMixin ],
+        widgets: [],
+    }));
+
+    Widgets.Item(Widgets.StackGroup, {
+        name: 'stack-vertical',
         thumbnail: '/assets/vendor/ntr1x-archery-widgets/src/widgets/container/stack/stack-vertical.png',
-        widget: Widgets.StackWidget('default-stack-vertical'),
+        widget: Widgets.StackVerticalWidget,
     });
 
 })(jQuery, Vue, Core, Widgets);
