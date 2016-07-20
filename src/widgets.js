@@ -149,6 +149,9 @@ var Widgets =
 
     Widgets.extend = function(original, config) {
 
+        original = JSON.parse(JSON.stringify(original));
+        config = JSON.parse(JSON.stringify(config));
+
         var result = JSON.parse(JSON.stringify(
             Object.assign({
                 name: null,
@@ -185,8 +188,10 @@ var Widgets =
                 var prop = props[i];
                 var param = params[prop.name] = params[prop.name] || { value: null }; // TODO Set a type-dependent initial value
 
-                if (prop.props) {
-                    initParams(prop, param);
+                if (prop.type == 'multiple' && prop.props && param.value) {
+                    for (var j = 0; j < param.value.length; j++) {
+                        initParams(prop.props, param.value[j]);
+                    }
                 }
             }
         }
