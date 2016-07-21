@@ -1,13 +1,34 @@
-.wg.wg-default-gallery .carousel .carousel-inner .item .wg-default-gallery.wg-default-gallery-table {
+.wg.wg-default-gallery > .wg.wg-content > .carousel > .carousel-inner > .item > .wg.wg-item-table {
+  display: table;
+}
+.wg.wg-default-gallery > .wg.wg-content > .carousel > .carousel-inner > .item > .wg.wg-item-table > .wg.wg-item-row {
+  display: table-row;
+}
+.wg.wg-default-gallery > .wg.wg-content > .carousel > .carousel-inner > .item > .wg.wg-item-table > .wg.wg-item-row > .wg.wg-item-cell {
+  display: table-cell;
+  vertical-align: top;
+}
+.wg.wg-default-gallery > .wg.wg-content > .carousel > .carousel-inner > .item > .wg.wg-item-table > .wg.wg-item-row > .wg.wg-item-cell > .wg.wg-cell-content {
+  display: table;
+}
+.wg.wg-default-gallery > .wg.wg-content > .carousel > .carousel-inner > .item > .wg.wg-item-table > .wg.wg-item-row > .wg.wg-item-cell > .wg.wg-cell-content > .wg.wg-content-drawing {
+  display: table-cell;
+  vertical-align: top;
+}
+.wg.wg-default-gallery > .wg.wg-content > .carousel > .carousel-inner > .item > .wg.wg-item-table > .wg.wg-item-row > .wg.wg-item-cell > .wg.wg-cell-content > .wg-content-description {
+  display: table-cell;
+  vertical-align: top;
+}
+.wg.wg-default-gallery > .carousel .carousel-inner .item .wg-default-gallery.wg-default-gallery-table {
   display: table;
   width: 100%;
 }
-.wg.wg-default-gallery .carousel .carousel-inner .item .wg-default-gallery.wg-default-gallery-table .wg-default-gallery.wg-default-gallery-row {
+.wg.wg-default-gallery > .carousel .carousel-inner .item .wg-default-gallery.wg-default-gallery-table .wg-default-gallery.wg-default-gallery-row {
   display: table-row;
 }
-.wg.wg-default-gallery .carousel .carousel-inner .item .wg-default-gallery.wg-default-gallery-table .wg-default-gallery.wg-default-gallery-row .wg-default-gallery.wg-default-gallery-cell {
+.wg.wg-default-gallery > .carousel .carousel-inner .item .wg-default-gallery.wg-default-gallery-table .wg-default-gallery.wg-default-gallery-row .wg-default-gallery.wg-default-gallery-cell {
   display: table-cell;
 }
-.wg.wg-default-gallery .carousel .carousel-inner .item .wg-default-gallery.wg-default-gallery-table .wg-default-gallery.wg-default-gallery-row .wg-default-gallery.wg-default-gallery-cell .wg-default-gallery.wg-default-gallery-thumbnail {
+.wg.wg-default-gallery > .carousel .carousel-inner .item .wg-default-gallery.wg-default-gallery-table .wg-default-gallery.wg-default-gallery-row .wg-default-gallery.wg-default-gallery-cell .wg-default-gallery.wg-default-gallery-thumbnail {
   margin-bottom: 0px;
 }

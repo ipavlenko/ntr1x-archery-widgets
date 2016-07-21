@@ -1,7 +1,7 @@
 (function($, Vue, Core, Widgets) {
 
     Widgets.InputWidget =
-    Widgets.Widget(Widgets.InputsGroup, Widgets.extend({}, {
+    Widgets.Widget(Widgets.InputsGroup, Widgets.create({
         name: 'default-input-text',
         tag: 'default-input-text',
         mixins: [ Widgets.WidgetMixin, Widgets.BoxMixin, Widgets.SizeMixin ],
@@ -11,21 +11,17 @@
             { name: 'label', title: 'Label', type: 'string', tab: 'content' },
             { name: 'placeholder', title: 'Placeholder', type: 'string', tab: 'content' },
         ],
-        params: {
-            model:      Widgets.Param({ value: '' }),
-            margin:     Widgets.Param('15px 15px'),
-            type:       Widgets.Param('text'),
-            label:      Widgets.Param(''),
-        },
     }));
 
     Widgets.InputWidgetFactory = function(label, type) {
 
-        return Widgets.extend(Widgets.InputWidget, {
-            params: {
-                type:       Widgets.Param(type),
-                label:      Widgets.Param(label),
+        return Widgets.build(Widgets.InputWidget, {
+            model: {
+                value: { value: '' }
             },
+            margin: { value: '15px 15px' },
+            label: { value: label },
+            type: { value: type },
         });
     };
 
@@ -36,7 +32,7 @@
     });
 
     Widgets.TextareaWidget =
-    Widgets.Widget(Widgets.InputsGroup, Widgets.extend({}, {
+    Widgets.Widget(Widgets.InputsGroup, Widgets.create({
         name: 'default-input-textarea',
         tag: 'default-input-textarea',
         mixins: [ Widgets.WidgetMixin, Widgets.BoxMixin, Widgets.SizeMixin ],
@@ -45,21 +41,17 @@
             { name: 'label', title: 'Label', type: 'string', tab: 'data' },
             { name: 'placeholder', title: 'Placeholder', type: 'string', tab: 'data' },
         ],
-        params: {
-            model:          Widgets.Param({ value: '' }),
-            margin:         Widgets.Param('15px 15px'),
-            label:          Widgets.Param(''),
-            placeholder:    Widgets.Param(''),
-        },
     }));
 
     Widgets.TextareaWidgetFactory = function(label, placeholder) {
 
-        return Widgets.extend(Widgets.TextareaWidget, {
-            params: {
-                label:          Widgets.Param(label),
-                placeholder:    Widgets.Param(placeholder),
+        return Widgets.build(Widgets.TextareaWidget, {
+            model: {
+                value: { value: '' }
             },
+            placeholder: { value: placeholder },
+            margin: { value: '15px 15px' },
+            label: { value: label },
         });
     };
 
@@ -70,7 +62,7 @@
     });
 
     Widgets.RadioInputWidget =
-    Widgets.Widget(Widgets.InputsGroup, Widgets.extend({}, {
+    Widgets.Widget(Widgets.InputsGroup, Widgets.create({
         name: 'default-input-radio',
         tag: 'default-input-radio',
         mixins: [ Widgets.WidgetMixin, Widgets.BoxMixin, Widgets.SizeMixin ],
@@ -88,27 +80,23 @@
                 ]
             },
         ],
-        params: {
-            model:      Widgets.Param({ value: null }),
-            margin:     Widgets.Param('15px 15px'),
-            items:      Widgets.Param([]),
-        },
     }));
 
     Widgets.RadioInputWidgetFactory = function(value, options) {
 
-        return Widgets.extend(Widgets.RadioInputWidget, {
-            params: {
-                model:      Widgets.Param({ value: value }),
-                items: {
-                    value: options.map(function(option) {
-                        return {
-                            value: Widgets.Param(option.value),
-                            label: Widgets.Param(option.label),
-                        };
-                    })
-                }
+        return Widgets.build(Widgets.RadioInputWidget, {
+            model: {
+                value: { value: value }
             },
+            margin: { value: '15px 15px' },
+            items: {
+                value: options.map(function(option) {
+                    return {
+                        value: Widgets.Param(option.value),
+                        label: Widgets.Param(option.label),
+                    };
+                })
+            }
         });
     };
 
@@ -122,7 +110,7 @@
     });
 
     Widgets.CheckInputWidget =
-    Widgets.Widget(Widgets.InputsGroup, Widgets.extend({}, {
+    Widgets.Widget(Widgets.InputsGroup, Widgets.create({
         name: 'default-input-checkbox',
         tag: 'default-input-checkbox',
         mixins: [ Widgets.WidgetMixin, Widgets.BoxMixin, Widgets.SizeMixin ],
@@ -140,27 +128,23 @@
                 ]
             },
         ],
-        params: {
-            model:      Widgets.Param({ value: [] }),
-            margin:     Widgets.Param('15px 15px'),
-            items:      Widgets.Param([]),
-        },
     }));
 
     Widgets.CheckInputWidgetFactory = function(value, options) {
 
-        return Widgets.extend(Widgets.CheckInputWidget, {
-            params: {
-                model:      Widgets.Param({ value: value }),
-                items: {
-                    value: options.map(function(option) {
-                        return {
-                            value: Widgets.Param(option.value),
-                            label: Widgets.Param(option.label),
-                        };
-                    })
-                }
+        return Widgets.build(Widgets.CheckInputWidget, {
+            model: {
+                value: { value: value }
             },
+            margin: { value: '15px 15px' },
+            items: {
+                value: options.map(function(option) {
+                    return {
+                        value: Widgets.Param(option.value),
+                        label: Widgets.Param(option.label),
+                    };
+                })
+            }
         });
     };
 

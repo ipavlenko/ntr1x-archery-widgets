@@ -1,7 +1,7 @@
 (function($, Vue, Core, Widgets) {
 
     Widgets.TextWidget =
-    Widgets.Widget(Widgets.BlocksGroup, Widgets.extend({}, {
+    Widgets.Widget(Widgets.BlocksGroup, Widgets.create({
         name: 'default-text',
         tag: 'default-text',
         mixins: [ Widgets.WidgetMixin, Widgets.BoxMixin, Widgets.SizeMixin ],
@@ -9,21 +9,14 @@
             { name: 'stereotype', title: 'Stereotype', type: 'string', tab: 'data' },
             { name: 'content', title: 'Content', type: 'rich', tab: 'content' },
         ],
-        params: {
-            content:    Widgets.Param(''),
-            margin:     Widgets.Param('15px 15px'),
-            stereotype: Widgets.Param('default'),
-        },
     }));
 
     Widgets.TextWidgetFactory = function(stereotype, content) {
 
-        return Widgets.extend(Widgets.TextWidget, {
-            params: {
-                content:    Widgets.Param(content),
-                margin:     Widgets.Param('15px 15px'),
-                stereotype: Widgets.Param(stereotype),
-            },
+        return Widgets.build(Widgets.TextWidget, {
+            content: { value: content },
+            margin: { value: '15px 15px' },
+            stereotype: { value: stereotype },
         });
     }
 

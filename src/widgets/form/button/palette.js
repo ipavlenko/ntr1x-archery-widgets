@@ -1,7 +1,7 @@
 (function($, Vue, Core, Widgets) {
 
     Widgets.ButtonWidget =
-    Widgets.Widget(Widgets.ButtonsGroup, Widgets.extend({}, {
+    Widgets.Widget(Widgets.ButtonsGroup, Widgets.create({
         name: 'default-button',
         tag: 'default-button',
         mixins: [ Widgets.WidgetMixin, Widgets.BoxMixin, Widgets.SizeMixin ],
@@ -10,22 +10,20 @@
             { name: 'type', title: 'Type', type: 'string', tab: 'data' },
             { name: 'stereotype', title: 'Stereotype', type: 'string', tab: 'data' },
         ],
-        params: {
-            margin:     Widgets.Param('15px 15px'),
-            type:       Widgets.Param('button'),
-            title:      Widgets.Param('Button'),
-            stereotype: Widgets.Param('default'),
-        },
     }));
 
     Widgets.ButtonWidgetFactory = function(title, stereotype) {
 
-        return Widgets.extend(Widgets.ButtonWidget, {
-            params: {
-                title:      Widgets.Param(title),
-                stereotype: Widgets.Param(stereotype),
-            },
+        var w = Widgets.build(Widgets.ButtonWidget, {
+            margin: { value: '15px 15px' },
+            type: { value: 'button' },
+            title: { value: title },
+            stereotype: { value: stereotype },
         });
+
+        console.log(w);
+
+        return w;
     }
 
     Widgets.Item(Widgets.ButtonsGroup, {

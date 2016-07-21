@@ -1,7 +1,7 @@
 (function($, Vue, Core, Widgets) {
 
     Widgets.RadioWidget =
-    Widgets.Widget(Widgets.RadiosGroup, Widgets.extend({}, {
+    Widgets.Widget(Widgets.RadiosGroup, Widgets.create({
         name: 'default-radio',
         tag: 'default-radio',
         mixins: [ Widgets.WidgetMixin, Widgets.BoxMixin, Widgets.SizeMixin ],
@@ -19,29 +19,24 @@
                 ]
             },
         ],
-        params: {
-            model:      Widgets.Param({ value: null }),
-            margin:     Widgets.Param('15px 15px'),
-            stereotype: Widgets.Param('default'),
-            items:      Widgets.Param([]),
-        },
     }));
 
     Widgets.RadioWidgetFactory = function(stereotype, value, options) {
 
-        return Widgets.extend(Widgets.RadioWidget, {
-            params: {
-                model:      Widgets.Param({ value: value }),
-                stereotype: Widgets.Param(stereotype),
-                items: {
-                    value: options.map(function(option) {
-                        return {
-                            value: Widgets.Param(option.value),
-                            label: Widgets.Param(option.label),
-                        };
-                    })
-                }
+        return Widgets.build(Widgets.RadioWidget, {
+            model: {
+                value: { value: value }
             },
+            margin: { value: '15px 15px' },
+            stereotype: { value: stereotype },
+            items: {
+                value: options.map(function(option) {
+                    return {
+                        value: { value: option.value },
+                        label: { value: option.label },
+                    };
+                })
+            }
         });
     };
 

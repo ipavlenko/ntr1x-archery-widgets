@@ -147,39 +147,59 @@ var Widgets =
         return group.widget(name);
     }
 
-    Widgets.extend = function(original, config) {
+    Widgets.clone = function(original) {
+        return JSON.parse(JSON.stringify(original));
+    }
 
-        original = JSON.parse(JSON.stringify(original));
-        config = JSON.parse(JSON.stringify(config));
+    Widgets.create = function(config) {
 
-        var result = JSON.parse(JSON.stringify(
-            Object.assign({
-                name: null,
-                tag: null,
-                tabs: [],
-                props: [],
-                params: {},
-                widgets: [],
-            }, original)
-        ));
+        var result = {
+            name: config.name,
+            tag: config.tag,
+            widgets: config.widgets,
+            tabs: [],
+            props: [],
+            params: {},
+        };
 
-        if ('name' in config) result.name = config.name;
-        if ('tag' in config) result.tag = config.tag;
         if ('_action' in config) result._action = config._action;
+
+        function visit(w, m) {
+
+            if ('props' in m) {
+
+                if (m.override) {
+
+                    w.tabs = JSON.parse(JSON.stringify(m.tabs));
+                    w.props = JSON.parse(JSON.stringify(m.props));
+
+                } else {
+
+                    if (m.tabs) w.tabs = w.tabs.concat(m.tabs);
+                    if (m.props) w.props = w.props.concat(m.props);
+                }
+            }
+
+        }
 
         if (config.mixins) {
 
             for (var i = 0; i < config.mixins.length; i++) {
                 var m = config.mixins[i];
-                if ('tabs' in m) result.tabs = result.tabs.concat(m.tabs);
-                if ('props' in m) result.props = result.props.concat(m.props);
-                if ('params' in m) result.params = $.extend(true, result.params, m.params);
+                visit(result, m);
             }
         }
 
-        if ('tabs' in config) result.tabs = result.tabs.concat(config.tabs);
-        if ('props' in config) result.props = result.props.concat(config.props);
-        if ('params' in config) result.params = $.extend(true, result.params, config.params);
+        visit(result, config);
+
+        return result;
+    };
+
+    Widgets.build = function(widget, params) {
+
+        var w = Object.assign(JSON.parse(JSON.stringify(widget)), {
+            params: params || {}
+        });
 
         function initParams(props, params) {
 
@@ -188,18 +208,24 @@ var Widgets =
                 var prop = props[i];
                 var param = params[prop.name] = params[prop.name] || { value: null }; // TODO Set a type-dependent initial value
 
-                if (prop.type == 'multiple' && prop.props && param.value) {
-                    for (var j = 0; j < param.value.length; j++) {
-                        initParams(prop.props, param.value[j]);
+                if (prop.props) {
+                    if (prop.type == 'multiple') {
+                        param.value = param.value == null ? [] : param.value;
+                        for (var j = 0; j < param.value.length; j++) {
+                            initParams(prop.props, param.value[j]);
+                        }
+                    } else if (prop.type == 'object') {
+                        param.value = param.value == null ? {} : param.value;
+                        initParams(prop.props, param.value);
                     }
                 }
             }
         }
 
-        initParams(result.props, result.params);
+        initParams(w.props, w.params);
 
-        return result;
-    };
+        return w;
+    }
 
     Widgets.Item = function(group, config) {
 

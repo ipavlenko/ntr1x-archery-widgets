@@ -16,8 +16,7 @@
 
             function updateMatrix(bindings) {
 
-                // console.log('created');
-                var items = bindings.items || [];
+                var items = bindings.items.collection || [];
 
                 var rows = parseInt(bindings.rows);
                 rows = rows > 0 ? rows : 1;

@@ -1,7 +1,7 @@
 (function($, Vue, Core, Widgets) {
 
     Widgets.CheckWidget =
-    Widgets.Widget(Widgets.ChecksGroup, Widgets.extend({}, {
+    Widgets.Widget(Widgets.ChecksGroup, Widgets.create({
         name: 'default-check',
         tag: 'default-check',
         mixins: [ Widgets.WidgetMixin, Widgets.BoxMixin, Widgets.SizeMixin ],
@@ -19,29 +19,24 @@
                 ]
             },
         ],
-        params: {
-            model:      Widgets.Param({ value: [] }),
-            margin:     Widgets.Param('15px 15px'),
-            stereotype: Widgets.Param('default'),
-            items:      Widgets.Param([]),
-        },
     }));
 
     Widgets.CheckWidgetFactory = function(stereotype, value, options) {
 
-        return Widgets.extend(Widgets.CheckWidget, {
-            params: {
-                model:      Widgets.Param({ value: value }),
-                stereotype: Widgets.Param(stereotype),
-                items: {
-                    value: options.map(function(option) {
-                        return {
-                            value: Widgets.Param(option.value),
-                            label: Widgets.Param(option.label),
-                        };
-                    })
-                }
+        return Widgets.build(Widgets.CheckWidget, {
+            model: {
+                value: { value: value }
             },
+            margin: { value: '15px 15px' },
+            stereotype: { value: stereotype },
+            items: {
+                value: options.map(function(option) {
+                    return {
+                        value: { value: option.value },
+                        label: { value: option.label },
+                    };
+                })
+            }
         });
     }
 
