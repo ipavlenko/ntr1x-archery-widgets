@@ -15,7 +15,11 @@
     Widgets.ButtonWidgetFactory = function(title, stereotype) {
 
         var w = Widgets.build(Widgets.ButtonWidget, {
-            margin: { value: '15px 15px' },
+            inner: {
+                value:  {
+                    margin: { value: '15px 15px' },
+                }
+            },
             type: { value: 'button' },
             title: { value: title },
             stereotype: { value: stereotype },

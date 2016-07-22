@@ -2,20 +2,19 @@
 
     Widgets.StubWidget =
     Widgets.Widget(Widgets.UtilGroup, Widgets.create({
+        _action: 'ignore',
         name: 'default-stub',
         tag: 'default-stub',
-        _action: 'ignore',
+        mixins: [ Widgets.BoxMixin ],
         props: [
-            { name: 'content', type: 'string' }
+            { name: 'content', type: 'rich' }
         ],
     }));
 
     Widgets.StubWidgetFactory = function(content) {
 
         return Widgets.build(Widgets.StubWidget, {
-            params: {
-                content: { value: content },
-            },
+            content: { value: content },
         });
     }
 

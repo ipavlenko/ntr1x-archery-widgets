@@ -13,14 +13,26 @@
 
     Widgets.BoxMixin = {
         props: [
-            { name: 'margin', title: 'Margin', type: 'string', placeholder: '0px 0px', tab: 'appearance' },
-            { name: 'padding', title: 'Padding', type: 'string', placeholder: '0px 0px', tab: 'appearance' },
-            { name: 'innerBorder', title: 'Inner Border', type: 'string', placeholder: 'solid 1px #000000', tab: 'appearance' },
-            { name: 'innerBackground', title: 'Inner Background', type: 'string', placeholder: '#FFFFFF', tab: 'appearance' },
-            { name: 'innerBackgroundSize', title: 'Inner Background Size', type: 'string', placeholder: 'cover', tab: 'appearance' },
-            { name: 'outerBorder', title: 'Outer Border', type: 'string', placeholder: 'solid 1px #000000', tab: 'appearance' },
-            { name: 'outerBackground', title: 'Outer Background', type: 'string', placeholder: '#FFFFFF', tab: 'appearance' },
-            { name: 'outerBackgroundSize', title: 'Outer Background Size', type: 'string', placeholder: 'cover', tab: 'appearance' },
+            { name: 'inner', title: 'Inner Container', type: 'object', tab: 'appearance',
+                tabs: [
+                    { name: 'appearance', title: 'Appearance' },
+                ],
+                props: [
+                    { name: 'border', title: 'Border', type: 'string', placeholder: '1px solid #000000', tab: 'appearance' },
+                    { name: 'background', title: 'Background', type: 'string', placeholder: '#FFFFFF', tab: 'appearance' },
+                ]
+            },
+            { name: 'outer', title: 'Outer Container', type: 'object', tab: 'appearance',
+                tabs: [
+                    { name: 'appearance', title: 'Appearance' },
+                ],
+                props: [
+                    { name: 'margin', title: 'Margin', type: 'string', placeholder: '0px 0px', tab: 'appearance' },
+                    { name: 'padding', title: 'Padding', type: 'string', placeholder: '0px 0px', tab: 'appearance' },
+                    { name: 'border', title: 'Border', type: 'string', placeholder: '1px solid #000000', tab: 'appearance' },
+                    { name: 'background', title: 'Background', type: 'string', placeholder: '#FFFFFF', tab: 'appearance' },
+                ]
+            },
         ],
     };
 
