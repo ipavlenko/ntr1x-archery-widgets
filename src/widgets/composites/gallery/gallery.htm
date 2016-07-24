@@ -1,12 +1,15 @@
 <template id="default-gallery">
     <default-box :bindings.sync="bindings" class="wg wg-widget wg-default-gallery">
 
-        <div id="{{ systemId }}-carousel" class="carousel slide" data-ride="carousel" v-if="bindings.items.collection">
-
-            <!-- Indicators -->
-            <ol class="carousel-indicators" v-if="matrix.length > 1">
-                <li v-for="item in bindings.items.collection" data-target="#{{ systemId }}-carousel" data-slide-to="{{ $index }}" :class="{ 'active' : !$index }"></li>
-            </ol>
+        <div id="{{ systemId }}-carousel" class="wg wg-carousel carousel slide" data-ride="carousel" v-if="bindings.items.collection"
+            :class="{
+                'wg-dock-above': !bindings.dock || bindings.dock == 'above',
+                'wg-dock-top': bindings.dock == 'top',
+                'wg-dock-right': bindings.dock == 'right',
+                'wg-dock-bottom': bindings.dock == 'bottom',
+                'wg-dock-left': bindings.dock == 'left',
+            }"
+        >
 
             <!-- Wrapper for slides -->
             <div class="carousel-inner" role="listbox">
@@ -20,13 +23,6 @@
                         <div class="wg wg-item-row" v-for="rd in pd">
                             <div class="wg wg-item-cell" v-for="cd in rd">
                                 <div class="wg wg-cell-content" v-if="cd"
-                                    :class="{
-                                        'wg-dock-above': !bindings.dock || bindings.dock == 'above',
-                                        'wg-dock-top': bindings.dock == 'top',
-                                        'wg-dock-right': bindings.dock == 'right',
-                                        'wg-dock-bottom': bindings.dock == 'bottom',
-                                        'wg-dock-left': bindings.dock == 'left',
-                                    }"
                                     :style="{
                                         width: cd.width || bindings.items.style.width,
                                         height: cd.height || bindings.items.style.height,
@@ -61,6 +57,11 @@
                     </div>
                 </div>
             </div>
+
+            <!-- Indicators -->
+            <ol class="carousel-indicators" v-if="matrix.length > 1">
+                <li v-for="item in matrix" data-target="#{{ systemId }}-carousel" data-slide-to="{{ $index }}" :class="{ 'active' : !$index }"></li>
+            </ol>
 
             <!-- Controls -->
             <!--

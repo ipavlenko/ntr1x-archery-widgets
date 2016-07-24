@@ -24,7 +24,7 @@
     P.Spacing = { name: 'spacing', title: 'Border Spacing', type: 'string', tab: 'appearance' };
     P.Collapse = { name: 'collapse', title: 'Border Collapse', type: 'string', tab: 'appearance' };
 
-    P.Align = { name: 'text-align', title: 'Text Align', type: 'select', tab: 'appearance', options: [
+    P.Align = { name: 'align', title: 'Text Align', type: 'select', tab: 'appearance', options: [
         { value: 'left', text: 'Left' },
         { value: 'right', text: 'Right' },
         { value: 'center', text: 'Ceneter' },

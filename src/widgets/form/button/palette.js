@@ -24,9 +24,7 @@
             title: { value: title },
             stereotype: { value: stereotype },
         });
-
-        console.log(w);
-
+        
         return w;
     }
 

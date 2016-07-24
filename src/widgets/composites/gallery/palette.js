@@ -8,8 +8,7 @@
         name: 'default-gallery',
         tag: 'default-gallery',
         mixins: [ Widgets.WidgetMixin, Widgets.BoxMixin, Widgets.SizeMixin ],
-        props: [
-            P.Cols, P.Rows, P.Dock, P.Color, P.Align,
+        props: [ P.Cols, P.Rows, P.Dock, P.Color, P.Align,
             {
                 name: 'border', title: 'Border', type: 'object', tab: 'appearance',
                 tabs: [ T.Appearance ],
@@ -19,42 +18,38 @@
                 name: 'items', title: 'Items', type: 'object', tab: 'data',
                 tabs: [ T.Data, T.Appearance ],
                 props: [
-                    { name: 'collection', title: 'Collection', type: 'multiple', tab: 'data',
-                    tabs: [ T.Appearance, T.Content ],
-                        props: [
-                            { name: 'drawing', title: 'Drawing', type: 'object', tab: 'appearance',
+                    {
+                        name: 'collection', title: 'Collection', type: 'multiple', tab: 'data',
+                        tabs: [ T.Appearance, T.Content ],
+                        props: [ P.Width, P.Height, P.Margin, P.Padding, P.Background,
+                            {
+                                name: 'drawing', title: 'Drawing', type: 'object', tab: 'appearance',
                                 tabs: [ T.Appearance ],
-                                props: [
-                                    P.Width, P.Height, P.Margin, P.Padding, P.Background,
-                                ],
+                                props: [ P.Width, P.Height, P.Margin, P.Padding, P.Background, ],
                             },
-                            { name: 'description', title: 'Description', type: 'object', tab: 'appearance',
+                            {
+                                name: 'description', title: 'Description', type: 'object', tab: 'appearance',
                                 tabs: [ T.Appearance, T.Content ],
-                                props: [
-                                    P.Width, P.Height, P.Margin, P.Padding, P.Background,
-                                    P.Color, P.Align, P.Content,
-                                ]
+                                props: [ P.Width, P.Height, P.Margin, P.Padding, P.Background, P.Color, P.Align, P.Content, ]
                             },
-                            P.Width, P.Height, P.Margin, P.Padding, P.Background,
                         ]
                     },
-                    { name: 'style', title: 'Style', type: 'object', tab: 'appearance',
+                    {
+                        name: 'style', title: 'Style', type: 'object', tab: 'appearance',
                         tabs: [ T.Appearance ],
-                        props: [
-                            { name: 'drawing', title: 'Drawing', type: 'object', tab: 'appearance',
+                        props: [ P.Width, P.Height, P.Margin, P.Padding, P.Background,
+                            {
+                                name: 'drawing', title: 'Drawing', type: 'object', tab: 'appearance',
                                 tabs: [ T.Appearance ],
                                 props: [
                                     P.Width, P.Height, P.Margin, P.Padding, P.Background,
                                 ]
                             },
-                            { name: 'description', title: 'Description', type: 'object', tab: 'appearance',
+                            {
+                                name: 'description', title: 'Description', type: 'object', tab: 'appearance',
                                 tabs: [ T.Appearance ],
-                                props: [
-                                    P.Width, P.Height, P.Margin, P.Padding, P.Background,
-                                    P.Color, P.Align,
-                                ]
+                                props: [ P.Width, P.Height, P.Margin, P.Padding, P.Background, P.Color, P.Align, ]
                             },
-                            P.Width, P.Height, P.Margin, P.Padding, P.Background,
                         ],
                     }
                 ]
@@ -68,12 +63,20 @@
             rows: { value: defaults.rows },
             cols: { value: defaults.cols },
             dock: { value: defaults.dock },
+            align: { value: defaults.align },
+            color: { value: defaults.color },
+            background: { value: defaults.background },
+            border: {
+                value: {
+                    spacing: { value: defaults.border.spacing }
+                }
+            },
             items: {
                 value: {
                     style: {
                         value: {
-                            width: { value: defaults.width },
-                            height: { value: defaults.height },
+                            width: { value: defaults.items.style.width },
+                            height: { value: defaults.items.style.height },
                             description: {
                                 value: {
                                     padding: { value: defaults.padding },
@@ -82,17 +85,16 @@
                         }
                     },
                     collection: {
-                        value: defaults.collection.map(function(item) {
+                        value: defaults.items.collection.map(function(item) {
                             return {
                                 drawing: {
                                     value: {
-                                        background: { value: item.background },
+                                        background: { value: item.drawing.background },
                                     }
                                 },
                                 description: {
                                     value: {
-                                        content: { value: item.content },
-                                        color: { value: item.color },
+                                        content: { value: item.description.content },
                                     }
                                 },
                             };
@@ -102,8 +104,6 @@
             },
         });
 
-        // console.log(w);
-
         return w;
     }
 
@@ -111,58 +111,191 @@
         name: 'gallery-r1c1f',
         thumbnail: '/assets/vendor/ntr1x-archery-widgets/src/widgets/composites/gallery/gallery-r1c1f.png',
         widget: Widgets.GalleryWidgetFactory({
-            rows: 1, cols: 1, dock: 'above', width: '100%', height: '300px', padding: '30px', 'text-align': 'center', color: '#FFFFFF',
-            collection: [
-                { content: `
-                    <h3 style="text-align:center;"><span style="font-size:48px">First Item</span></h3>
-                    <p style="text-align:center;"><span style="font-size: 28px">You can change item data using settings editor</span></p>
-                `, background: '#FF6466', color: '#FFFFFF' },
-                { content: `
-                    <h3 style="text-align:center;"><span style="font-size:48px">Second Item</span></h3>
-                    <p style="text-align:center;"><span style="font-size: 28px">You can change item data using settings editor</span></p>
-                `, background: '#605BE8', color: '#FFFFFF' },
-                { content: `
-                    <h3 style="text-align:center;"><span style="font-size:48px">Third Item</span></h3>
-                    <p style="text-align:center;"><span style="font-size: 28px">You can change item data using settings editor</span></p>
-                `, background: '#70FFBF', color: '#FFFFFF' },
-            ]
+            rows: 1, cols: 1, dock: 'above', padding: '30px', align: 'center', color: '#FFFFFF',
+            border: {
+                spacing: '0px',
+            },
+            items: {
+                style: {
+                    width: '100%',
+                    height: '250px',
+                },
+                collection: [
+                    {
+                        drawing: {
+                            background: '#FF6466'
+                        },
+                        description: {
+                            content: `
+                                <h3><span style="font-size:48px">First Item</span></h3>
+                                <p><span style="font-size: 28px">You can change item data using settings editor</span></p>
+                            `,
+                        },
+                    },
+                    {
+                        drawing: {
+                            background: '#605BE8'
+                        },
+                        description: {
+                            content: `
+                                <h3><span style="font-size:48px">Second Item</span></h3>
+                                <p><span style="font-size: 28px">You can change item data using settings editor</span></p>
+                            `,
+                        },
+                    },
+                    {
+                        drawing: {
+                            background: '#70FFBF'
+                        },
+                        description: {
+                            content: `
+                                <h3><span style="font-size:48px">Third Item</span></h3>
+                                <p><span style="font-size: 28px">You can change item data using settings editor</span></p>
+                            `,
+                        },
+                    },
+                ]
+            }
         }),
     });
 
     Widgets.Item(Widgets.GalleryGroup, {
         name: 'gallery-r1c1r',
         thumbnail: '/assets/vendor/ntr1x-archery-widgets/src/widgets/composites/gallery/gallery-r1c1r.png',
-        widget: Widgets.GalleryWidgetFactory({ rows: 1, cols: 1, dock: 'above', width: '100%', height: '300px', padding: '30px',
-            collection: [
-                { content: `
-                    <h3 style="text-align:center;"><span style="font-size:48px">First Item</span></h3>
-                    <p style="text-align:center;"><span style="font-size: 28px">You can change item data using settings editor</span></p>
-                `, background: '#FF6466', color: '#FFFFFF' },
-                { content: `
-                    <h3 style="text-align:center;"><span style="font-size:48px">Second Item</span></h3>
-                    <p style="text-align:center;"><span style="font-size: 28px">You can change item data using settings editor</span></p>
-                `, background: '#605BE8', color: '#FFFFFF' },
-                { content: `
-                    <h3 style="text-align:center;"><span style="font-size:48px">Third Item</span></h3>
-                    <p style="text-align:center;"><span style="font-size: 28px">You can change item data using settings editor</span></p>
-                `, background: '#70FFBF', color: '#FFFFFF' },
-            ]
+        widget: Widgets.GalleryWidgetFactory({
+            rows: 1, cols: 1, dock: 'right', padding: '30px', align: 'left', color: '#333333',
+            border: {
+                spacing: '20px',
+            },
+            items: {
+                style: {
+                    width: '100%',
+                    height: '240px',
+                },
+                collection: [
+                    {
+                        drawing: {
+                            background: '#FF6466'
+                        },
+                        description: {
+                            content: `
+                                <h3><span style="font-size:48px">First Item</span></h3>
+                                <p><span style="font-size: 28px">You can change item data using settings editor</span></p>
+                            `,
+                        },
+                    },
+                    {
+                        drawing: {
+                            background: '#605BE8'
+                        },
+                        description: {
+                            content: `
+                                <h3><span style="font-size:48px">Second Item</span></h3>
+                                <p><span style="font-size: 28px">You can change item data using settings editor</span></p>
+                            `,
+                        },
+                    },
+                    {
+                        drawing: {
+                            background: '#70FFBF'
+                        },
+                        description: {
+                            content: `
+                                <h3><span style="font-size:48px">Third Item</span></h3>
+                                <p><span style="font-size: 28px">You can change item data using settings editor</span></p>
+                            `,
+                        },
+                    },
+                ]
+            }
         }),
     });
 
-    // Widgets.Item(Widgets.GalleryGroup, {
-    //     name: 'gallery-r1c3f',
-    //     thumbnail: '/assets/vendor/ntr1x-archery-widgets/src/widgets/composites/gallery/gallery-r1c3f.png',
-    //     widget: Widgets.GalleryWidgetFactory(1, 3, 'above', '100%', '400px', '30px', [
-    //         { caption: '<h3>First Item</h3><p>You can change item data using settings editor</p>', background: '#FF3500' },
-    //         { caption: '<h3>Second Item</h3><p>You can change item data using settings editor</p>', background: '#DC0055' },
-    //         { caption: '<h3>Third Item</h3><p>You can change item data using settings editor</p>', background: '#BF0037' },
-    //         { caption: '<h3>Fourth Item</h3><p>You can change item data using settings editor</p>', background: '#A52939' },
-    //         { caption: '<h3>Fifth Item</h3><p>You can change item data using settings editor</p>', background: '#EE3B80' },
-    //         { caption: '<h3>Sixth Item</h3><p>You can change item data using settings editor</p>', background: '#EE6B9E' },
-    //     ]),
-    // });
-    //
+    Widgets.Item(Widgets.GalleryGroup, {
+        name: 'gallery-r1c3f',
+        thumbnail: '/assets/vendor/ntr1x-archery-widgets/src/widgets/composites/gallery/gallery-r1c3f.png',
+        widget: Widgets.GalleryWidgetFactory({
+            rows: 1, cols: 3, dock: 'above', padding: '30px', align: 'center', color: '#FFFFFF',
+            border: {
+                spacing: '20px',
+            },
+            items: {
+                style: {
+                    width: '100%',
+                    height: '180px',
+                },
+                collection: [
+                    {
+                        drawing: {
+                            background: '#FF6466'
+                        },
+                        description: {
+                            content: `
+                                <h3><span>First Item</span></h3>
+                                <p><span>You can change item data using settings editor</span></p>
+                            `,
+                        },
+                    },
+                    {
+                        drawing: {
+                            background: '#605BE8'
+                        },
+                        description: {
+                            content: `
+                                <h3><span>Second Item</span></h3>
+                                <p><span>You can change item data using settings editor</span></p>
+                            `,
+                        },
+                    },
+                    {
+                        drawing: {
+                            background: '#70FFBF'
+                        },
+                        description: {
+                            content: `
+                                <h3><span>Third Item</span></h3>
+                                <p><span>You can change item data using settings editor</span></p>
+                            `,
+                        },
+                    },
+                    {
+                        drawing: {
+                            background: '#A52939'
+                        },
+                        description: {
+                            content: `
+                                <h3><span>Fourth Item</span></h3>
+                                <p><span>You can change item data using settings editor</span></p>
+                            `,
+                        },
+                    },
+                    {
+                        drawing: {
+                            background: '#EE3B80'
+                        },
+                        description: {
+                            content: `
+                                <h3><span>Fifth Item</span></h3>
+                                <p><span>You can change item data using settings editor</span></p>
+                            `,
+                        },
+                    },
+                    {
+                        drawing: {
+                            background: '#EE6B9E'
+                        },
+                        description: {
+                            content: `
+                                <h3><span>Sixth Item</span></h3>
+                                <p><span>You can change item data using settings editor</span></p>
+                            `,
+                        },
+                    },
+                ]
+            }
+        }),
+    });
+
     // Widgets.Item(Widgets.GalleryGroup, {
     //     name: 'gallery-r1c3b',
     //     thumbnail: '/assets/vendor/ntr1x-archery-widgets/src/widgets/composites/gallery/gallery-r1c3b.png',
