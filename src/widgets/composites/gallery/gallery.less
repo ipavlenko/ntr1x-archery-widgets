@@ -11,47 +11,57 @@
             }
 
             >.carousel-inner {
+
                 >.item {
+
                     >.wg.wg-item-table {
+
                         display: table;
+                        width: 100%;
+
                         >.wg.wg-item-row {
+
                             display: table-row;
+
                             >.wg.wg-item-cell {
+
                                 display: table-cell;
                                 vertical-align: top;
+
                                 >.wg.wg-cell-content {
+
                                     display: table;
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        }
-    }
-}
+                                    width: 100%;
 
-.wg.wg-default-gallery {
+                                    &.wg-dock-above {
 
-    >.wg.wg-content {
+                                        >.wg.wg-content-drawing {
+                                            position: absolute;
+                                            display: block;
+                                            top: 0px;
+                                            left: 0px;
+                                            right: 0px;
+                                            bottom: 0px;
+                                        }
+                                        >.wg.wg-content-description {
+                                            position: absolute;
+                                            display: block;
+                                            top: 0px;
+                                            left: 0px;
+                                            right: 0px;
+                                            bottom: 0px;
+                                        }
+                                    }
 
-        >.carousel {
+                                    &.wg-dock-right {
 
-            >.carousel-indicators {
-
-            }
-
-            >.carousel-inner {
-                >.item {
-                    >.wg.wg-item-table {
-                        display: table;
-                        >.wg.wg-item-row {
-                            display: table-row;
-                            >.wg.wg-item-cell {
-                                display: table-cell;
-                                vertical-align: top;
-                                >.wg.wg-cell-content {
-                                    display: table;
+                                        >.wg.wg-content-drawing {
+                                            display: table-cell;
+                                        }
+                                        >.wg.wg-content-description {
+                                            display: table-cell;
+                                        }
+                                    }
                                 }
                             }
                         }

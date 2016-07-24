@@ -5,26 +5,56 @@
 
             <!-- Indicators -->
             <ol class="carousel-indicators" v-if="matrix.length > 1">
-                <li v-for="item in bindings.items" data-target="#{{ systemId }}-carousel" data-slide-to="{{ $index }}" :class="{ 'active' : !$index }"></li>
+                <li v-for="item in bindings.items.collection" data-target="#{{ systemId }}-carousel" data-slide-to="{{ $index }}" :class="{ 'active' : !$index }"></li>
             </ol>
 
             <!-- Wrapper for slides -->
             <div class="carousel-inner" role="listbox">
                 <div v-for="pd in matrix" class="item" :class="{ 'active' : !$index }">
                     <div class="wg wg-item-table" :style="{
+                        'text-align': bindings.align,
+                        'color': bindings.color,
                         'border-spacing': bindings.border.spacing,
                         'border-collapse': bindings.border.collapse,
                     }">
                         <div class="wg wg-item-row" v-for="rd in pd">
                             <div class="wg wg-item-cell" v-for="cd in rd">
-                                <div class="wg wg-cell-content" v-if="cd">
-                                    <div class="wg wg-content-drawing" v-if="cd" :style="{
-                                        'background': cd.background || bindings.items.style.background,
-                                        'width': cd.width || bindings.items.style.width,
-                                        'height': cd.height || bindings.items.style.height,
-                                    }">
+                                <div class="wg wg-cell-content" v-if="cd"
+                                    :class="{
+                                        'wg-dock-above': !bindings.dock || bindings.dock == 'above',
+                                        'wg-dock-top': bindings.dock == 'top',
+                                        'wg-dock-right': bindings.dock == 'right',
+                                        'wg-dock-bottom': bindings.dock == 'bottom',
+                                        'wg-dock-left': bindings.dock == 'left',
+                                    }"
+                                    :style="{
+                                        width: cd.width || bindings.items.style.width,
+                                        height: cd.height || bindings.items.style.height,
+                                        margin: cd.margin || bindings.items.style.margin,
+                                        padding: cd.padding || bindings.items.style.padding,
+                                        background: cd.background || bindings.items.style.background,
+                                    }"
+                                >
+                                    <div class="wg wg-content-drawing" v-if="cd"
+                                        :style="{
+                                            'width': cd.drawing.width || bindings.items.style.drawing.width,
+                                            'height': cd.drawing.height || bindings.items.style.drawing.height,
+                                            'margin': cd.drawing.margin || bindings.items.style.drawing.margin,
+                                            'padding': cd.drawing.padding || bindings.items.style.drawing.padding,
+                                            'background': cd.drawing.background || bindings.items.style.drawing.background,
+                                        }"
+                                    >
                                     </div>
-                                    <div class="wg wg-content-description" v-if="cd.content" >{{{ cd.content }}}</div>
+                                    <div class="wg wg-content-description" v-if="cd"
+                                        :style="{
+                                            'width': cd.description.width || bindings.items.style.description.width,
+                                            'height': cd.description.height || bindings.items.style.description.height,
+                                            'margin': cd.description.margin || bindings.items.style.description.margin,
+                                            'padding': cd.description.padding || bindings.items.style.description.padding,
+                                            'background': cd.description.background || bindings.items.style.description.background,
+                                            'color': cd.description.color || bindings.items.style.description.color,
+                                        }"
+                                    >{{{ cd.description.content }}}</div>
                                 </div>
                             </div>
                         </div>
