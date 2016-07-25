@@ -33,10 +33,6 @@ var Widgets =
             var segments = path.split('/');
             return $.extend(true, {}, this.category(segments[0]).group(segments[1]).item(segments[2]).widget, {
                 _action: 'create',
-                resource: {
-                    params: [],
-                    _action: 'create'
-                },
             });
         }
 

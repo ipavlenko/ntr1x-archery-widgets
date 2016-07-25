@@ -99,3 +99,29 @@
   display: table-cell;
   width: 60%;
 }
+.wg.wg-default-gallery > .wg.wg-content > .wg.wg-carousel.wg-dock-bottom > .carousel-inner > .item {
+  margin-bottom: 40px;
+}
+.wg.wg-default-gallery > .wg.wg-content > .wg.wg-carousel.wg-dock-bottom > .carousel-inner > .item > .wg.wg-item-table {
+  display: table;
+  width: 100%;
+}
+.wg.wg-default-gallery > .wg.wg-content > .wg.wg-carousel.wg-dock-bottom > .carousel-inner > .item > .wg.wg-item-table > .wg.wg-item-row {
+  display: table-row;
+}
+.wg.wg-default-gallery > .wg.wg-content > .wg.wg-carousel.wg-dock-bottom > .carousel-inner > .item > .wg.wg-item-table > .wg.wg-item-row > .wg.wg-item-cell {
+  display: table-cell;
+  vertical-align: top;
+}
+.wg.wg-default-gallery > .wg.wg-content > .wg.wg-carousel.wg-dock-bottom > .carousel-inner > .item > .wg.wg-item-table > .wg.wg-item-row > .wg.wg-item-cell > .wg.wg-cell-content {
+  display: block;
+  width: 100%;
+}
+.wg.wg-default-gallery > .wg.wg-content > .wg.wg-carousel.wg-dock-bottom > .carousel-inner > .item > .wg.wg-item-table > .wg.wg-item-row > .wg.wg-item-cell > .wg.wg-cell-content > .wg.wg-content-drawing {
+  display: block;
+  width: 100%;
+}
+.wg.wg-default-gallery > .wg.wg-content > .wg.wg-carousel.wg-dock-bottom > .carousel-inner > .item > .wg.wg-item-table > .wg.wg-item-row > .wg.wg-item-cell > .wg.wg-cell-content > .wg.wg-content-description {
+  display: block;
+  width: 100%;
+}

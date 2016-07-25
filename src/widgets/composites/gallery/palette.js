@@ -90,6 +90,7 @@
                                 drawing: {
                                     value: {
                                         background: { value: item.drawing.background },
+                                        height: { value: item.drawing.height },
                                     }
                                 },
                                 description: {
@@ -296,69 +297,485 @@
         }),
     });
 
-    // Widgets.Item(Widgets.GalleryGroup, {
-    //     name: 'gallery-r1c3b',
-    //     thumbnail: '/assets/vendor/ntr1x-archery-widgets/src/widgets/composites/gallery/gallery-r1c3b.png',
-    //     widget: Widgets.GalleryWidgetFactory(1, 3, 'bottom', '100%', '400px', '30px', [
-    //         { caption: '<h3>First Item</h3><p>You can change item data using settings editor</p>', background: '#FF3500' },
-    //         { caption: '<h3>Second Item</h3><p>You can change item data using settings editor</p>', background: '#DC0055' },
-    //         { caption: '<h3>Third Item</h3><p>You can change item data using settings editor</p>', background: '#BF0037' },
-    //         { caption: '<h3>Fourth Item</h3><p>You can change item data using settings editor</p>', background: '#A52939' },
-    //         { caption: '<h3>Fifth Item</h3><p>You can change item data using settings editor</p>', background: '#EE3B80' },
-    //         { caption: '<h3>Sixth Item</h3><p>You can change item data using settings editor</p>', background: '#EE6B9E' },
-    //     ]),
-    // });
-    //
-    // Widgets.Item(Widgets.GalleryGroup, {
-    //     name: 'gallery-r2c4f',
-    //     thumbnail: '/assets/vendor/ntr1x-archery-widgets/src/widgets/composites/gallery/gallery-r2c4f.png',
-    //     widget: Widgets.GalleryWidgetFactory(2, 4, 'above', '100%', '400px', '30px', [
-    //         { caption: '<h3>First Item</h3><p>You can change item data using settings editor</p>', background: '#FF3500' },
-    //         { caption: '<h3>Second Item</h3><p>You can change item data using settings editor</p>', background: '#DC0055' },
-    //         { caption: '<h3>Third Item</h3><p>You can change item data using settings editor</p>', background: '#BF0037' },
-    //         { caption: '<h3>Fourth Item</h3><p>You can change item data using settings editor</p>', background: '#A52939' },
-    //         { caption: '<h3>Fifth Item</h3><p>You can change item data using settings editor</p>', background: '#EE3B80' },
-    //         { caption: '<h3>Sixth Item</h3><p>You can change item data using settings editor</p>', background: '#EE6B9E' },
-    //     ]),
-    // });
-    //
-    // Widgets.Item(Widgets.GalleryGroup, {
-    //     name: 'gallery-r2c4b',
-    //     thumbnail: '/assets/vendor/ntr1x-archery-widgets/src/widgets/composites/gallery/gallery-r2c4b.png',
-    //     widget: Widgets.GalleryWidgetFactory(2, 4, 'bottom', '100%', '400px', '30px', [
-    //         { caption: '<h3>First Item</h3><p>You can change item data using settings editor</p>', background: '#FF3500' },
-    //         { caption: '<h3>Second Item</h3><p>You can change item data using settings editor</p>', background: '#DC0055' },
-    //         { caption: '<h3>Third Item</h3><p>You can change item data using settings editor</p>', background: '#BF0037' },
-    //         { caption: '<h3>Fourth Item</h3><p>You can change item data using settings editor</p>', background: '#A52939' },
-    //         { caption: '<h3>Fifth Item</h3><p>You can change item data using settings editor</p>', background: '#EE3B80' },
-    //         { caption: '<h3>Sixth Item</h3><p>You can change item data using settings editor</p>', background: '#EE6B9E' },
-    //     ]),
-    // });
-    //
-    // Widgets.Item(Widgets.GalleryGroup, {
-    //     name: 'gallery-r2c3f',
-    //     thumbnail: '/assets/vendor/ntr1x-archery-widgets/src/widgets/composites/gallery/gallery-r2c3f.png',
-    //     widget: Widgets.GalleryWidgetFactory(2, 3, 'above', '100%', '400px', '30px', [
-    //         { caption: '<h3>First Item</h3><p>You can change item data using settings editor</p>', background: '#FF3500' },
-    //         { caption: '<h3>Second Item</h3><p>You can change item data using settings editor</p>', background: '#DC0055' },
-    //         { caption: '<h3>Third Item</h3><p>You can change item data using settings editor</p>', background: '#BF0037' },
-    //         { caption: '<h3>Fourth Item</h3><p>You can change item data using settings editor</p>', background: '#A52939' },
-    //         { caption: '<h3>Fifth Item</h3><p>You can change item data using settings editor</p>', background: '#EE3B80' },
-    //         { caption: '<h3>Sixth Item</h3><p>You can change item data using settings editor</p>', background: '#EE6B9E' },
-    //     ]),
-    // });
-    //
-    // Widgets.Item(Widgets.GalleryGroup, {
-    //     name: 'gallery-r3c2r',
-    //     thumbnail: '/assets/vendor/ntr1x-archery-widgets/src/widgets/composites/gallery/gallery-r3c2r.png',
-    //     widget: Widgets.GalleryWidgetFactory(3, 2, 'right', '100%', '400px', '30px', [
-    //         { caption: '<h3>First Item</h3><p>You can change item data using settings editor</p>', background: '#FF3500' },
-    //         { caption: '<h3>Second Item</h3><p>You can change item data using settings editor</p>', background: '#DC0055' },
-    //         { caption: '<h3>Third Item</h3><p>You can change item data using settings editor</p>', background: '#BF0037' },
-    //         { caption: '<h3>Fourth Item</h3><p>You can change item data using settings editor</p>', background: '#A52939' },
-    //         { caption: '<h3>Fifth Item</h3><p>You can change item data using settings editor</p>', background: '#EE3B80' },
-    //         { caption: '<h3>Sixth Item</h3><p>You can change item data using settings editor</p>', background: '#EE6B9E' },
-    //     ]),
-    // });
+    Widgets.Item(Widgets.GalleryGroup, {
+        name: 'gallery-r1c3b',
+        thumbnail: '/assets/vendor/ntr1x-archery-widgets/src/widgets/composites/gallery/gallery-r1c3b.png',
+        widget: Widgets.GalleryWidgetFactory({
+            rows: 1, cols: 3, dock: 'bottom', padding: '15px', align: 'left', color: '#333333',
+            border: {
+                spacing: '20px',
+            },
+            items: {
+                style: {
+                    width: '100%',
+                },
+                collection: [
+                    {
+                        drawing: {
+                            background: '#FF6466',
+                            height: '180px',
+                        },
+                        description: {
+                            content: `
+                                <h3><span style="font-size:24px">First Item</span></h3>
+                                <p><span style="font-size: 18px">You can change item data using settings editor</span></p>
+                            `,
+                        },
+                    },
+                    {
+                        drawing: {
+                            background: '#605BE8',
+                            height: '180px',
+                        },
+                        description: {
+                            content: `
+                                <h3><span style="font-size:24px">Second Item</span></h3>
+                                <p><span style="font-size: 18px">You can change item data using settings editor</span></p>
+                            `,
+                        },
+                    },
+                    {
+                        drawing: {
+                            background: '#70FFBF',
+                            height: '180px',
+                        },
+                        description: {
+                            content: `
+                                <h3><span style="font-size:24px">Third Item</span></h3>
+                                <p><span style="font-size: 18px">You can change item data using settings editor</span></p>
+                            `,
+                        },
+                    },
+                    {
+                        drawing: {
+                            background: '#A52939',
+                            height: '180px',
+                        },
+                        description: {
+                            content: `
+                                <h3><span>Fourth Item</span></h3>
+                                <p><span>You can change item data using settings editor</span></p>
+                            `,
+                        },
+                    },
+                    {
+                        drawing: {
+                            background: '#EE3B80',
+                            height: '180px',
+                        },
+                        description: {
+                            content: `
+                                <h3><span>Fifth Item</span></h3>
+                                <p><span>You can change item data using settings editor</span></p>
+                            `,
+                        },
+                    },
+                    {
+                        drawing: {
+                            background: '#EE6B9E',
+                            height: '180px',
+                        },
+                        description: {
+                            content: `
+                                <h3><span>Sixth Item</span></h3>
+                                <p><span>You can change item data using settings editor</span></p>
+                            `,
+                        },
+                    },
+                ]
+            }
+        }),
+    });
+
+    Widgets.Item(Widgets.GalleryGroup, {
+        name: 'gallery-r2c4f',
+        thumbnail: '/assets/vendor/ntr1x-archery-widgets/src/widgets/composites/gallery/gallery-r2c4f.png',
+        widget: Widgets.GalleryWidgetFactory({
+            rows: 2, cols: 4, dock: 'above', padding: '15px', align: 'center', color: '#FFFFFF',
+            border: {
+                spacing: '20px',
+            },
+            items: {
+                style: {
+                    width: '100%',
+                    height: '180px',
+                },
+                collection: [
+                    {
+                        drawing: {
+                            background: '#FF6466'
+                        },
+                        description: {
+                            content: `
+                                <h3><span>First Item</span></h3>
+                                <p><span>You can change item data using settings editor</span></p>
+                            `,
+                        },
+                    },
+                    {
+                        drawing: {
+                            background: '#605BE8'
+                        },
+                        description: {
+                            content: `
+                                <h3><span>Second Item</span></h3>
+                                <p><span>You can change item data using settings editor</span></p>
+                            `,
+                        },
+                    },
+                    {
+                        drawing: {
+                            background: '#70FFBF'
+                        },
+                        description: {
+                            content: `
+                                <h3><span>Third Item</span></h3>
+                                <p><span>You can change item data using settings editor</span></p>
+                            `,
+                        },
+                    },
+                    {
+                        drawing: {
+                            background: '#A52939'
+                        },
+                        description: {
+                            content: `
+                                <h3><span>Fourth Item</span></h3>
+                                <p><span>You can change item data using settings editor</span></p>
+                            `,
+                        },
+                    },
+                    {
+                        drawing: {
+                            background: '#EE3B80'
+                        },
+                        description: {
+                            content: `
+                                <h3><span>Fifth Item</span></h3>
+                                <p><span>You can change item data using settings editor</span></p>
+                            `,
+                        },
+                    },
+                    {
+                        drawing: {
+                            background: '#EE6B9E'
+                        },
+                        description: {
+                            content: `
+                                <h3><span>Sixth Item</span></h3>
+                                <p><span>You can change item data using settings editor</span></p>
+                            `,
+                        },
+                    },
+                    {
+                        drawing: {
+                            background: '#FF6466'
+                        },
+                        description: {
+                            content: `
+                                <h3><span>Seventh Item</span></h3>
+                                <p><span>You can change item data using settings editor</span></p>
+                            `,
+                        },
+                    },
+                    {
+                        drawing: {
+                            background: '#605BE8'
+                        },
+                        description: {
+                            content: `
+                                <h3><span>Eighth Item</span></h3>
+                                <p><span>You can change item data using settings editor</span></p>
+                            `,
+                        },
+                    },
+                ]
+            }
+        }),
+    });
+
+    Widgets.Item(Widgets.GalleryGroup, {
+        name: 'gallery-r2c4b',
+        thumbnail: '/assets/vendor/ntr1x-archery-widgets/src/widgets/composites/gallery/gallery-r2c4b.png',
+        widget: Widgets.GalleryWidgetFactory({
+            rows: 2, cols: 4, dock: 'bottom', padding: '15px', align: 'center', color: '#333333',
+            border: {
+                spacing: '20px',
+            },
+            items: {
+                style: {
+                    width: '100%',
+                },
+                collection: [
+                    {
+                        drawing: {
+                            background: '#FF6466',
+                            height: '180px',
+                        },
+                        description: {
+                            content: `
+                                <h3><span>First Item</span></h3>
+                                <p><span>You can change item data using settings editor</span></p>
+                            `,
+                        },
+                    },
+                    {
+                        drawing: {
+                            background: '#605BE8',
+                            height: '180px',
+                        },
+                        description: {
+                            content: `
+                                <h3><span>Second Item</span></h3>
+                                <p><span>You can change item data using settings editor</span></p>
+                            `,
+                        },
+                    },
+                    {
+                        drawing: {
+                            background: '#70FFBF',
+                            height: '180px',
+                        },
+                        description: {
+                            content: `
+                                <h3><span>Third Item</span></h3>
+                                <p><span>You can change item data using settings editor</span></p>
+                            `,
+                        },
+                    },
+                    {
+                        drawing: {
+                            background: '#A52939',
+                            height: '180px',
+                        },
+                        description: {
+                            content: `
+                                <h3><span>Fourth Item</span></h3>
+                                <p><span>You can change item data using settings editor</span></p>
+                            `,
+                        },
+                    },
+                    {
+                        drawing: {
+                            background: '#EE3B80',
+                            height: '180px',
+                        },
+                        description: {
+                            content: `
+                                <h3><span>Fifth Item</span></h3>
+                                <p><span>You can change item data using settings editor</span></p>
+                            `,
+                        },
+                    },
+                    {
+                        drawing: {
+                            background: '#EE6B9E',
+                            height: '180px',
+                        },
+                        description: {
+                            content: `
+                                <h3><span>Sixth Item</span></h3>
+                                <p><span>You can change item data using settings editor</span></p>
+                            `,
+                        },
+                    },
+                    {
+                        drawing: {
+                            background: '#FF6466',
+                            height: '180px',
+                        },
+                        description: {
+                            content: `
+                                <h3><span>Seventh Item</span></h3>
+                                <p><span>You can change item data using settings editor</span></p>
+                            `,
+                        },
+                    },
+                    {
+                        drawing: {
+                            background: '#605BE8',
+                            height: '180px',
+                        },
+                        description: {
+                            content: `
+                                <h3><span>Eighth Item</span></h3>
+                                <p><span>You can change item data using settings editor</span></p>
+                            `,
+                        },
+                    },
+                ]
+            }
+        }),
+    });
+
+    Widgets.Item(Widgets.GalleryGroup, {
+        name: 'gallery-r2c3f',
+        thumbnail: '/assets/vendor/ntr1x-archery-widgets/src/widgets/composites/gallery/gallery-r2c3f.png',
+        widget: Widgets.GalleryWidgetFactory({
+            rows: 2, cols: 3, dock: 'above', padding: '15px', align: 'center', color: '#FFFFFF',
+            border: {
+                spacing: '20px',
+            },
+            items: {
+                style: {
+                    width: '100%',
+                    height: '180px',
+                },
+                collection: [
+                    {
+                        drawing: {
+                            background: '#FF6466'
+                        },
+                        description: {
+                            content: `
+                                <h3><span>First Item</span></h3>
+                                <p><span>You can change item data using settings editor</span></p>
+                            `,
+                        },
+                    },
+                    {
+                        drawing: {
+                            background: '#605BE8'
+                        },
+                        description: {
+                            content: `
+                                <h3><span>Second Item</span></h3>
+                                <p><span>You can change item data using settings editor</span></p>
+                            `,
+                        },
+                    },
+                    {
+                        drawing: {
+                            background: '#70FFBF'
+                        },
+                        description: {
+                            content: `
+                                <h3><span>Third Item</span></h3>
+                                <p><span>You can change item data using settings editor</span></p>
+                            `,
+                        },
+                    },
+                    {
+                        drawing: {
+                            background: '#A52939'
+                        },
+                        description: {
+                            content: `
+                                <h3><span>Fourth Item</span></h3>
+                                <p><span>You can change item data using settings editor</span></p>
+                            `,
+                        },
+                    },
+                    {
+                        drawing: {
+                            background: '#EE3B80'
+                        },
+                        description: {
+                            content: `
+                                <h3><span>Fifth Item</span></h3>
+                                <p><span>You can change item data using settings editor</span></p>
+                            `,
+                        },
+                    },
+                    {
+                        drawing: {
+                            background: '#EE6B9E'
+                        },
+                        description: {
+                            content: `
+                                <h3><span>Sixth Item</span></h3>
+                                <p><span>You can change item data using settings editor</span></p>
+                            `,
+                        },
+                    },
+                ]
+            }
+        }),
+    });
+
+    Widgets.Item(Widgets.GalleryGroup, {
+        name: 'gallery-r3c2r',
+        thumbnail: '/assets/vendor/ntr1x-archery-widgets/src/widgets/composites/gallery/gallery-r3c2r.png',
+        widget: Widgets.GalleryWidgetFactory({
+            rows: 3, cols: 2, dock: 'right', padding: '15px', align: 'left', color: '#333333',
+            border: {
+                spacing: '20px',
+            },
+            items: {
+                style: {
+                    width: '100%',
+                    height: '140px',
+                },
+                collection: [
+                    {
+                        drawing: {
+                            background: '#FF6466'
+                        },
+                        description: {
+                            content: `
+                                <h3><span>First Item</span></h3>
+                                <p><span>You can change item data using settings editor</span></p>
+                            `,
+                        },
+                    },
+                    {
+                        drawing: {
+                            background: '#605BE8'
+                        },
+                        description: {
+                            content: `
+                                <h3><span>Second Item</span></h3>
+                                <p><span>You can change item data using settings editor</span></p>
+                            `,
+                        },
+                    },
+                    {
+                        drawing: {
+                            background: '#70FFBF'
+                        },
+                        description: {
+                            content: `
+                                <h3><span>Third Item</span></h3>
+                                <p><span>You can change item data using settings editor</span></p>
+                            `,
+                        },
+                    },
+                    {
+                        drawing: {
+                            background: '#A52939'
+                        },
+                        description: {
+                            content: `
+                                <h3><span>Fourth Item</span></h3>
+                                <p><span>You can change item data using settings editor</span></p>
+                            `,
+                        },
+                    },
+                    {
+                        drawing: {
+                            background: '#EE3B80'
+                        },
+                        description: {
+                            content: `
+                                <h3><span>Fifth Item</span></h3>
+                                <p><span>You can change item data using settings editor</span></p>
+                            `,
+                        },
+                    },
+                    {
+                        drawing: {
+                            background: '#EE6B9E'
+                        },
+                        description: {
+                            content: `
+                                <h3><span>Sixth Item</span></h3>
+                                <p><span>You can change item data using settings editor</span></p>
+                            `,
+                        },
+                    },
+                ]
+            }
+        }),
+    });
 
 })(jQuery, Vue, Core, Widgets);
