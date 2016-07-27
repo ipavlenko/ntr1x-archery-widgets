@@ -11,18 +11,18 @@
         :style="{
             'height': bindings.height,
             'width': bindings.width,
-            'border': bindings.outerBorder,
-            'background': bindings.outerBackground,
-            'background-size': bindings.outerBackgroundSize,
+            'margin': bindings.outer.margin,
+            'padding': bindings.outer.padding,
+            'border': bindings.outer.border,
+            'background': bindings.outer.background,
         }"
     >
         <div class="wg wg-content"
             :style="{
-                'margin': bindings.margin,
-                'padding': bindings.padding,
-                'border': bindings.innerBorder,
-                'background': bindings.innerBackground,
-                'background-size': bindings.outerBackgroundSize,
+                'margin': bindings.inner.margin,
+                'padding': bindings.inner.padding,
+                'border': bindings.inner.border,
+                'background': bindings.inner.background,
             }"
         >
             {{{ bindings.content }}}

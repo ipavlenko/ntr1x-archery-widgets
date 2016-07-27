@@ -15,8 +15,12 @@
 
         return Widgets.build(Widgets.TextWidget, {
             content: { value: content },
-            margin: { value: '15px 15px' },
             stereotype: { value: stereotype },
+            inner: {
+                value: {
+                    padding: { value: '15px 15px' },
+                }
+            },
         });
     }
 

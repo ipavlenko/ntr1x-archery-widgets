@@ -4,7 +4,7 @@ Shell = window.Shell || {};
 
     Vue.component('default-stack-canvas', {
         template: '#default-stack-canvas',
-        mixins: [ Core.StackedMixin ],
+        mixins: [ Core.WidgetMixin, Core.StackedMixin ],
     });
 
     Vue.component('default-stack-horisontal', {

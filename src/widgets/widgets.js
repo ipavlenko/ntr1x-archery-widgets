@@ -48,7 +48,7 @@
         props: [
             { name: 'inner', title: 'Inner Container', type: 'object', tab: 'appearance',
                 tabs: [ T.Appearance ],
-                props: [ P.Border, P.Background ]
+                props: [ P.Margin, P.Padding, P.Border, P.Background ]
             },
             { name: 'outer', title: 'Outer Container', type: 'object', tab: 'appearance',
                 tabs: [ T.Appearance ],

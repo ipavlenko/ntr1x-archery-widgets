@@ -1,5 +1,19 @@
 (function($, Vue, Core, Widgets) {
 
+    Widgets.StackCanvasWidget =
+    Widgets.Widget(Widgets.StackGroup, Widgets.create({
+        name: 'default-stack-canvas',
+        tag: 'default-stack-canvas',
+        mixins: [ Widgets.WidgetMixin, Widgets.SizeMixin ],
+        widgets: [],
+    }));
+
+    Widgets.Item(Widgets.StackGroup, {
+        hidden: true,
+        name: 'stack-canvas',
+        widget: Widgets.build(Widgets.StackCanvasWidget),
+    });
+
     Widgets.StackHorisontalWidget =
     Widgets.Widget(Widgets.StackGroup, Widgets.create({
         name: 'default-stack-horisontal',

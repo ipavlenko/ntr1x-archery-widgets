@@ -1,5 +1,8 @@
 <template id="default-stack-canvas">
-    <section class="wg wg-default-stack wg-default-stack-canvas wg-sortable">
+    <section class="wg wg-default-stack wg-default-stack-canvas wg-sortable" :style="{
+        width: bindings.width
+    }">
+        <pre>{{ bindings | json }}</pre>
         <div class="wg wg-content wg-sortable-content">
             <div class="wg wg-sortable-inner">
                 <div class="wg wg-sortable-container wg-sortable-vertical" :class="{ 'wg-sortable-editable': editable }">

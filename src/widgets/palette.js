@@ -7,5 +7,4 @@
 
     Widgets.UtilCategory = Widgets.Category('default-util', 'Util Elements', true);
 
-
 })(jQuery, Vue, Core, Widgets);

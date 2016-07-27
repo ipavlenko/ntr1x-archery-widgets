@@ -4,10 +4,12 @@
         'width': bindings.width,
         'border': bindings.outer.border,
         'background': bindings.outer.background,
+        'margin': bindings.outer.margin,
+        'padding': bindings.outer.padding,
     }">
         <div class="wg wg-content" :style="{
-            'margin': bindings.margin,
-            'padding': bindings.padding,
+            'margin': bindings.inner.margin,
+            'padding': bindings.inner.padding,
             'border': bindings.inner.border,
             'background': bindings.inner.background,
         }"><slot>Empty</slot></div>
