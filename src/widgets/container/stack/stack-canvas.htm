@@ -1,6 +1,6 @@
 <template id="default-stack-canvas">
     <section class="wg wg-default-stack wg-default-stack-canvas wg-sortable" :style="{
-        width: bindings.width
+        width: bindings.width || '1280px'
     }">
         <pre>{{ bindings | json }}</pre>
         <div class="wg wg-content wg-sortable-content">

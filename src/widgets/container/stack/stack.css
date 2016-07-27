@@ -1,6 +1,7 @@
 .wg.wg-default-stack.wg-default-stack-canvas {
   position: relative;
   overflow: visible;
+  margin: auto;
 }
 .wg.wg-default-stack.wg-default-stack-canvas > .wg.wg-sortable-content {
   position: relative;
