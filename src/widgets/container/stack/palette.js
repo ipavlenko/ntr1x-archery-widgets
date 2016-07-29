@@ -4,8 +4,7 @@
     Widgets.Widget(Widgets.StackGroup, Widgets.create({
         name: 'default-stack-canvas',
         tag: 'default-stack-canvas',
-        mixins: [ Widgets.WidgetMixin, Widgets.SizeMixin ],
-        widgets: [],
+        mixins: [ Widgets.SizeMixin ],
     }));
 
     Widgets.Item(Widgets.StackGroup, {
