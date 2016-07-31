@@ -39,6 +39,10 @@
         { value: 'left', text: 'Left' },
     ]};
 
+    Widgets.CanvasMixin = {
+        tabs: [ T.Data, T.Appearance, T.Content ],
+    };
+
     Widgets.WidgetMixin = {
         tabs: [ T.Data, T.Appearance, T.Content ],
         props: [ P.Id ],

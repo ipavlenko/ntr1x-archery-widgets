@@ -31,9 +31,12 @@ var Widgets =
 
         var item = function(path) {
             var segments = path.split('/');
-            return $.extend(true, {}, this.category(segments[0]).group(segments[1]).item(segments[2]).widget, {
+            var w = $.extend(true, {}, this.category(segments[0]).group(segments[1]).item(segments[2]).widget, {
                 _action: 'create',
             });
+            delete w.props;
+            delete w.tabs;
+            return w;
         }
 
         function generateId(prefix) {
@@ -162,18 +165,15 @@ var Widgets =
 
         function visit(w, m) {
 
-            if ('props' in m) {
+            if (m.override) {
 
-                if (m.override) {
+                if ('tabs' in m) w.tabs = JSON.parse(JSON.stringify(m.tabs));
+                if ('props' in m) w.props = JSON.parse(JSON.stringify(m.props));
 
-                    w.tabs = JSON.parse(JSON.stringify(m.tabs));
-                    w.props = JSON.parse(JSON.stringify(m.props));
+            } else {
 
-                } else {
-
-                    if (m.tabs) w.tabs = w.tabs.concat(m.tabs);
-                    if (m.props) w.props = w.props.concat(m.props);
-                }
+                if ('tabs' in m) w.tabs = w.tabs.concat(m.tabs);
+                if ('props' in m) w.props = w.props.concat(m.props);
             }
 
         }
