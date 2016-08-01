@@ -90,7 +90,7 @@ var Widgets =
         return Widgets.Palette.category(name);
     };
 
-    Widgets.Group = function(category, name, title) {
+    Widgets.Group = function(category, name, title, ignore) {
 
         var map = {};
         var arr = [];
@@ -132,6 +132,7 @@ var Widgets =
             item: item,
             widgets: widgets,
             widget: widget,
+            ignore: ignore,
         });
 
         return category.group(name);
