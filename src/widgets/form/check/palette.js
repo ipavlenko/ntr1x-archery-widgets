@@ -27,7 +27,11 @@
             model: {
                 value: { value: value }
             },
-            margin: { value: '15px 15px' },
+            inner: {
+                value: {
+                    margin: { value: '15px 15px' },
+                }
+            },
             stereotype: { value: stereotype },
             items: {
                 value: options.map(function(option) {

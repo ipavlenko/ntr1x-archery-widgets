@@ -19,7 +19,11 @@
             model: {
                 value: { value: '' }
             },
-            margin: { value: '15px 15px' },
+            inner: {
+                value: {
+                    margin: { value: '15px 15px' },
+                }
+            },
             label: { value: label },
             type: { value: type },
         });
@@ -50,7 +54,11 @@
                 value: { value: '' }
             },
             placeholder: { value: placeholder },
-            margin: { value: '15px 15px' },
+            inner: {
+                value: {
+                    margin: { value: '15px 15px' },
+                }
+            },
             label: { value: label },
         });
     };
@@ -88,7 +96,11 @@
             model: {
                 value: { value: value }
             },
-            margin: { value: '15px 15px' },
+            inner: {
+                value: {
+                    margin: { value: '15px 15px' },
+                }
+            },
             items: {
                 value: options.map(function(option) {
                     return {
@@ -136,7 +148,11 @@
             model: {
                 value: { value: value }
             },
-            margin: { value: '15px 15px' },
+            inner: {
+                value: {
+                    margin: { value: '15px 15px' },
+                }
+            },
             items: {
                 value: options.map(function(option) {
                     return {
