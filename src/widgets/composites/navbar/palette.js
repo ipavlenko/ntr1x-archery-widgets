@@ -29,6 +29,4 @@
         widget: Widgets.NavbarWidgetFactory('inverse'),
     });
 
-    console.log(Widgets.NavigationGroup);
-
 })(jQuery, Vue, Core, Widgets);
