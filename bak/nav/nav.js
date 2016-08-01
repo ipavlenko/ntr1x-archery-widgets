@@ -8,8 +8,8 @@
         },
     };
 
-    Vue.component('default-nav-horisontal', {
-        template: '#default-nav-horisontal',
+    Vue.component('default-nav-horizontal', {
+        template: '#default-nav-horizontal',
         mixins: [ Core.WidgetMixin, Nav ],
     });
 

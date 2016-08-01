@@ -14,18 +14,30 @@
         widget: Widgets.build(Widgets.StackCanvasWidget),
     });
 
-    Widgets.StackHorisontalWidget =
+    Widgets.StackHorizontalWidget =
     Widgets.Widget(Widgets.StackGroup, Widgets.create({
-        name: 'default-stack-horisontal',
-        tag: 'default-stack-horisontal',
+        name: 'default-stack-horizontal',
+        tag: 'default-stack-horizontal',
         mixins: [ Widgets.WidgetMixin, Widgets.BoxMixin ],
         widgets: [],
     }));
 
     Widgets.Item(Widgets.StackGroup, {
-        name: 'stack-horisontal',
-        thumbnail: '/assets/vendor/ntr1x-archery-widgets/src/widgets/container/stack/stack-horisontal.png',
-        widget: Widgets.build(Widgets.StackHorisontalWidget),
+        name: 'stack-horizontal',
+        thumbnail: '/assets/vendor/ntr1x-archery-widgets/src/widgets/container/stack/stack-horizontal.png',
+        widget: Widgets.build(Widgets.StackHorizontalWidget),
+    });
+
+    Widgets.Item(Widgets.StackGroup, {
+        name: 'stack-left',
+        thumbnail: '/assets/vendor/ntr1x-archery-widgets/src/widgets/container/stack/stack-left.png',
+        widget: Widgets.build(Widgets.StackHorizontalWidget),
+    });
+
+    Widgets.Item(Widgets.StackGroup, {
+        name: 'stack-right',
+        thumbnail: '/assets/vendor/ntr1x-archery-widgets/src/widgets/container/stack/stack-right.png',
+        widget: Widgets.build(Widgets.StackHorizontalWidget),
     });
 
     Widgets.StackVerticalWidget =
@@ -39,6 +51,18 @@
     Widgets.Item(Widgets.StackGroup, {
         name: 'stack-vertical',
         thumbnail: '/assets/vendor/ntr1x-archery-widgets/src/widgets/container/stack/stack-vertical.png',
+        widget: Widgets.build(Widgets.StackVerticalWidget, {}),
+    });
+
+    Widgets.Item(Widgets.StackGroup, {
+        name: 'stack-2columns',
+        thumbnail: '/assets/vendor/ntr1x-archery-widgets/src/widgets/container/stack/stack-2columns.png',
+        widget: Widgets.build(Widgets.StackVerticalWidget, {}),
+    });
+
+    Widgets.Item(Widgets.StackGroup, {
+        name: 'stack-3columns',
+        thumbnail: '/assets/vendor/ntr1x-archery-widgets/src/widgets/container/stack/stack-3columns.png',
         widget: Widgets.build(Widgets.StackVerticalWidget, {}),
     });
 

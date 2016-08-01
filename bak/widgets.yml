@@ -392,9 +392,9 @@ Items:
 
 #Media:
 #    title: 'Media'
-#    tag: default-media-horisontal
+#    tag: default-media-horizontal
 #    mixins: [ WidgetMixin, BoxMixin ]
-#    thumbnail: 'src/items/media-horisontal.png'
+#    thumbnail: 'src/items/media-horizontal.png'
 #    categories: [ composites.other ]
 #    props:
 #        -
@@ -433,7 +433,7 @@ Items:
 
 Nav1:
     title: 'Navigation Bar 1'
-    tag: default-nav-horisontal
+    tag: default-nav-horizontal
     mixins: [ WidgetMixin, BoxMixin, SizeMixin ]
     thumbnail: 'src/nav/nav-1.png'
     categories: [ composites.navigation ]
@@ -470,7 +470,7 @@ Nav1:
 
 Nav2:
     title: 'Navigation Bar 2'
-    tag: default-nav-horisontal
+    tag: default-nav-horizontal
     mixins: [ WidgetMixin, BoxMixin, SizeMixin ]
     thumbnail: 'src/nav/nav-2.png'
     categories: [ composites.navigation ]
@@ -507,7 +507,7 @@ Nav2:
 
 Nav3:
     title: 'Navigation Bar 3'
-    tag: default-nav-horisontal
+    tag: default-nav-horizontal
     mixins: [ WidgetMixin, BoxMixin, SizeMixin ]
     thumbnail: 'src/nav/nav-3.png'
     categories: [ composites.navigation ]
@@ -544,7 +544,7 @@ Nav3:
 
 Nav4:
     title: 'Navigation Bar 4'
-    tag: default-nav-horisontal
+    tag: default-nav-horizontal
     mixins: [ WidgetMixin, BoxMixin, SizeMixin ]
     thumbnail: 'src/nav/nav-4.png'
     categories: [ composites.navigation ]
@@ -581,7 +581,7 @@ Nav4:
 
 Nav5:
     title: 'Navigation Bar 5'
-    tag: default-nav-horisontal
+    tag: default-nav-horizontal
     mixins: [ WidgetMixin, BoxMixin, SizeMixin ]
     thumbnail: 'src/nav/nav-5.png'
     categories: [ composites.navigation ]
@@ -618,7 +618,7 @@ Nav5:
 
 Nav6:
     title: 'Navigation Bar 6'
-    tag: default-nav-horisontal
+    tag: default-nav-horizontal
     mixins: [ WidgetMixin, BoxMixin, SizeMixin ]
     thumbnail: 'src/nav/nav-6.png'
     categories: [ composites.navigation ]
@@ -655,7 +655,7 @@ Nav6:
 
 Nav7:
     title: 'Navigation Bar 7'
-    tag: default-nav-horisontal
+    tag: default-nav-horizontal
     mixins: [ WidgetMixin, BoxMixin, SizeMixin ]
     thumbnail: 'src/nav/nav-7.png'
     categories: [ composites.navigation ]
@@ -692,7 +692,7 @@ Nav7:
 
 Nav8:
     title: 'Navigation Bar 8'
-    tag: default-nav-horisontal
+    tag: default-nav-horizontal
     mixins: [ WidgetMixin, BoxMixin, SizeMixin ]
     thumbnail: 'src/nav/nav-8.png'
     categories: [ composites.navigation ]
@@ -729,9 +729,9 @@ Nav8:
 
 NavHorizontal:
     title: 'Navigation Bar'
-    tag: default-nav-horisontal
+    tag: default-nav-horizontal
     mixins: [ WidgetMixin, BoxMixin, SizeMixin ]
-    thumbnail: 'src/nav/horisontal.png'
+    thumbnail: 'src/nav/horizontal.png'
     categories: [ composites.navigation ]
     props:
         - { name: active, title: Active, type: string, tab: data }
@@ -926,11 +926,11 @@ Gallery:
 
 # Layouts Widgets
 
-Horisontal:
-    title: 'Horisontal Stack'
-    tag: default-stack-horisontal
+Horizontal:
+    title: 'Horizontal Stack'
+    tag: default-stack-horizontal
     mixins: [ WidgetMixin, BoxMixin ]
-    thumbnail: 'src/stack/horisontal.png'
+    thumbnail: 'src/stack/horizontal.png'
     categories: [ layouts.stack ]
 
 Vertical:

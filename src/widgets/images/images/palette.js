@@ -6,7 +6,7 @@
         tag: 'default-image',
         mixins: [ Widgets.WidgetMixin, Widgets.BoxMixin, Widgets.SizeMixin ],
         props: [
-            { name: 'title', title: 'Title', type: 'string', tab: 'content' },
+            { name: 'src', title: 'Source', type: 'string', tab: 'appearance' },
         ],
     }));
 
@@ -14,11 +14,7 @@
 
         var w = Widgets.build(Widgets.ImageWidget, {
             height: { value: '300px' },
-            inner: {
-                value:  {
-                    background: { value: `transparent url(${url}) no-repeat center center` },
-                }
-            },
+            src: { value: url },
         });
 
         return w;

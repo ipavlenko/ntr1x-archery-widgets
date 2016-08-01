@@ -5,8 +5,8 @@
         mixins: [ Core.WidgetMixin ]
     });
 
-    Vue.component('default-media-horisontal', {
-        template: '#default-media-horisontal',
+    Vue.component('default-media-horizontal', {
+        template: '#default-media-horizontal',
         mixins: [ Core.WidgetMixin ]
     });
 

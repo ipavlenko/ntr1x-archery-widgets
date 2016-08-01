@@ -1,3 +1,4 @@
-.wg.wg-default-image > .wg.wg-content {
+.wg.wg-default-image > .wg.wg-content > img {
+  width: 100%;
   min-height: 40px;
 }

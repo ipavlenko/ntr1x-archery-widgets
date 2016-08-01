@@ -7,8 +7,8 @@ Shell = window.Shell || {};
         mixins: [ Core.WidgetMixin, Core.StackedMixin ],
     });
 
-    Vue.component('default-stack-horisontal', {
-        template: '#default-stack-horisontal',
+    Vue.component('default-stack-horizontal', {
+        template: '#default-stack-horizontal',
         mixins: [ Core.WidgetMixin, Core.StackedMixin ],
     });
 
