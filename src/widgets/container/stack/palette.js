@@ -5,6 +5,7 @@
         name: 'default-stack-canvas',
         tag: 'default-stack-canvas',
         mixins: [ Widgets.CanvasMixin, Widgets.SizeMixin ],
+        widgets: [],
     }));
 
     Widgets.Item(Widgets.StackGroup, {
