@@ -28,18 +28,6 @@
         widget: Widgets.build(Widgets.StackHorizontalWidget),
     });
 
-    Widgets.Item(Widgets.StackGroup, {
-        name: 'stack-left',
-        thumbnail: '/assets/vendor/ntr1x-archery-widgets/src/widgets/container/stack/stack-left.png',
-        widget: Widgets.build(Widgets.StackHorizontalWidget),
-    });
-
-    Widgets.Item(Widgets.StackGroup, {
-        name: 'stack-right',
-        thumbnail: '/assets/vendor/ntr1x-archery-widgets/src/widgets/container/stack/stack-right.png',
-        widget: Widgets.build(Widgets.StackHorizontalWidget),
-    });
-
     Widgets.StackVerticalWidget =
     Widgets.Widget(Widgets.StackGroup, Widgets.create({
         name: 'default-stack-vertical',
@@ -64,6 +52,18 @@
         name: 'stack-3columns',
         thumbnail: '/assets/vendor/ntr1x-archery-widgets/src/widgets/container/stack/stack-3columns.png',
         widget: Widgets.build(Widgets.StackVerticalWidget, {}),
+    });
+
+    Widgets.Item(Widgets.StackGroup, {
+        name: 'stack-left',
+        thumbnail: '/assets/vendor/ntr1x-archery-widgets/src/widgets/container/stack/stack-left.png',
+        widget: Widgets.build(Widgets.StackHorizontalWidget),
+    });
+
+    Widgets.Item(Widgets.StackGroup, {
+        name: 'stack-right',
+        thumbnail: '/assets/vendor/ntr1x-archery-widgets/src/widgets/container/stack/stack-right.png',
+        widget: Widgets.build(Widgets.StackHorizontalWidget),
     });
 
 })(jQuery, Vue, Core, Widgets);
