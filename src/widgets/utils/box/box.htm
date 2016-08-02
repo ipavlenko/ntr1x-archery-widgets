@@ -1,13 +1,13 @@
 <template id="default-box">
     <section :class="class" :id="bindings.id" :style="{
-        'height': bindings.height,
-        'width': bindings.width,
         'border': bindings.outer.border,
         'background': bindings.outer.background,
         'margin': bindings.outer.margin,
         'padding': bindings.outer.padding,
     }">
         <div class="wg wg-content" :style="{
+            'height': bindings.height,
+            'width': bindings.width,
             'margin': bindings.inner.margin,
             'padding': bindings.inner.padding,
             'border': bindings.inner.border,
