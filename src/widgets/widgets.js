@@ -20,6 +20,9 @@
     P.Rows = { name: 'rows', title: 'Rows', type: 'string', tab: 'appearance' };
     P.Color = { name: 'color', title: 'Color', type: 'string', tab: 'appearance' };
     P.Content = { name: 'content', title: 'Content', type: 'string', tab: 'content' };
+    P.Title = { name: 'title', title: 'Title', type: 'string', tab: 'data' };
+    P.Vlink = { name: 'vlink', title: 'Vlink', type: 'string', tab: 'data' };
+    P.Href = { name: 'href', title: 'Href', type: 'string', tab: 'data' };
 
     P.Spacing = { name: 'spacing', title: 'Border Spacing', type: 'string', tab: 'appearance' };
     P.Collapse = { name: 'collapse', title: 'Border Collapse', type: 'string', tab: 'appearance' };

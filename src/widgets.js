@@ -1,7 +1,7 @@
-var Widgets =
+window.Widgets =
 (function($, Vue, Core) {
 
-    Widgets = {};
+    var Widgets = {};
 
     Widgets.Palette = (function() {
 
