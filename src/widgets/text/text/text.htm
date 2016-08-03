@@ -9,8 +9,6 @@
             'bg-danger': bindings.stereotype == 'danger',
         }"
         :style="{
-            'height': bindings.height,
-            'width': bindings.width,
             'margin': bindings.outer.margin,
             'padding': bindings.outer.padding,
             'border': bindings.outer.border,
@@ -19,13 +17,13 @@
     >
         <div class="wg wg-content"
             :style="{
+                'height': bindings.height,
+                'width': bindings.width,
                 'margin': bindings.inner.margin,
                 'padding': bindings.inner.padding,
                 'border': bindings.inner.border,
                 'background': bindings.inner.background,
             }"
-        >
-            {{{ bindings.content }}}
-        </div>
+        >{{{ bindings.content }}}</div>
     </section>
 </template>
