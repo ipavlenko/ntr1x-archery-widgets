@@ -1,7 +1,22 @@
 <template id="default-stack-vertical">
-    <section class="wg wg-default-stack wg-default-stack-vertical wg-sortable">
-        <div class="wg wg-content wg-sortable-content">
-            <div class="wg wg-sortable-inner">
+    <section class="wg wg-default-stack wg-default-stack-vertical wg-sortable" :style="{
+        'border': bindings.outer.border,
+        'background': bindings.outer.background,
+        'margin': bindings.outer.margin,
+        'padding': bindings.outer.padding,
+    }">
+        <div class="wg wg-content wg-sortable-content" :style="{
+            'height': bindings.height,
+            'width': bindings.width,
+            'margin': bindings.inner.margin,
+            'padding': bindings.inner.padding,
+            'border': bindings.inner.border,
+            'background': bindings.inner.background,
+        }">
+            <div class="wg wg-sortable-inner" :style="{
+                'border-spacing': bindings.spacing,
+                'border-collapse': bindings.collapse,
+            }">
                 <div class="wg wg-sortable-container wg-sortable-vertical" :class="{ 'wg-sortable-editable': editable }">
                     <div class="wg wg-sortable-item" :class="{ 'wg-sortable-editable': editable }" v-for="child in children">
                         <div class="wg wg-item-content">

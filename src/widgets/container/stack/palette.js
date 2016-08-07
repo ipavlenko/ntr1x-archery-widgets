@@ -18,8 +18,12 @@
     Widgets.Widget(Widgets.StackGroup, Widgets.create({
         name: 'default-stack-horizontal',
         tag: 'default-stack-horizontal',
-        mixins: [ Widgets.WidgetMixin, Widgets.BoxMixin ],
+        mixins: [ Widgets.WidgetMixin, Widgets.BoxMixin, Widgets.SizeMixin ],
         widgets: [],
+        props: [
+            { name: 'spacing', title: 'Border Spacing', type: 'string', tab: 'appearance' },
+            { name: 'collapse', title: 'Border Collapse', type: 'string', tab: 'appearance' },
+        ],
     }));
 
     Widgets.Item(Widgets.StackGroup, {
@@ -32,8 +36,12 @@
     Widgets.Widget(Widgets.StackGroup, Widgets.create({
         name: 'default-stack-vertical',
         tag: 'default-stack-vertical',
-        mixins: [ Widgets.WidgetMixin, Widgets.BoxMixin ],
+        mixins: [ Widgets.WidgetMixin, Widgets.BoxMixin, Widgets.SizeMixin ],
         widgets: [],
+        props: [
+            { name: 'spacing', title: 'Border Spacing', type: 'string', tab: 'appearance' },
+            { name: 'collapse', title: 'Border Collapse', type: 'string', tab: 'appearance' },
+        ],
     }));
 
     Widgets.Item(Widgets.StackGroup, {
