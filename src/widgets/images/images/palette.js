@@ -13,7 +13,7 @@
     Widgets.ImageWidgetFactory = function(url) {
 
         var w = Widgets.build(Widgets.ImageWidget, {
-            height: { value: '300px' },
+            // height: { value: '300px' },
             src: { value: url },
         });
 
