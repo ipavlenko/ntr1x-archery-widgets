@@ -1,0 +1,25 @@
+<template id="default-table">
+    <default-box :bindings.sync="bindings" class="wg wg-widget wg-default-table">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th v-for="column in bindings.columns.collection">{{ column.title }}</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td v-for="column in bindings.columns.collection">Cell</td>
+                </tr>
+                <tr>
+                    <td v-for="column in bindings.columns.collection">Cell</td>
+                </tr>
+                <tr>
+                    <td v-for="column in bindings.columns.collection">Cell</td>
+                </tr>
+                <tr>
+                    <td v-for="column in bindings.columns.collection">Cell</td>
+                </tr>
+            </tbody>
+        </table>
+    </default-box>
+</template>
