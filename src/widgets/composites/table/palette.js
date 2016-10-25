@@ -29,6 +29,24 @@
                     }
                 ]
             },
+            {
+                name: 'rows', title: 'Rows', type: 'object', tab: 'data',
+                tabs: [ T.Data, T.Appearance ],
+                props: [
+                    {
+                        name: 'collection', title: 'Collection', type: 'multiple', tab: 'data',
+                        tabs: [ T.Data ],
+                        props: [ P.Margin, P.Padding, P.Background,
+                            { name: 'item', title: 'Item', type: 'asis', tab: 'data', },
+                        ]
+                    },
+                    {
+                        name: 'style', title: 'Style', type: 'object', tab: 'appearance',
+                        tabs: [ T.Appearance ],
+                        props: [ P.Margin, P.Padding, P.Background, ],
+                    }
+                ]
+            },
         ],
     }));
 
@@ -64,10 +82,28 @@
                     },
                     collection: {
                         value: [
-                            { name: { value: "index" }, title: { value: "#" } },
-                            { name: { value: "name" }, title: { value: "Name" } },
-                            { name: { value: "department" }, title: { value: "Department" } },
-                            { name: { value: "sallary" }, title: { value: "Sallary" } },
+                            { name: { value: "item.index" }, title: { value: "#" } },
+                            { name: { value: "item.name" }, title: { value: "Name" } },
+                            { name: { value: "item.department" }, title: { value: "Department" } },
+                            { name: { value: "item.sallary" }, title: { value: "Sallary" } },
+                        ]
+                    }
+                }
+            },
+            rows: {
+                value: {
+                    style: {
+                        value: {
+                            padding: { value: '12px 16px' },
+                            margin: { value: '4px 2px' },
+                        }
+                    },
+                    collection: {
+                        value: [
+                            { item: { value: { index: 1, name: 'Иванов Иван', department: 'Проектный', sallary: '70' } } },
+                            { item: { value: { index: 2, name: 'Иванов Иван', department: 'Проектный', sallary: '60' } } },
+                            { item: { value: { index: 3, name: 'Иванов Иван', department: 'Проектный', sallary: '80' } } },
+                            { item: { value: { index: 4, name: 'Иванов Иван', department: 'Проектный', sallary: '65' } } },
                         ]
                     }
                 }

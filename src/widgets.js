@@ -208,12 +208,15 @@ window.Widgets =
                 if (prop.props) {
                     if (prop.type == 'multiple') {
                         param.value = param.value == null ? [] : param.value;
+                        param.proto = param.proto == null ? {} : param.proto;
                         for (var j = 0; j < param.value.length; j++) {
                             initParams(prop.props, param.value[j]);
                         }
                     } else if (prop.type == 'object') {
                         param.value = param.value == null ? {} : param.value;
                         initParams(prop.props, param.value);
+                    } else if (prop.type == 'asis') {
+                        param.value = param.value == null ? {} : param.value;
                     }
                 }
             }
