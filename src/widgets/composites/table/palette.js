@@ -71,7 +71,6 @@
                     margin: { value: '0px auto' },
                 },
             },
-            width: { value: '1200px' },
             columns: {
                 value: {
                     style: {
