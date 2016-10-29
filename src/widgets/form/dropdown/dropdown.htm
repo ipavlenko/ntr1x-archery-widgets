@@ -1,0 +1,25 @@
+<template id="default-dropdown">
+    <default-box :bindings.sync="bindings" class="wg wg-widget wg-default-dropdown">
+        <div class="form-group">
+            <div class="btn-group">
+                <button type="{{ bindings.type }}" class="btn btn-block dropdown-toggle" data-toggle="dropdown" :class="{
+                        'btn-default': bindings.stereotype == 'default',
+                        'btn-primary': bindings.stereotype == 'primary',
+                        'btn-success': bindings.stereotype == 'success',
+                        'btn-info': bindings.stereotype == 'info',
+                        'btn-warning': bindings.stereotype == 'warning',
+                        'btn-danger': bindings.stereotype == 'danger',
+                        'btn-link': bindings.stereotype == 'link',
+                    }"
+                    :style="{
+                        height: bindings.height
+                    }"
+                >{{ selected ? selected.title : bindings.empty }}
+                &nbsp;<span class="caret"></span></button>
+                <ul class="dropdown-menu">
+                    <li v-for="item in bindings.items.collection" :class="{ 'active': isSelected(item) }"><a @click="select(item)">{{ item.title }}</a></li>
+                </ul>
+            </div>
+        </div>
+    </default-box>
+</template>

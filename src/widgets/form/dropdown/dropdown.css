@@ -1,0 +1,10 @@
+.wg.wg-default-dropdown > .wg.wg-content {
+  overflow: visible;
+}
+.wg.wg-default-dropdown > .wg.wg-content > .form-group > .btn-group {
+  display: table;
+  width: 100%;
+}
+.wg.wg-default-dropdown > .wg.wg-content > .form-group > .btn-group > .dropdown-menu {
+  width: 100%;
+}
