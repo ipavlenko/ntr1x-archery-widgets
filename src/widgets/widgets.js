@@ -6,6 +6,7 @@
     T.Data = { name: 'data', title: 'Data' };
     T.Appearance = { name: 'appearance', title: 'Appearance' };
     T.Content = { name: 'content', title: 'Content' };
+    T.Events = { name: 'events', title: 'Events' };
 
     P.Id = { name: 'id', title: 'ID', type: 'string', tab: 'data', placeholder: 'Unique ID' };
 
@@ -42,6 +43,8 @@
         { value: 'left', text: 'Left' },
     ]};
 
+    P.Click = { name: 'click', title: '@Click', type: 'string', tab: 'events' };
+
     Widgets.CanvasMixin = {
         tabs: [ T.Data, T.Appearance, T.Content ],
     };
@@ -66,6 +69,11 @@
 
     Widgets.SizeMixin = {
         props: [ P.Width, P.Height ],
-    }
+    };
+
+    Widgets.EventsMixin = {
+        tabs: [ T.Events ],
+        props: [ P.Click ],
+    };
 
 })(jQuery, Vue, Core, Widgets);

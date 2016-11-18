@@ -4,7 +4,7 @@
     Widgets.Widget(Widgets.ButtonsGroup, Widgets.create({
         name: 'default-button',
         tag: 'default-button',
-        mixins: [ Widgets.WidgetMixin, Widgets.BoxMixin, Widgets.SizeMixin ],
+        mixins: [ Widgets.WidgetMixin, Widgets.BoxMixin, Widgets.SizeMixin, Widgets.EventsMixin ],
         props: [
             { name: 'title', title: 'Title', type: 'string', tab: 'content' },
             { name: 'type', title: 'Type', type: 'string', tab: 'data' },

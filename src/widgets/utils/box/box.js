@@ -5,7 +5,7 @@
         props: {
             bindings: Object,
             class: String,
-        }
+        },
     });
 
 })(jQuery, Vue, Core);

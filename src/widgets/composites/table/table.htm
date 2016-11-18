@@ -4,16 +4,17 @@
                bindings.columns
             && bindings.columns.collection
             && bindings.columns.collection.length
-            && bindings.rows
-            && bindings.rows.collection
-            && bindings.rows.collection.length"
-        >
+        ">
             <thead>
                 <tr>
                     <th v-for="column in bindings.columns.collection">{{ column.title }}</th>
                 </tr>
             </thead>
-            <tbody>
+            <tbody v-if="
+                   bindings.rows
+                && bindings.rows.collection
+                && bindings.rows.collection.length
+            ">
                 <tr v-for="row in bindings.rows.collection">
                     <td v-for="column in bindings.columns.collection">{{ row | get column.name }}</td>
                 </tr>

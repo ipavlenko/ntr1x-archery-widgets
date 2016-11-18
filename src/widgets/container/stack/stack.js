@@ -1,6 +1,4 @@
-Shell = window.Shell || {};
-
-(function($, Vue, Core, Shell, undefined) {
+(function($, Vue, Core) {
 
     Vue.component('default-stack-canvas', {
         template: '#default-stack-canvas',
@@ -17,4 +15,4 @@ Shell = window.Shell || {};
         mixins: [ Core.WidgetMixin, Core.StackedMixin ],
     });
 
-})(jQuery, Vue, Core, Shell);
+})(jQuery, Vue, Core);

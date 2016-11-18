@@ -1,0 +1,11 @@
+.wg.wg-default-frame {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+.wg.wg-default-frame .wg.wg-content {
+  box-sizing: border-box;
+  min-height: 100px;
+  min-width: 100px;
+}

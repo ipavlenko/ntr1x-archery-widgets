@@ -1,0 +1,27 @@
+<template id="default-frame">
+    <section class="wg wg-default-frame" :id="bindings.id"
+        :style="{
+            'margin': bindings.outer.margin,
+            'padding': bindings.outer.padding,
+            'border': bindings.outer.border,
+            'background': bindings.outer.background,
+        }"
+    >
+        <div class="wg wg-content"
+            :style="{
+                'height': bindings.height,
+                'width': bindings.width,
+                'margin': bindings.inner.margin,
+                'padding': bindings.inner.padding,
+                'border': bindings.inner.border,
+                'background': bindings.inner.background,
+            }"
+        >
+            <div>
+                <a v-link="{ path: '/second' }">Second</a>
+                <a v-link="{ path: '/purchases' }">Purchases</a>
+            </div>
+            <router-view></router-view>
+        </div>
+    </section>
+</template>
