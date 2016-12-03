@@ -3,7 +3,7 @@
 //     Vue.component('default-frame', {
 //         template: '#default-frame',
 //         mixins: [ Core.WidgetMixin ],
-//         attached: function() {
+//         mounted: function() {
 //
 //             // let div = $('<div></div>').appendTo();
 //

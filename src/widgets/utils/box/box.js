@@ -1,11 +1,16 @@
-(function($, Vue, Core) {
+(function($, Vue) {
 
     Vue.component('default-box', {
         template: '#default-box',
         props: {
             bindings: Object,
-            class: String,
+            'class': String,
         },
+        data: function() {
+            return {
+                clazz: this['class']
+            }
+        }
     });
 
-})(jQuery, Vue, Core);
+})(jQuery, Vue);
