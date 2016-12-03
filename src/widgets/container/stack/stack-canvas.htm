@@ -5,19 +5,19 @@
         <div class="wg wg-content wg-sortable-content">
             <div class="wg wg-sortable-inner">
                 <div class="wg wg-sortable-container wg-sortable-vertical" :class="{ 'wg-sortable-editable': editable }">
-                    <div class="wg wg-sortable-item" :class="{ 'wg-sortable-editable': editable }" v-for="child in children">
-                        <div class="wg wg-item-content">
+                    <div class="wg wg-sortable-item" :class="{ 'wg-sortable-editable': editable }" v-for="(child, index) in children">
+                        <div class="wg wg-item-content" :key="index">
                             <div class="wg wg-inner">
                                 <shell-widget
-                                    :globals.sync="globals"
-                                    :settings.sync="settings"
-                                    :stack.sync="page"
-                                    :page.sync="page"
-                                    :data.sync="data"
-                                    :storage.sync="storage"
-                                    :model.sync="child"
-                                    :editable.sync="editable"
-                                    :items.sync="child.widgets"
+                                    :globals="globals"
+                                    :settings="settings"
+                                    :stack="page"
+                                    :page="page"
+                                    :data="data"
+                                    :storage="storage"
+                                    :model="child"
+                                    :editable="editable"
+                                    :items="child.widgets"
                                 ></shell-widget>
                             </div>
                         </div>

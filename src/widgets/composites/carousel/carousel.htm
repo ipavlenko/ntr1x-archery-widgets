@@ -14,8 +14,7 @@
                         'background': item.background,
                         'background-size': item.backgroundSize,
                     }">
-                        <div v-if="item.caption" class="carousel-caption">
-                            {{{ item.caption }}}
+                        <div v-if="item.caption" class="carousel-caption" v-html="item.caption">
                         </div>
                     </div>
                 </div>

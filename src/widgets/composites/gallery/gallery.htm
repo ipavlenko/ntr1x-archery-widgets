@@ -50,7 +50,8 @@
                                             'background': cd.description.background || bindings.items.style.description.background,
                                             'color': cd.description.color || bindings.items.style.description.color,
                                         }"
-                                    >{{{ cd.description.content }}}</div>
+                                        v-html="cd.description.content"
+                                    ></div>
                                 </div>
                             </div>
                         </div>
@@ -60,7 +61,7 @@
 
             <!-- Indicators -->
             <ol class="carousel-indicators" v-if="matrix.length > 1">
-                <li v-for="item in matrix" data-target="#{{ systemId }}-carousel" data-slide-to="{{ $index }}" :class="{ 'active' : !$index }"></li>
+                <li v-for="item in matrix" :data-target="systemId + '-carousel'" data-slide-to="{{ $index }}" :class="{ 'active' : !$index }"></li>
             </ol>
 
             <!-- Controls -->
