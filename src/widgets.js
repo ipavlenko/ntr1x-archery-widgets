@@ -8,8 +8,6 @@ window.Widgets =
         var map = {};
         var arr = [];
 
-        var widgets = {};
-
         var categories = function() { return arr; }
         var category = function(n, category) {
 
@@ -252,7 +250,7 @@ window.Widgets =
         }
     }
 
-    Vue.service('palette', Widgets.Palette);
+    // Vue.service('palette', Widgets.Palette);
 
     return Widgets;
 
