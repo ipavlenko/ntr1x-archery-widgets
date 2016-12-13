@@ -29,9 +29,7 @@ window.Widgets =
 
         var item = function(path) {
             var segments = path.split('/');
-            var w = $.extend(true, {}, this.category(segments[0]).group(segments[1]).item(segments[2]).widget, {
-                _action: 'create',
-            });
+            var w = $.extend(true, {}, this.category(segments[0]).group(segments[1]).item(segments[2]).widget);
             delete w.props;
             delete w.tabs;
             return w;
