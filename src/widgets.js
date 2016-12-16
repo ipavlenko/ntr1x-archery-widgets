@@ -36,14 +36,7 @@ window.Widgets =
         }
 
         function generateId(prefix) {
-
-            var ALPHABET = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
-            var ID_LENGTH = 8;
-
-            var rtn = '';
-            for (var i = 0; i < ID_LENGTH; i++) {
-                rtn += ALPHABET.charAt(Math.floor(Math.random() * ALPHABET.length));
-            }
+            let rtn = Math.random().toString(36).substr(2, 9);
             return prefix ? prefix + rtn : rtn;
         }
 
@@ -188,9 +181,9 @@ window.Widgets =
         return result;
     };
 
-    Widgets.build = function(widget, params) {
+    Widgets.build = function(proto, params) { // proto is a widget or a composite property
 
-        var w = Object.assign(JSON.parse(JSON.stringify(widget)), {
+        var w = Object.assign(JSON.parse(JSON.stringify(proto)), {
             params: params || {}
         });
 
