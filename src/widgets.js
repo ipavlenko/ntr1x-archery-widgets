@@ -194,6 +194,10 @@ window.Widgets =
                 var prop = props[i];
                 var param = params[prop.name] = params[prop.name] || { value: null }; // TODO Set a type-dependent initial value
 
+                if (prop.type == 'action') {
+                    param.action = param.action || 'actions/execute'
+                }
+
                 if (prop.props) {
                     if (prop.type == 'multiple') {
                         param.value = param.value == null ? [] : param.value;
@@ -203,6 +207,9 @@ window.Widgets =
                         }
                     } else if (prop.type == 'object') {
                         param.value = param.value == null ? {} : param.value;
+                        initParams(prop.props, param.value);
+                    } else if (prop.type == 'action') {
+                        param.action = param.action == null ? 'actions/execute' : param.action;
                         initParams(prop.props, param.value);
                     } else if (prop.type == 'asis') {
                         param.value = param.value == null ? {} : param.value;
