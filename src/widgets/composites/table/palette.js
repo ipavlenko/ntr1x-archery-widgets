@@ -16,6 +16,7 @@
                 props: [
                     {
                         name: 'collection', title: 'Collection', type: 'multiple', tab: 'data',
+                        display: (item, index) => item.title.value ? item.title.value : `<item ${index}>`,
                         tabs: [ T.Data ],
                         props: [ P.Margin, P.Padding, P.Background,
                             { name: 'name', title: 'Name', type: 'string', tab: 'data', },
@@ -35,7 +36,7 @@
                 props: [
                     {
                         name: 'collection', title: 'Collection', type: 'multiple', tab: 'data',
-                        tabs: [ T.Data ],
+                        tabs: [ T.Data, T.Appearance ],
                         props: [ P.Margin, P.Padding, P.Background,
                             { name: 'item', title: 'Item', type: 'asis', tab: 'data', },
                         ]

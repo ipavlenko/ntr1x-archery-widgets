@@ -181,44 +181,50 @@ window.Widgets =
         return result;
     };
 
+    Widgets.buildParam = function(prop, param) {
+
+        if (prop.type == 'action') {
+            param.action = param.action || 'actions/execute'
+        }
+
+        if (prop.props) {
+            if (prop.type == 'multiple') {
+                param.value = param.value == null ? [] : param.value;
+                // param.proto = param.proto == null ? {} : param.proto;
+                for (var j = 0; j < param.value.length; j++) {
+                    Widgets.buildParams(prop.props, param.value[j]);
+                }
+            } else if (prop.type == 'object') {
+                param.value = param.value == null ? {} : param.value;
+                Widgets.buildParams(prop.props, param.value);
+            } else if (prop.type == 'action') {
+                param.action = param.action == null ? 'actions/execute' : param.action;
+                Widgets.buildParams(prop.props, param.value);
+            } else if (prop.type == 'asis') {
+                param.value = param.value == null ? {} : param.value;
+            }
+        }
+
+        return param
+    }
+
+    Widgets.buildParams = function(props, params) {
+
+        for (let prop of props) {
+
+            let param = params[prop.name] = params[prop.name] || { value: null }; // TODO Set a type-dependent initial value
+
+            Widgets.buildParam(prop, param)
+        }
+    }
+
     Widgets.build = function(proto, params) { // proto is a widget or a composite property
 
         var w = Object.assign(JSON.parse(JSON.stringify(proto)), {
             params: params || {}
         });
 
-        function initParams(props, params) {
-
-            for (var i = 0; i < props.length; i++) {
-
-                var prop = props[i];
-                var param = params[prop.name] = params[prop.name] || { value: null }; // TODO Set a type-dependent initial value
-
-                if (prop.type == 'action') {
-                    param.action = param.action || 'actions/execute'
-                }
-
-                if (prop.props) {
-                    if (prop.type == 'multiple') {
-                        param.value = param.value == null ? [] : param.value;
-                        param.proto = param.proto == null ? {} : param.proto;
-                        for (var j = 0; j < param.value.length; j++) {
-                            initParams(prop.props, param.value[j]);
-                        }
-                    } else if (prop.type == 'object') {
-                        param.value = param.value == null ? {} : param.value;
-                        initParams(prop.props, param.value);
-                    } else if (prop.type == 'action') {
-                        param.action = param.action == null ? 'actions/execute' : param.action;
-                        initParams(prop.props, param.value);
-                    } else if (prop.type == 'asis') {
-                        param.value = param.value == null ? {} : param.value;
-                    }
-                }
-            }
-        }
-
-        initParams(w.props, w.params);
+        Widgets.buildParams(w.props, w.params);
 
         return w;
     }
