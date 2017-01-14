@@ -9,7 +9,6 @@
         tag: 'default-table',
         mixins: [ Widgets.WidgetMixin, Widgets.BoxMixin, Widgets.SizeMixin ],
         props: [
-            // { name: 'stereotype', title: 'Stereotype', type: 'string', tab: 'data' },
             {
                 name: 'columns', title: 'Columns', type: 'object', tab: 'data',
                 tabs: [ T.Data, T.Appearance ],
