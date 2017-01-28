@@ -24,6 +24,7 @@
                 'border': bindings.inner.border,
                 'background': bindings.inner.background,
             }"
-        >{{{ bindings.content }}}</div>
+            v-html="bindings.content"
+        ></div>
     </section>
 </template>

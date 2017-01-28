@@ -3,7 +3,7 @@
         <div class="wg wg-table" :style="{
             height: bindings.height,
         }">
-            <span class="wg wg-cell">{{{ bindings.content }}}</span>
+            <span class="wg wg-cell" v-html="bindings.content"></span>
         </div>
     </default-box>
 </template>

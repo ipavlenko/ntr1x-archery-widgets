@@ -43,7 +43,7 @@
         { value: 'left', text: 'Left' },
     ]};
 
-    P.Click = { name: 'click', title: '@Click', type: 'string', tab: 'events' };
+    P.Click = { name: 'click', title: '@Click', type: 'action', tab: 'events' };
 
     Widgets.CanvasMixin = {
         tabs: [ T.Data, T.Appearance, T.Content ],

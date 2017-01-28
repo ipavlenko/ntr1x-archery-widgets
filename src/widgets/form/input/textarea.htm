@@ -1,10 +1,13 @@
 <template id="default-input-textarea">
     <default-box :bindings.sync="bindings" class="wg wg-widget wg-default-input-textarea">
         <div class="form-group">
-            <label v-if="bindings.label" for="{{ systemId }}-input">{{ bindings.label }}</label>
-            <textarea class="form-control" id="{{ systemId }}-input" placeholder="{{ bindings.placeholder}}" v-model="bindings.model.value" style="{
-                height: bindings.height
-            }"></textarea>
+            <label v-if="bindings.label" :for="systemId + '-input'">{{ bindings.label }}</label>
+            <textarea class="form-control"
+                :id="systemId + '-input'"
+                :placeholder="bindings.placeholder"
+                :value="bindings.model && bindings.model.value"
+                @input="$store.commit('storage/value', { parent: bindings.model, property: 'value', value: $event.target.value })"
+            ></textarea>
         </div>
     </default-box>
 </template>

@@ -2,7 +2,7 @@
     <default-box :bindings.sync="bindings" class="wg wg-widget wg-default-dropdown">
         <div class="form-group">
             <div class="btn-group">
-                <button type="{{ bindings.type }}" class="btn btn-block dropdown-toggle" data-toggle="dropdown" :class="{
+                <button :type="bindings.type" class="btn btn-block dropdown-toggle" data-toggle="dropdown" :class="{
                         'btn-default': bindings.stereotype == 'default',
                         'btn-primary': bindings.stereotype == 'primary',
                         'btn-success': bindings.stereotype == 'success',
