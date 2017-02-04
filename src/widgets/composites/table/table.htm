@@ -16,7 +16,7 @@
                 && bindings.rows.collection.length
             ">
                 <tr v-for="row in bindings.rows.collection">
-                    <td v-for="column in bindings.columns.collection">{{ row | get(column.name) }}</td>
+                    <td v-for="column in bindings.columns.collection">{{ $page.eval(column.value, { $item: row.item }) }}</td>
                 </tr>
             </tbody>
         </table>

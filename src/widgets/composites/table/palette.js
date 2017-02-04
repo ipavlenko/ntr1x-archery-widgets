@@ -18,7 +18,7 @@
                         display: (item, index) => item.title.value ? item.title.value : `<item ${index}>`,
                         tabs: [ T.Data ],
                         props: [ P.Margin, P.Padding, P.Background,
-                            { name: 'name', title: 'Name', type: 'string', tab: 'data', },
+                            { name: 'value', title: 'Value', type: 'action', tab: 'data', },
                             { name: 'title', title: 'Title', type: 'string', tab: 'data', },
                         ]
                     },
@@ -81,10 +81,10 @@
                     },
                     collection: {
                         value: [
-                            { name: { value: "item.index" }, title: { value: "#" } },
-                            { name: { value: "item.name" }, title: { value: "Name" } },
-                            { name: { value: "item.department" }, title: { value: "Department" } },
-                            { name: { value: "item.sallary" }, title: { value: "Sallary" } },
+                            { value: { value: '$item.index' }, title: { value: '#' } },
+                            { value: { value: '$item.name' }, title: { value: 'Name' } },
+                            { value: { value: '$item.department' }, title: { value: 'Department' } },
+                            { value: { value: '$item.sallary' }, title: { value: 'Sallary' } },
                         ]
                     }
                 }
@@ -100,9 +100,9 @@
                     collection: {
                         value: [
                             { item: { value: { index: 1, name: 'Иванов Иван', department: 'Проектный', sallary: '70' } } },
-                            { item: { value: { index: 2, name: 'Иванов Иван', department: 'Проектный', sallary: '60' } } },
-                            { item: { value: { index: 3, name: 'Иванов Иван', department: 'Проектный', sallary: '80' } } },
-                            { item: { value: { index: 4, name: 'Иванов Иван', department: 'Проектный', sallary: '65' } } },
+                            { item: { value: { index: 2, name: 'Петров Пётр', department: 'Проектный', sallary: '60' } } },
+                            { item: { value: { index: 3, name: 'Егоров Егор', department: 'Проектный', sallary: '80' } } },
+                            { item: { value: { index: 4, name: 'Кольев Коля', department: 'Проектный', sallary: '65' } } },
                         ]
                     }
                 }
