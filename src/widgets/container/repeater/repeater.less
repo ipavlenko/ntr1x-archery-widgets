@@ -1,11 +1,11 @@
-// "out": "stack.css"
+// "out": "repeater.css"
 
-.wg.wg-default-stack {
+.wg.wg-default-repeater {
 
     display: table;
     width: 100%;
 
-    &.wg-default-stack-canvas {
+    &.wg-default-repeater-canvas {
 
         position: relative;
         overflow: visible;
@@ -93,7 +93,7 @@
         }
     }
 
-    &.wg-default-stack-vertical {
+    &.wg-default-repeater-vertical {
 
         >.wg.wg-sortable-content {
 
@@ -176,7 +176,7 @@
         }
     }
 
-    &.wg-default-stack-horizontal {
+    &.wg-default-repeater-horizontal {
 
         >.wg.wg-sortable-content {
 
@@ -253,7 +253,7 @@
     }
 }
 
-.wg.wg-default-stack {
+.wg.wg-default-repeater {
 
     >.wg.wg-content {
 
@@ -319,7 +319,7 @@
         }
     }
 
-    &.wg-default-stack-horizontal {
+    &.wg-default-repeater-horizontal {
         >.wg.wg-content {
             >.wg.wg-table {
                 >.wg.wg-row {
@@ -345,8 +345,8 @@
         }
     }
 
-    &.wg-default-stack-canvas,
-    &.wg-default-stack-vertical {
+    &.wg-default-repeater-canvas,
+    &.wg-default-repeater-vertical {
         >.wg.wg-content {
             >.wg.wg-table {
 
@@ -377,41 +377,6 @@
 
         >.wg.wg-content {
             // outline: 4px solid red;
-        }
-    }
-}
-
-.wg.wg-sortable-placeholder {
-    >.wg.wg-placeholder-container {
-        >.wg.wg-placeholder-inner {
-
-            position: relative;
-            overflow: visible;
-
-            &:before {
-
-                content: "";
-                position: absolute;
-                width: 0;
-                height: 0;
-                border: 5px solid transparent;
-            }
-        }
-    }
-}
-
-.wg.wg-sortable-container {
-    box-sizing: border-box;
-    &.active {
-        &:after {
-            content: "";
-            position: absolute;
-            top: 0px;
-            left: 0px;
-            right: 0px;
-            bottom: 0px;
-            z-index: 10000;
-            outline: 1px solid red;
         }
     }
 }

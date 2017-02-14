@@ -1,0 +1,57 @@
+<template id="default-repeater-horizontal">
+    <section class="wg wg-default-repeater wg-default-repeater-horizontal wg-sortable" :style="{
+        'border': bindings.outer.border,
+        'background': bindings.outer.background,
+        'margin': bindings.outer.margin,
+        'padding': bindings.outer.padding,
+    }">
+        <div class="wg wg-content wg-sortable-content" :style="{
+            'height': bindings.height,
+            'width': bindings.width,
+            'margin': bindings.inner.margin,
+            'padding': bindings.inner.padding,
+            'border': bindings.inner.border,
+            'background': bindings.inner.background,
+        }">
+            <div class="wg wg-sortable-inner" :style="{
+                'border-spacing': bindings.spacing,
+                'border-collapse': bindings.collapse,
+            }">
+                <div class="wg wg-sortable-container" :class="{ 'wg-sortable-editable': editable }">
+                    <template v-for="(item, j) in bindings.collection">
+                        <default-repeater-item :item="item" class="wg wg-sortable-item" :class="{ 'wg-sortable-editable': editable }"
+                            v-for="(child, i) in children"
+                        >
+                            <div class="wg wg-item-content" :key="child.uuid">
+                                <div class="wg wg-inner">
+                                    <shell-widget
+                                        :stack="stack"
+                                        :page="page"
+                                        :model="child"
+                                        :editable="editable && !(i + j)"
+                                    ></shell-widget>
+                                </div>
+                            </div>
+                        </default-repeater-item>
+                    </template>
+                    <template v-if="!(bindings.collection && bindings.collection.length)">
+                        <default-repeater-item class="wg wg-sortable-item" :class="{ 'wg-sortable-editable': editable }"
+                            v-for="(child, i) in children"
+                        >
+                            <div class="wg wg-item-content" :key="child.uuid">
+                                <div class="wg wg-inner">
+                                    <shell-widget
+                                        :stack="stack"
+                                        :page="page"
+                                        :model="child"
+                                        :editable="false"
+                                    ></shell-widget>
+                                </div>
+                            </div>
+                        </default-repeater-item>
+                    </template>
+                </div>
+            </div>
+        </div>
+    </section>
+</template>
