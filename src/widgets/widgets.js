@@ -46,11 +46,11 @@
     P.Click = { name: 'click', title: '@Click', type: 'action', tab: 'events' };
 
     Widgets.CanvasMixin = {
-        tabs: [ T.Data, T.Appearance, T.Content ],
+        tabs: [ T.Data, T.Appearance, T.Content, T.Events  ],
     };
 
     Widgets.WidgetMixin = {
-        tabs: [ T.Data, T.Appearance, T.Content ],
+        tabs: [ T.Data, T.Appearance, T.Content, T.Events ],
         props: [ P.Id ],
     };
 
@@ -72,7 +72,6 @@
     };
 
     Widgets.EventsMixin = {
-        tabs: [ T.Events ],
         props: [ P.Click ],
     };
 

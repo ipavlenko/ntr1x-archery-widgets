@@ -6,6 +6,9 @@
         tag: 'default-stack-canvas',
         mixins: [ Widgets.CanvasMixin, Widgets.SizeMixin ],
         widgets: [],
+        props: [
+            { name: 'load', title: '@Load', type: 'action', tab: 'events' }
+        ],
     }));
 
     Widgets.Item(Widgets.StackGroup, {

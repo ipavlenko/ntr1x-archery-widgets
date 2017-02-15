@@ -3,6 +3,9 @@
     Vue.component('default-stack-canvas', {
         template: '#default-stack-canvas',
         mixins: [ Core.WidgetMixin, Core.StackedMixin ],
+        created() {
+            this.$page.dispatch(this.bindings.load, this.$context)
+        },
     });
 
     Vue.component('default-stack-horizontal', {
