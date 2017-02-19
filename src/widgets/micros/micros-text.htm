@@ -9,6 +9,7 @@
         }"
     >
         <div class="wg wg-content"
+            :class="bindings.cssClass"
             :style="{
                 'min-height': bindings.minHeight,
                 'min-width': bindings.minWidth,
@@ -23,9 +24,14 @@
                 'line-height': bindings.lineHeight,
                 'color': bindings.color
             }">
-            <div v-text="bindings.content" :style="{
-                'font-size': bindings.fontSize,
-            }"></div>
+            <a href="#" v-if="bindings.stereotype == 'a'" v-text="bindings.content" :style="{ 'font-size': bindings.fontSize }"></a>
+            <h1 v-else-if="bindings.stereotype == 'h1'" v-text="bindings.content" :style="{ 'font-size': bindings.fontSize }"></h1>
+            <h2 v-else-if="bindings.stereotype == 'h2'" v-text="bindings.content" :style="{ 'font-size': bindings.fontSize }"></h2>
+            <h3 v-else-if="bindings.stereotype == 'h3'" v-text="bindings.content" :style="{ 'font-size': bindings.fontSize }"></h3>
+            <h4 v-else-if="bindings.stereotype == 'h4'" v-text="bindings.content" :style="{ 'font-size': bindings.fontSize }"></h4>
+            <h5 v-else-if="bindings.stereotype == 'h5'" v-text="bindings.content" :style="{ 'font-size': bindings.fontSize }"></h5>
+            <h6 v-else-if="bindings.stereotype == 'h6'" v-text="bindings.content" :style="{ 'font-size': bindings.fontSize }"></h6>
+            <div v-else v-text="bindings.content" :style="{ 'font-size': bindings.fontSize }"></div>
         </div>
     </section>
 </template>

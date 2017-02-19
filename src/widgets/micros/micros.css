@@ -1,7 +1,43 @@
 .wg.wg-default-micros > .wg.wg-content {
-  display: inline-block;
-  vertical-align: top;
+  display: table;
   box-sizing: border-box;
   font-size: 1em;
   height: 2em;
+}
+.wg.wg-default-micros > .wg.wg-content > * {
+  display: table-cell;
+  vertical-align: middle;
+}
+.wg.wg-default-micros.wg-default-micros-text > .wg.wg-content > h1 {
+  font-size: 1.8em;
+  margin: 0;
+  font-weight: bold;
+}
+.wg.wg-default-micros.wg-default-micros-text > .wg.wg-content > h2 {
+  font-size: 1.6em;
+  margin: 0;
+  font-weight: bold;
+}
+.wg.wg-default-micros.wg-default-micros-text > .wg.wg-content > h3 {
+  font-size: 1.4em;
+  margin: 0;
+  font-weight: bold;
+}
+.wg.wg-default-micros.wg-default-micros-text > .wg.wg-content > h4 {
+  font-size: 1.2em;
+  margin: 0;
+  font-weight: bold;
+  font-style: italic;
+}
+.wg.wg-default-micros.wg-default-micros-text > .wg.wg-content > h5 {
+  font-size: 1.0em;
+  margin: 0;
+  font-weight: bold;
+  font-style: italic;
+}
+.wg.wg-default-micros.wg-default-micros-text > .wg.wg-content > h6 {
+  font-size: 0.8em;
+  margin: 0;
+  font-weight: bold;
+  font-style: italic;
 }

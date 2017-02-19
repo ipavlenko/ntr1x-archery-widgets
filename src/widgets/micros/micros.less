@@ -3,11 +3,17 @@
 .wg.wg-default-micros {
 
     >.wg.wg-content {
-        display: inline-block;
-        vertical-align: top;
+        display: table;
+        // display: inline-block;
+        // vertical-align: top;
         box-sizing: border-box;
         font-size: 1em;
         height: 2em;
+
+        >* {
+            display: table-cell;
+            vertical-align: middle;
+        }
     }
 
     &.wg-default-micros-icon {
@@ -37,6 +43,12 @@
     &.wg-default-micros-text {
 
         >.wg.wg-content {
+            >h1 { font-size: 1.8em; margin: 0; font-weight: bold; }
+            >h2 { font-size: 1.6em; margin: 0; font-weight: bold; }
+            >h3 { font-size: 1.4em; margin: 0; font-weight: bold; }
+            >h4 { font-size: 1.2em; margin: 0; font-weight: bold; font-style: italic; }
+            >h5 { font-size: 1.0em; margin: 0; font-weight: bold; font-style: italic; }
+            >h6 { font-size: 0.8em; margin: 0; font-weight: bold; font-style: italic; }
             // line-height: 1.2em;
             // font-size: 1em;
             // padding: 0.4em 0.6em;
