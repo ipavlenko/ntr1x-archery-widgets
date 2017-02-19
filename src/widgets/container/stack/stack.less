@@ -190,11 +190,14 @@
 
                 >.wg.wg-sortable-container {
 
-                    display: table-row;
+                    display: flex;
+                    flex-wrap: wrap;
+                    // justify-content: flex-end;
 
                     >.wg.wg-sortable-item {
 
-                        display: table-cell;
+                        // display: table-cell;
+                        flex: 0 0 1px;
                         vertical-align: top;
 
                         >.wg.wg-item-content {

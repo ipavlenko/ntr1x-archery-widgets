@@ -1,0 +1,12 @@
+.wg.wg-default-micros > .wg.wg-content {
+  min-width: 2em;
+  height: 2em;
+  display: inline-block;
+  box-sizing: border-box;
+  font-size: 1em;
+}
+.wg.wg-default-micros.wg-default-micros-button > .wg.wg-content {
+  line-height: 1.6em;
+  font-size: 1em;
+  padding: 0.2em 0.6em;
+}

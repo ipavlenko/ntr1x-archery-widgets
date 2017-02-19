@@ -1,0 +1,31 @@
+<template id="default-micros-text">
+    <section class="wg wg-default-micros wg-default-micros-text" :id="bindings.id"
+        :style="{
+            'margin': bindings.outer.margin,
+            'padding': bindings.outer.padding,
+            'border': bindings.outer.border,
+            'border-radius': bindings.outer.borderRadius,
+            'background': bindings.outer.background,
+        }"
+    >
+        <div class="wg wg-content"
+            :style="{
+                'min-height': bindings.minHeight,
+                'min-width': bindings.minWidth,
+                'height': bindings.height,
+                'width': bindings.width,
+                'margin': bindings.inner.margin,
+                'padding': bindings.inner.padding,
+                'border': bindings.inner.border,
+                'border-radius': bindings.inner.borderRadius,
+                'background': bindings.inner.background,
+                'text-align': bindings.align,
+                'line-height': bindings.lineHeight,
+                'color': bindings.color
+            }">
+            <div v-text="bindings.content" :style="{
+                'font-size': bindings.fontSize,
+            }"></div>
+        </div>
+    </section>
+</template>

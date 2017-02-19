@@ -4,6 +4,7 @@
         'background': bindings.outer.background,
         'margin': bindings.outer.margin,
         'padding': bindings.outer.padding,
+        'font-size': bindings.fontSize,
     }">
         <div class="wg wg-content wg-sortable-content" :style="{
             'height': bindings.height,
@@ -17,8 +18,17 @@
                 'border-spacing': bindings.spacing,
                 'border-collapse': bindings.collapse,
             }">
-                <div class="wg wg-sortable-container wg-sortable-horizontal" :class="{ 'wg-sortable-editable': editable }">
-                    <div class="wg wg-sortable-item" :class="{ 'wg-sortable-editable': editable }" v-for="child in children">
+                <div class="wg wg-sortable-container wg-sortable-horizontal"
+                    :class="{
+                        'wg-sortable-editable': editable
+                    }"
+                    :style="{
+                        'justify-content': bindings.justify
+                    }"
+                >
+                    <div class="wg wg-sortable-item" :class="{ 'wg-sortable-editable': editable }" v-for="child in children"
+                        :style="{ 'flex': (child.name == 'default-util/default-util-group/default-stub') ? '1 1 auto' : 'none' }"
+                    >
                         <div class="wg wg-item-content" :key="child.uuid">
                             <div class="wg wg-inner">
                                 <shell-widget

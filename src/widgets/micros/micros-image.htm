@@ -1,0 +1,23 @@
+<template id="default-micros-image">
+    <section class="wg wg-default-micros wg-default-micros-image" :id="bindings.id"
+        :style="{
+            'margin': bindings.outer.margin,
+            'padding': bindings.outer.padding,
+            'border': bindings.outer.border,
+            'background': bindings.outer.background,
+            'font-size': bindings.fontSize,
+        }"
+    >
+        <img class="wg wg-content"
+            :src="bindings.src"
+            :style="{
+                'height': bindings.height,
+                'width': bindings.width,
+                'margin': bindings.inner.margin,
+                'padding': bindings.inner.padding,
+                'border': bindings.inner.border,
+                'background': bindings.inner.background,
+            }">
+        </img>
+    </section>
+</template>

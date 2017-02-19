@@ -1,0 +1,25 @@
+<template id="default-micros-button">
+    <section class="wg wg-default-micros wg-default-micros-button" :id="bindings.id"
+        :style="{
+            'margin': bindings.outer.margin,
+            'padding': bindings.outer.padding,
+            'border': bindings.outer.border,
+            'background': bindings.outer.background,
+            'font-size': bindings.fontSize,
+        }"
+    >
+        <button :type="bindings.type" class="wg wg-content btn"
+            @click="$page.dispatch(bindings.click, $context)"
+            :class="bindings.cssClass"
+            :style="{
+                'height': bindings.height,
+                'width': bindings.width,
+                'margin': bindings.inner.margin,
+                'padding': bindings.inner.padding,
+                'border': bindings.inner.border,
+                'background': bindings.inner.background,
+            }"
+            v-text="bindings.title"
+        ></button>
+    </section>
+</template>
