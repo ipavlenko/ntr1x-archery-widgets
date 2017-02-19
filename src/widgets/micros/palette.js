@@ -70,21 +70,31 @@
         tag: 'default-micros-button',
         mixins: [ Widgets.WidgetMixin, Widgets.BoxMixin, Widgets.SizeMixin, Widgets.FontMixin, Widgets.EventsMixin ],
         props: [
-            { name: 'title', title: 'Title', type: 'string', tab: 'content' },
-            { name: 'type', title: 'Type', type: 'string', tab: 'data' },
-            { name: 'cssClass', title: 'CSS Class', type: 'string', tab: 'appearance' },
+            { name: 'content', title: 'Content', type: 'string', tab: 'content' },
         ],
     }));
 
-    Widgets.MicrosButtonWidgetFactory = function(title) {
+    Widgets.MicrosButtonWidgetFactory = ({ content, cssClass, color, background, borderRadius, lineHeight, height, margin, padding, fontSize, align, minWidth }) =>
 
-        var w = Widgets.build(Widgets.MicrosButtonWidget, {
-            type: { value: 'button' },
-            title: { value: title },
-        });
-
-        return w;
-    }
+        Widgets.build(Widgets.MicrosButtonWidget, {
+            cssClass: { value: cssClass },
+            content: { value: content },
+            color: { value: color },
+            height: { value: height },
+            fontSize: { value: fontSize },
+            lineHeight: { value: lineHeight },
+            minWidth: { value: minWidth },
+            align: { value: align },
+            inner: {
+                value: {
+                    margin: { value: margin },
+                    padding: { value: padding },
+                    background: { value: background },
+                    borderRadius: { value: borderRadius },
+                }
+            }
+        })
+    ;
 
     Widgets.MicrosIconWidget =
     Widgets.Widget(Widgets.MicrosMainGroup, Widgets.create({
@@ -149,7 +159,7 @@
     Widgets.Item(Widgets.MicrosMainGroup, {
         name: 'default-micros-badge',
         thumbnail: '/assets/vendor/ntr1x-archery-widgets/src/widgets/micros/micros-badge.png',
-        widget: Widgets.MicrosTextWidgetFactory({ content: '23 OCT', color: '#FFFFFF', background: '#2196F3', margin: '0.2em 0em', height: '1.6em', lineHeight: '1.6em', padding: '0em 0.4em', borderRadius: '0.25em', fontSize: '0.8em' }),
+        widget: Widgets.MicrosTextWidgetFactory({ content: '23 OCT', color: '#FFFFFF', background: '#2196F3', margin: '0.2em 0em', height: '1.6em', lineHeight: '1.5em', padding: '0em 0.4em', borderRadius: '0.25em', fontSize: '0.8em' }),
     });
 
     Widgets.Item(Widgets.MicrosMainGroup, {
@@ -167,7 +177,7 @@
     Widgets.Item(Widgets.MicrosMainGroup, {
         name: 'default-micros-button',
         thumbnail: '/assets/vendor/ntr1x-archery-widgets/src/widgets/micros/micros-button.png',
-        widget: Widgets.MicrosButtonWidgetFactory('Button'),
+        widget: Widgets.MicrosButtonWidgetFactory({ content: 'Button', cssClass: 'btn btn-primary', margin: '0.2em 0em', height: '1.6em', lineHeight: '1.5em', padding: '0em 0.4em', borderRadius: '0.25em', fontSize: '0.8em' }),
     });
 
     Widgets.Item(Widgets.MicrosMainGroup, {

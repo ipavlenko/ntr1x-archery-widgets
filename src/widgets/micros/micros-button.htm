@@ -4,22 +4,30 @@
             'margin': bindings.outer.margin,
             'padding': bindings.outer.padding,
             'border': bindings.outer.border,
+            'border-radius': bindings.outer.borderRadius,
             'background': bindings.outer.background,
-            'font-size': bindings.fontSize,
         }"
     >
-        <button :type="bindings.type" class="wg wg-content btn"
+        <button class="wg wg-content"
             @click="$page.dispatch(bindings.click, $context)"
             :class="bindings.cssClass"
             :style="{
+                'min-height': bindings.minHeight,
+                'min-width': bindings.minWidth,
                 'height': bindings.height,
                 'width': bindings.width,
                 'margin': bindings.inner.margin,
                 'padding': bindings.inner.padding,
                 'border': bindings.inner.border,
+                'border-radius': bindings.inner.borderRadius,
                 'background': bindings.inner.background,
-            }"
-            v-text="bindings.title"
-        ></button>
+                'text-align': bindings.align,
+                'line-height': bindings.lineHeight,
+                'color': bindings.color
+            }">
+            <div v-text="bindings.content" :style="{
+                'font-size': bindings.fontSize,
+            }"></div>
+        </button>
     </section>
 </template>
