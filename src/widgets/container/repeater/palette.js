@@ -21,12 +21,6 @@
         ],
     }));
 
-    Widgets.Item(Widgets.RepeaterGroup, {
-        name: 'repeater-horizontal',
-        thumbnail: '/assets/vendor/ntr1x-archery-widgets/src/widgets/container/repeater/repeater-horizontal.png',
-        widget: Widgets.build(Widgets.RepeaterHorizontalWidget),
-    });
-
     Widgets.RepeaterVerticalWidget =
     Widgets.Widget(Widgets.RepeaterGroup, Widgets.create({
         name: 'default-repeater-vertical',
@@ -47,9 +41,27 @@
     }));
 
     Widgets.Item(Widgets.RepeaterGroup, {
+        name: 'repeater-horizontal',
+        thumbnail: '/assets/vendor/ntr1x-archery-widgets/src/widgets/container/repeater/repeater-center.png',
+        widget: Widgets.build(Widgets.RepeaterHorizontalWidget),
+    });
+
+    Widgets.Item(Widgets.RepeaterGroup, {
         name: 'repeater-vertical',
         thumbnail: '/assets/vendor/ntr1x-archery-widgets/src/widgets/container/repeater/repeater-vertical.png',
         widget: Widgets.build(Widgets.RepeaterVerticalWidget),
+    });
+
+    Widgets.Item(Widgets.RepeaterGroup, {
+        name: 'repeater-horizontal-left',
+        thumbnail: '/assets/vendor/ntr1x-archery-widgets/src/widgets/container/repeater/repeater-left.png',
+        widget: Widgets.build(Widgets.RepeaterHorizontalWidget),
+    });
+
+    Widgets.Item(Widgets.RepeaterGroup, {
+        name: 'repeater-horizontal-right',
+        thumbnail: '/assets/vendor/ntr1x-archery-widgets/src/widgets/container/repeater/repeater-right.png',
+        widget: Widgets.build(Widgets.RepeaterHorizontalWidget),
     });
 
 })(jQuery, Vue, Core, Widgets);

@@ -2,63 +2,6 @@
   display: table;
   width: 100%;
 }
-.wg.wg-default-repeater.wg-default-repeater-canvas {
-  position: relative;
-  overflow: visible;
-  margin: auto;
-}
-.wg.wg-default-repeater.wg-default-repeater-canvas > .wg.wg-sortable-content {
-  position: relative;
-  overflow: visible;
-}
-.wg.wg-default-repeater.wg-default-repeater-canvas > .wg.wg-sortable-content > .wg.wg-sortable-inner {
-  position: relative;
-  overflow: visible;
-}
-.wg.wg-default-repeater.wg-default-repeater-canvas > .wg.wg-sortable-content > .wg.wg-sortable-inner > .wg.wg-sortable-container {
-  position: relative;
-  overflow: visible;
-}
-.wg.wg-default-repeater.wg-default-repeater-canvas > .wg.wg-sortable-content > .wg.wg-sortable-inner > .wg.wg-sortable-container > .wg.wg-sortable-item {
-  position: relative;
-  overflow: visible;
-}
-.wg.wg-default-repeater.wg-default-repeater-canvas > .wg.wg-sortable-content > .wg.wg-sortable-inner > .wg.wg-sortable-container > .wg.wg-sortable-item > .wg.wg-item-content {
-  position: relative;
-  overflow: visible;
-}
-.wg.wg-default-repeater.wg-default-repeater-canvas > .wg.wg-sortable-content > .wg.wg-sortable-inner > .wg.wg-sortable-container > .wg.wg-sortable-item > .wg.wg-item-content > .wg.wg-inner {
-  position: relative;
-}
-.wg.wg-default-repeater.wg-default-repeater-canvas > .wg.wg-sortable-content > .wg.wg-sortable-inner > .wg.wg-sortable-container > .wg.wg-sortable-item.dragged {
-  position: absolute;
-  display: table;
-  opacity: 0;
-  z-index: 2000;
-}
-.wg.wg-default-repeater.wg-default-repeater-canvas > .wg.wg-sortable-content > .wg.wg-sortable-inner > .wg.wg-sortable-container > .wg.wg-sortable-placeholder {
-  position: relative;
-  overflow: visible;
-}
-.wg.wg-default-repeater.wg-default-repeater-canvas > .wg.wg-sortable-content > .wg.wg-sortable-inner > .wg.wg-sortable-container > .wg.wg-sortable-placeholder > .wg.wg-placeholder-container {
-  position: relative;
-  overflow: visible;
-}
-.wg.wg-default-repeater.wg-default-repeater-canvas > .wg.wg-sortable-content > .wg.wg-sortable-inner > .wg.wg-sortable-container > .wg.wg-sortable-placeholder > .wg.wg-placeholder-container > .wg.wg-placeholder-inner {
-  position: relative;
-  overflow: visible;
-}
-.wg.wg-default-repeater.wg-default-repeater-canvas > .wg.wg-sortable-content > .wg.wg-sortable-inner > .wg.wg-sortable-container > .wg.wg-sortable-placeholder > .wg.wg-placeholder-container > .wg.wg-placeholder-inner:before {
-  content: "";
-  position: absolute;
-  width: 0;
-  height: 0;
-  border: 5px solid transparent;
-  border-left-color: red;
-  left: -5px;
-  margin-top: -5px;
-  border-right: none;
-}
 .wg.wg-default-repeater.wg-default-repeater-vertical > .wg.wg-sortable-content {
   position: relative;
   overflow: visible;
@@ -78,6 +21,13 @@
 .wg.wg-default-repeater.wg-default-repeater-vertical > .wg.wg-sortable-content > .wg.wg-sortable-inner > .wg.wg-sortable-container > .wg.wg-sortable-item > .wg.wg-item-content {
   position: relative;
   overflow: visible;
+}
+.wg.wg-default-repeater.wg-default-repeater-vertical > .wg.wg-sortable-content > .wg.wg-sortable-inner > .wg.wg-sortable-container > .wg.wg-sortable-item > .wg.wg-item-content.wg-disabled {
+  -webkit-filter: grayscale(100%);
+  -mox-filter: grayscale(100%);
+  -ms-filter: grayscale(100%);
+  filter: grayscale(100%);
+  opacity: 0.7;
 }
 .wg.wg-default-repeater.wg-default-repeater-vertical > .wg.wg-sortable-content > .wg.wg-sortable-inner > .wg.wg-sortable-container > .wg.wg-sortable-item > .wg.wg-item-content > .wg.wg-inner {
   position: relative;
@@ -129,6 +79,13 @@
 .wg.wg-default-repeater.wg-default-repeater-horizontal > .wg.wg-sortable-content > .wg.wg-sortable-inner > .wg.wg-sortable-container > .wg.wg-sortable-item > .wg.wg-item-content {
   position: relative;
   overflow: visible;
+}
+.wg.wg-default-repeater.wg-default-repeater-horizontal > .wg.wg-sortable-content > .wg.wg-sortable-inner > .wg.wg-sortable-container > .wg.wg-sortable-item > .wg.wg-item-content.wg-disabled {
+  -webkit-filter: grayscale(100%);
+  -mox-filter: grayscale(100%);
+  -ms-filter: grayscale(100%);
+  filter: grayscale(100%);
+  opacity: 0.7;
 }
 .wg.wg-default-repeater.wg-default-repeater-horizontal > .wg.wg-sortable-content > .wg.wg-sortable-inner > .wg.wg-sortable-container > .wg.wg-sortable-item > .wg.wg-item-content > .wg.wg-inner {
   position: relative;

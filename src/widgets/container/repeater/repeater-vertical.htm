@@ -35,11 +35,11 @@
                             </div>
                         </default-repeater-item>
                     </template>
-                    <template v-if="!(bindings.collection && bindings.collection.length)">
+                    <template v-if="!(bindings.collection && bindings.collection.length) && $route.meta.private">
                         <default-repeater-item class="wg wg-sortable-item" :class="{ 'wg-sortable-editable': editable }"
                             v-for="(child, i) in children"
                         >
-                            <div class="wg wg-item-content" :key="child.uuid">
+                            <div class="wg wg-item-content wg-disabled" :key="child.uuid">
                                 <div class="wg wg-inner">
                                     <shell-widget
                                         :stack="stack"

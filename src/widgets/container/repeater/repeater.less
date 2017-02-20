@@ -5,94 +5,6 @@
     display: table;
     width: 100%;
 
-    &.wg-default-repeater-canvas {
-
-        position: relative;
-        overflow: visible;
-        margin: auto;
-
-        >.wg.wg-sortable-content {
-
-            position: relative;
-            overflow: visible;
-
-            >.wg.wg-sortable-inner {
-
-                position: relative;
-                overflow: visible;
-
-                >.wg.wg-sortable-container {
-
-                    // display: table;
-                    // width: 100%;
-                    position: relative;
-                    overflow: visible;
-
-                    >.wg.wg-sortable-item {
-
-                        // display: table-row;
-                        position: relative;
-                        overflow: visible;
-
-                        >.wg.wg-item-content {
-
-                            // display: table-cell;
-                            // vertical-align: top;
-                            position: relative;
-                            overflow: visible;
-
-                            >.wg.wg-inner {
-                                position: relative;
-                            }
-                        }
-
-                        &.dragged {
-                            position: absolute;
-                            display: table;
-                            // opacity: 0.5;
-                            opacity: 0;
-                            z-index: 2000;
-                            // width: 100%;
-                        }
-                    }
-
-                    >.wg.wg-sortable-placeholder {
-
-                        // display: table-row;
-                        position: relative;
-                        overflow: visible;
-
-                        >.wg.wg-placeholder-container {
-
-                            // display: table-cell;
-                            position: relative;
-                            overflow: visible;
-
-                            >.wg.wg-placeholder-inner {
-
-                                position: relative;
-                                overflow: visible;
-
-                                &:before {
-
-                                    content: "";
-                                    position: absolute;
-                                    width: 0;
-                                    height: 0;
-                                    border: 5px solid transparent;
-                                    border-left-color: red;
-                                    left: -5px;
-                                    margin-top: -5px;
-                                    border-right: none;
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        }
-    }
-
     &.wg-default-repeater-vertical {
 
         >.wg.wg-sortable-content {
@@ -124,6 +36,14 @@
                             // vertical-align: top;
                             position: relative;
                             overflow: visible;
+
+                            &.wg-disabled {
+                                -webkit-filter: grayscale(100%);
+                                -mox-filter: grayscale(100%);
+                                -ms-filter: grayscale(100%);
+                                filter: grayscale(100%);
+                                opacity: 0.7;
+                            }
 
                             >.wg.wg-inner {
                                 position: relative;
@@ -198,6 +118,14 @@
                         vertical-align: top;
 
                         >.wg.wg-item-content {
+
+                            &.wg-disabled {
+                                -webkit-filter: grayscale(100%);
+                                -mox-filter: grayscale(100%);
+                                -ms-filter: grayscale(100%);
+                                filter: grayscale(100%);
+                                opacity: 0.7;
+                            }
 
                             position: relative;
                             overflow: visible;
