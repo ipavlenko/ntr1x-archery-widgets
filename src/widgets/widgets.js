@@ -5,16 +5,18 @@
 
     T.Data = { name: 'data', title: 'Data' };
     T.Appearance = { name: 'appearance', title: 'Appearance' };
+    T.Layout = { name: 'layout', title: 'Layout' };
     T.Content = { name: 'content', title: 'Content' };
     T.Events = { name: 'events', title: 'Events' };
 
     P.Id = { name: 'id', title: 'ID', type: 'string', tab: 'data', placeholder: 'Unique ID' };
     P.CSSClass = { name: 'cssClass', title: 'CSS Class', type: 'string', tab: 'appearance' };
+    P.Flex = { name: 'flex', title: 'Flex', type: 'string', persistent: true, tab: 'layout' };
 
-    P.Width = { name: 'width', title: 'Width', type: 'string', tab: 'appearance' };
-    P.Height = { name: 'height', title: 'Height', type: 'string', tab: 'appearance' };
-    P.MinWidth = { name: 'minWidth', title: 'Min Width', type: 'string', tab: 'appearance' };
-    P.MinHeight = { name: 'minHeight', title: 'Min Height', type: 'string', tab: 'appearance' };
+    P.Width = { name: 'width', title: 'Width', type: 'string', tab: 'layout' };
+    P.Height = { name: 'height', title: 'Height', type: 'string', tab: 'layout' };
+    P.MinWidth = { name: 'minWidth', title: 'Min Width', type: 'string', tab: 'layout' };
+    P.MinHeight = { name: 'minHeight', title: 'Min Height', type: 'string', tab: 'layout' };
     P.Padding = { name: 'padding', title: 'Padding', type: 'string', tab: 'appearance' };
     P.Margin = { name: 'margin', title: 'Margin', type: 'string', tab: 'appearance' };
     P.Border = { name: 'border', title: 'Border', type: 'string', placeholder: '1px solid #000000', tab: 'appearance' };
@@ -52,12 +54,13 @@
     P.Click = { name: 'click', title: '@Click', type: 'action', tab: 'events' };
 
     Widgets.CanvasMixin = {
-        tabs: [ T.Data, T.Appearance, T.Content, T.Events  ],
+        tabs: [ T.Data, T.Appearance, T.Layout, T.Content, T.Events ],
+        props: [ P.Background ],
     };
 
     Widgets.WidgetMixin = {
-        tabs: [ T.Data, T.Appearance, T.Content, T.Events ],
-        props: [ P.Id, P.CSSClass ],
+        tabs: [ T.Data, T.Appearance, T.Layout, T.Content, T.Events ],
+        props: [ P.Id, P.CSSClass, P.Flex ],
     };
 
     Widgets.BoxMixin = {

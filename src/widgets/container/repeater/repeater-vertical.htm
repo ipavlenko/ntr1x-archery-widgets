@@ -6,7 +6,6 @@
         'padding': bindings.outer.padding,
     }">
         <div class="wg wg-content wg-sortable-content" :style="{
-            'height': bindings.height,
             'width': bindings.width,
             'margin': bindings.inner.margin,
             'padding': bindings.inner.padding,
@@ -17,11 +16,14 @@
                 'border-spacing': bindings.spacing,
                 'border-collapse': bindings.collapse,
             }">
-                <div class="wg wg-sortable-container" :class="{ 'wg-sortable-editable': editable }">
+                <div class="wg wg-sortable-container"
+                    :class="{ 'wg-sortable-editable': editable }"
+                    :style="{ 'height': bindings.height }"
+                >
                     <template v-for="(item, j) in bindings.collection">
-                        <default-repeater-item :item="item" class="wg wg-sortable-item" :class="{ 'wg-sortable-editable': editable }"
-                            :key="item"
-                            v-for="(child, i) in children"
+                        <default-repeater-item :item="item" :key="item" class="wg wg-sortable-item" v-for="(child, i) in children"
+                            :class="{ 'wg-sortable-editable': editable }"
+                            :style="{ 'flex': ((child.params.flex && child.params.flex.value) ? child.params.flex.value : '0 0 auto') }"
                         >
                             <div class="wg wg-item-content" :key="child.uuid">
                                 <div class="wg wg-inner">
@@ -36,8 +38,9 @@
                         </default-repeater-item>
                     </template>
                     <template v-if="!(bindings.collection && bindings.collection.length) && $route.meta.private">
-                        <default-repeater-item class="wg wg-sortable-item" :class="{ 'wg-sortable-editable': editable }"
-                            v-for="(child, i) in children"
+                        <default-repeater-item class="wg wg-sortable-item" v-for="(child, i) in children"
+                            :class="{ 'wg-sortable-editable': editable }"
+                            :style="{ 'flex': ((child.params.flex && child.params.flex.value) ? child.params.flex.value : '0 0 auto') }"
                         >
                             <div class="wg wg-item-content wg-disabled" :key="child.uuid">
                                 <div class="wg wg-inner">

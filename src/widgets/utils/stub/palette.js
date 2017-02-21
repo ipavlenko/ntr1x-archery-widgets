@@ -2,12 +2,12 @@
 
     Widgets.StubWidget =
     Widgets.Widget(Widgets.UtilGroup, Widgets.create({
-        _action: 'ignore',
         name: 'default-stub',
         tag: 'default-stub',
         mixins: [ Widgets.BoxMixin ],
         props: [
-            { name: 'content', type: 'rich' }
+            { name: 'content', type: 'rich' },
+            { name: 'flex', type: 'string' }
         ],
     }));
 
@@ -15,6 +15,7 @@
 
         return Widgets.build(Widgets.StubWidget, {
             content: { value: content },
+            flex: { value: '1 1 auto' },
         });
     }
 

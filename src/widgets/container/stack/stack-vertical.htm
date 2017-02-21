@@ -6,7 +6,6 @@
         'padding': bindings.outer.padding,
     }">
         <div class="wg wg-content wg-sortable-content" :style="{
-            'height': bindings.height,
             'width': bindings.width,
             'margin': bindings.inner.margin,
             'padding': bindings.inner.padding,
@@ -17,8 +16,18 @@
                 'border-spacing': bindings.spacing,
                 'border-collapse': bindings.collapse,
             }">
-                <div class="wg wg-sortable-container wg-sortable-vertical" :class="{ 'wg-sortable-editable': editable }">
-                    <div class="wg wg-sortable-item" :class="{ 'wg-sortable-editable': editable }" v-for="child in children">
+                <div class="wg wg-sortable-container wg-sortable-vertical"
+                    :class="{ 'wg-sortable-editable': editable }"
+                    :style="{
+                        'height': bindings.height,
+                        'justify-content': bindings.justify,
+                        'align-items': bindings.alignItems,
+                    }"
+                >
+                    <div class="wg wg-sortable-item" v-for="child in children"
+                        :class="{ 'wg-sortable-editable': editable }"
+                        :style="{ 'flex': ((child.params.flex && child.params.flex.value) ? child.params.flex.value : '0 0 auto') }"
+                    >
                         <div class="wg wg-item-content" :key="child.uuid">
                             <div class="wg wg-inner">
                                 <shell-widget

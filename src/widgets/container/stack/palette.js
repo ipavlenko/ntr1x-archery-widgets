@@ -9,13 +9,27 @@
         props: [
             { name: 'load', title: '@Load', type: 'action', tab: 'events' },
             { name: 'fontSize', title: 'Font Size', type: 'string', tab: 'appearance' },
+            { name: 'justify', title: 'Justify', type: 'select', tab: 'layout', options: [
+                { value: 'flex-start', text: 'Start' },
+                { value: 'flex-end', text: 'End' },
+                { value: 'center', text: 'Center' },
+            ] },
+            { name: 'alignItems', title: 'Align Items', type: 'select', tab: 'layout', options: [
+                { value: 'flex-start', text: 'Start' },
+                { value: 'flex-end', text: 'End' },
+                { value: 'center', text: 'Center' },
+                { value: 'stretch', text: 'Stretch' },
+            ] },
         ],
     }));
 
     Widgets.Item(Widgets.StackGroup, {
         hidden: true,
         name: 'stack-canvas',
-        widget: Widgets.build(Widgets.StackCanvasWidget),
+        widget: Widgets.build(Widgets.StackCanvasWidget, {
+            justify: { value: 'flex-start' },
+            alignItems: { value: 'stretch' },
+        }),
     });
 
     Widgets.StackHorizontalWidget =
@@ -26,10 +40,16 @@
         widgets: [],
         props: [
             { name: 'fontSize', title: 'Font Size', type: 'string', tab: 'appearance' },
-            { name: 'justify', title: 'Justify', type: 'select', tab: 'appearance', options: [
-                { value: 'flex-start', text: 'Left' },
-                { value: 'flex-end', text: 'Right' },
+            { name: 'justify', title: 'Justify', type: 'select', tab: 'layout', options: [
+                { value: 'flex-start', text: 'Start' },
+                { value: 'flex-end', text: 'End' },
                 { value: 'center', text: 'Center' },
+            ] },
+            { name: 'alignItems', title: 'Align Items', type: 'select', tab: 'layout', options: [
+                { value: 'flex-start', text: 'Start' },
+                { value: 'flex-end', text: 'End' },
+                { value: 'center', text: 'Center' },
+                { value: 'stretch', text: 'Stretch' },
             ] },
         ],
     }));
@@ -38,6 +58,7 @@
 
         return Widgets.build(Widgets.StackHorizontalWidget, {
             justify: { value: justify },
+            alignItems: { value: 'stretch' },
         });
     }
 
@@ -48,8 +69,18 @@
         mixins: [ Widgets.WidgetMixin, Widgets.BoxMixin, Widgets.SizeMixin ],
         widgets: [],
         props: [
-            { name: 'spacing', title: 'Border Spacing', type: 'string', tab: 'appearance' },
-            { name: 'collapse', title: 'Border Collapse', type: 'string', tab: 'appearance' },
+            { name: 'fontSize', title: 'Font Size', type: 'string', tab: 'appearance' },
+            { name: 'justify', title: 'Justify', type: 'select', tab: 'layout', options: [
+                { value: 'flex-start', text: 'Start' },
+                { value: 'flex-end', text: 'End' },
+                { value: 'center', text: 'Center' },
+            ] },
+            { name: 'alignItems', title: 'Align Items', type: 'select', tab: 'layout', options: [
+                { value: 'flex-start', text: 'Start' },
+                { value: 'flex-end', text: 'End' },
+                { value: 'center', text: 'Center' },
+                { value: 'stretch', text: 'Stretch' },
+            ] },
         ],
     }));
 

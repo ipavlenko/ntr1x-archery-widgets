@@ -13,8 +13,13 @@
 .wg.wg-default-repeater.wg-default-repeater-vertical > .wg.wg-sortable-content > .wg.wg-sortable-inner > .wg.wg-sortable-container {
   position: relative;
   overflow: visible;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
 }
 .wg.wg-default-repeater.wg-default-repeater-vertical > .wg.wg-sortable-content > .wg.wg-sortable-inner > .wg.wg-sortable-container > .wg.wg-sortable-item {
+  flex: 0 0 1px;
+  vertical-align: top;
   position: relative;
   overflow: visible;
 }
@@ -70,10 +75,11 @@
   width: 100%;
 }
 .wg.wg-default-repeater.wg-default-repeater-horizontal > .wg.wg-sortable-content > .wg.wg-sortable-inner > .wg.wg-sortable-container {
-  display: table-row;
+  display: flex;
+  flex-wrap: wrap;
 }
 .wg.wg-default-repeater.wg-default-repeater-horizontal > .wg.wg-sortable-content > .wg.wg-sortable-inner > .wg.wg-sortable-container > .wg.wg-sortable-item {
-  display: table-cell;
+  flex: 0 0 1px;
   vertical-align: top;
 }
 .wg.wg-default-repeater.wg-default-repeater-horizontal > .wg.wg-sortable-content > .wg.wg-sortable-inner > .wg.wg-sortable-container > .wg.wg-sortable-item > .wg.wg-item-content {

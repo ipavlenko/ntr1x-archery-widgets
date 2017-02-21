@@ -2,30 +2,40 @@
 
 .wg.wg-default-stub {
 
-    position: relative;
-    width: 100%;
+    display: flex;
+    flex: 1 1 auto;
+    flex-direction: column;
+    align-items: stretch;
     overflow: hidden;
     box-sizing: border-box;
 
     >.wg.wg-content {
 
+        display: flex;
+        flex: 1 1 auto;
+        flex-direction: column;
+        align-items: stretch;
         box-sizing: border-box;
         margin: 1px 1px;
         border: 2px dashed rgba(52, 73, 94, 0.5);
         background: rgba(52, 73, 94, 0.3);
 
         >.wg.wg-table {
-            display: table;
-            width: 100%;
+
+            display: flex;
+            flex: 1 1 auto;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 1em;
+            padding: 1em;
 
             >.wg.wg-cell {
-
-                display: table-cell;
-                vertical-align: middle;
+                flex: 0 0 auto;
                 text-align: center;
                 color: rgba(52, 73, 94, 0.7);
                 font-weight: bold;
-                height: 50px;
+                font-size: 0.8em;
             }
         }
     }

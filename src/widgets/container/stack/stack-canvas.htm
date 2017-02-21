@@ -1,11 +1,22 @@
 <template id="default-stack-canvas">
     <section class="wg wg-default-stack wg-default-stack-canvas wg-sortable" :style="{
-        width: bindings.width || '1200px'
+        'background': bindings.background,
+        'width': bindings.width,
+        'height': bindings.height
     }">
         <div class="wg wg-content wg-sortable-content">
             <div class="wg wg-sortable-inner">
-                <div class="wg wg-sortable-container wg-sortable-vertical" :class="{ 'wg-sortable-editable': editable }">
-                    <div class="wg wg-sortable-item" :class="{ 'wg-sortable-editable': editable }" v-for="child in children">
+                <div class="wg wg-sortable-container wg-sortable-vertical"
+                    :class="{ 'wg-sortable-editable': editable }"
+                    :style="{
+                       'justify-content': bindings.justify,
+                       'align-items': bindings.alignItems,
+                   }"
+                >
+                    <div class="wg wg-sortable-item" v-for="child in children"
+                        :class="{ 'wg-sortable-editable': editable }"
+                        :style="{ 'flex': ((child.params.flex && child.params.flex.value) ? child.params.flex.value : '0 0 auto') }"
+                    >
                         <div class="wg wg-item-content" :key="child.uuid">
                             <div class="wg wg-inner">
                                 <shell-widget

@@ -23,11 +23,13 @@
                         'wg-sortable-editable': editable
                     }"
                     :style="{
-                        'justify-content': bindings.justify
+                        'justify-content': bindings.justify,
+                        'align-items': bindings.alignItems,
                     }"
                 >
-                    <div class="wg wg-sortable-item" :class="{ 'wg-sortable-editable': editable }" v-for="child in children"
-                        :style="{ 'flex': (child.name == 'default-util/default-util-group/default-stub') ? '1 1 auto' : 'none' }"
+                    <div class="wg wg-sortable-item" v-for="child in children"
+                        :class="{ 'wg-sortable-editable': editable }"
+                        :style="{ 'flex': ((child.params.flex && child.params.flex.value) ? child.params.flex.value : '0 0 auto') }"
                     >
                         <div class="wg wg-item-content" :key="child.uuid">
                             <div class="wg wg-inner">

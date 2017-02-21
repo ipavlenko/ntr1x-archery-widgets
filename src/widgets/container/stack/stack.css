@@ -1,34 +1,51 @@
 .wg.wg-default-stack {
-  display: table;
-  width: 100%;
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  align-items: stretch;
 }
 .wg.wg-default-stack.wg-default-stack-canvas {
-  position: relative;
-  overflow: visible;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  flex: none;
   margin: auto;
 }
 .wg.wg-default-stack.wg-default-stack-canvas > .wg.wg-sortable-content {
-  position: relative;
-  overflow: visible;
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  align-items: stretch;
 }
 .wg.wg-default-stack.wg-default-stack-canvas > .wg.wg-sortable-content > .wg.wg-sortable-inner {
-  position: relative;
-  overflow: visible;
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  align-items: stretch;
 }
 .wg.wg-default-stack.wg-default-stack-canvas > .wg.wg-sortable-content > .wg.wg-sortable-inner > .wg.wg-sortable-container {
-  position: relative;
-  overflow: visible;
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  align-items: stretch;
 }
 .wg.wg-default-stack.wg-default-stack-canvas > .wg.wg-sortable-content > .wg.wg-sortable-inner > .wg.wg-sortable-container > .wg.wg-sortable-item {
-  position: relative;
-  overflow: visible;
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  align-items: stretch;
 }
 .wg.wg-default-stack.wg-default-stack-canvas > .wg.wg-sortable-content > .wg.wg-sortable-inner > .wg.wg-sortable-container > .wg.wg-sortable-item > .wg.wg-item-content {
-  position: relative;
-  overflow: visible;
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  align-items: stretch;
 }
 .wg.wg-default-stack.wg-default-stack-canvas > .wg.wg-sortable-content > .wg.wg-sortable-inner > .wg.wg-sortable-container > .wg.wg-sortable-item > .wg.wg-item-content > .wg.wg-inner {
-  position: relative;
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  align-items: stretch;
 }
 .wg.wg-default-stack.wg-default-stack-canvas > .wg.wg-sortable-content > .wg.wg-sortable-inner > .wg.wg-sortable-container > .wg.wg-sortable-item.dragged {
   position: absolute;
@@ -60,27 +77,40 @@
   border-right: none;
 }
 .wg.wg-default-stack.wg-default-stack-vertical > .wg.wg-sortable-content {
-  position: relative;
-  overflow: visible;
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  align-items: stretch;
 }
 .wg.wg-default-stack.wg-default-stack-vertical > .wg.wg-sortable-content > .wg.wg-sortable-inner {
-  position: relative;
-  overflow: visible;
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  align-items: stretch;
 }
 .wg.wg-default-stack.wg-default-stack-vertical > .wg.wg-sortable-content > .wg.wg-sortable-inner > .wg.wg-sortable-container {
-  position: relative;
-  overflow: visible;
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  align-items: stretch;
 }
 .wg.wg-default-stack.wg-default-stack-vertical > .wg.wg-sortable-content > .wg.wg-sortable-inner > .wg.wg-sortable-container > .wg.wg-sortable-item {
-  position: relative;
-  overflow: visible;
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  align-items: stretch;
 }
 .wg.wg-default-stack.wg-default-stack-vertical > .wg.wg-sortable-content > .wg.wg-sortable-inner > .wg.wg-sortable-container > .wg.wg-sortable-item > .wg.wg-item-content {
-  position: relative;
-  overflow: visible;
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  align-items: stretch;
 }
 .wg.wg-default-stack.wg-default-stack-vertical > .wg.wg-sortable-content > .wg.wg-sortable-inner > .wg.wg-sortable-container > .wg.wg-sortable-item > .wg.wg-item-content > .wg.wg-inner {
-  position: relative;
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  align-items: stretch;
 }
 .wg.wg-default-stack.wg-default-stack-vertical > .wg.wg-sortable-content > .wg.wg-sortable-inner > .wg.wg-sortable-container > .wg.wg-sortable-item.dragged {
   position: absolute;
@@ -112,28 +142,40 @@
   border-right: none;
 }
 .wg.wg-default-stack.wg-default-stack-horizontal > .wg.wg-sortable-content {
-  position: relative;
-  overflow: visible;
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  align-items: stretch;
 }
 .wg.wg-default-stack.wg-default-stack-horizontal > .wg.wg-sortable-content > .wg.wg-sortable-inner {
-  display: table;
-  width: 100%;
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  align-items: stretch;
 }
 .wg.wg-default-stack.wg-default-stack-horizontal > .wg.wg-sortable-content > .wg.wg-sortable-inner > .wg.wg-sortable-container {
   display: flex;
-  flex-wrap: wrap;
+  flex: 1 1 auto;
+  flex-direction: row;
+  align-items: stretch;
 }
 .wg.wg-default-stack.wg-default-stack-horizontal > .wg.wg-sortable-content > .wg.wg-sortable-inner > .wg.wg-sortable-container > .wg.wg-sortable-item {
-  flex: 0 0 1px;
-  vertical-align: top;
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  align-items: stretch;
 }
 .wg.wg-default-stack.wg-default-stack-horizontal > .wg.wg-sortable-content > .wg.wg-sortable-inner > .wg.wg-sortable-container > .wg.wg-sortable-item > .wg.wg-item-content {
-  position: relative;
-  overflow: visible;
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  align-items: stretch;
 }
 .wg.wg-default-stack.wg-default-stack-horizontal > .wg.wg-sortable-content > .wg.wg-sortable-inner > .wg.wg-sortable-container > .wg.wg-sortable-item > .wg.wg-item-content > .wg.wg-inner {
-  position: relative;
-  overflow: visible;
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  align-items: stretch;
 }
 .wg.wg-default-stack.wg-default-stack-horizontal > .wg.wg-sortable-content > .wg.wg-sortable-inner > .wg.wg-sortable-container > .wg.wg-sortable-item.dragged {
   position: absolute;

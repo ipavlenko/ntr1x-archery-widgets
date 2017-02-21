@@ -24,7 +24,14 @@
                     position: relative;
                     overflow: visible;
 
+                    display: flex;
+                    flex-direction: column;
+                    width: 100%;
+
                     >.wg.wg-sortable-item {
+
+                        flex: 0 0 1px;
+                        vertical-align: top;
 
                         // display: table-row;
                         position: relative;
@@ -110,11 +117,12 @@
 
                 >.wg.wg-sortable-container {
 
-                    display: table-row;
+                    display: flex;
+                    flex-wrap: wrap;
 
                     >.wg.wg-sortable-item {
 
-                        display: table-cell;
+                        flex: 0 0 1px;
                         vertical-align: top;
 
                         >.wg.wg-item-content {
