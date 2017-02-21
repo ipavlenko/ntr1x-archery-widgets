@@ -10,11 +10,13 @@
             { name: 'load', title: '@Load', type: 'action', tab: 'events' },
             { name: 'fontSize', title: 'Font Size', type: 'string', tab: 'appearance' },
             { name: 'justify', title: 'Justify', type: 'select', tab: 'layout', options: [
+                { value: '', text: '' },
                 { value: 'flex-start', text: 'Start' },
                 { value: 'flex-end', text: 'End' },
                 { value: 'center', text: 'Center' },
             ] },
             { name: 'alignItems', title: 'Align Items', type: 'select', tab: 'layout', options: [
+                { value: '', text: '' },
                 { value: 'flex-start', text: 'Start' },
                 { value: 'flex-end', text: 'End' },
                 { value: 'center', text: 'Center' },
@@ -41,11 +43,13 @@
         props: [
             { name: 'fontSize', title: 'Font Size', type: 'string', tab: 'appearance' },
             { name: 'justify', title: 'Justify', type: 'select', tab: 'layout', options: [
+                { value: '', text: '' },
                 { value: 'flex-start', text: 'Start' },
                 { value: 'flex-end', text: 'End' },
                 { value: 'center', text: 'Center' },
             ] },
             { name: 'alignItems', title: 'Align Items', type: 'select', tab: 'layout', options: [
+                { value: '', text: '' },
                 { value: 'flex-start', text: 'Start' },
                 { value: 'flex-end', text: 'End' },
                 { value: 'center', text: 'Center' },
@@ -57,6 +61,7 @@
     Widgets.StackHorizontalWidgetFactory = function(justify) {
 
         return Widgets.build(Widgets.StackHorizontalWidget, {
+            flex: { value: '1 1 auto' },
             justify: { value: justify },
             alignItems: { value: 'stretch' },
         });
@@ -71,11 +76,13 @@
         props: [
             { name: 'fontSize', title: 'Font Size', type: 'string', tab: 'appearance' },
             { name: 'justify', title: 'Justify', type: 'select', tab: 'layout', options: [
+                { value: '', text: '' },
                 { value: 'flex-start', text: 'Start' },
                 { value: 'flex-end', text: 'End' },
                 { value: 'center', text: 'Center' },
             ] },
             { name: 'alignItems', title: 'Align Items', type: 'select', tab: 'layout', options: [
+                { value: '', text: '' },
                 { value: 'flex-start', text: 'Start' },
                 { value: 'flex-end', text: 'End' },
                 { value: 'center', text: 'Center' },
@@ -83,6 +90,15 @@
             ] },
         ],
     }));
+
+    Widgets.StackVerticalWidgetFactory = function(justify) {
+
+        return Widgets.build(Widgets.StackVerticalWidget, {
+            flex: { value: '1 1 auto' },
+            justify: { value: justify },
+            alignItems: { value: 'stretch' },
+        });
+    }
 
     Widgets.Item(Widgets.StackGroup, {
         name: 'stack-horizontal',
@@ -93,7 +109,7 @@
     Widgets.Item(Widgets.StackGroup, {
         name: 'stack-vertical',
         thumbnail: '/assets/vendor/ntr1x-archery-widgets/src/widgets/container/stack/stack-vertical.png',
-        widget: Widgets.build(Widgets.StackVerticalWidget, {}),
+        widget: Widgets.StackVerticalWidgetFactory('center'),
     });
 
     Widgets.Item(Widgets.StackGroup, {

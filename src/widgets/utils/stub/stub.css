@@ -5,6 +5,8 @@
   align-items: stretch;
   overflow: hidden;
   box-sizing: border-box;
+  mix-blend-mode: normal;
+  text-shadow: white 0px 0px 10px, white 0px 0px 15px, white 0px 0px 20px;
 }
 .wg.wg-default-stub > .wg.wg-content {
   display: flex;
@@ -28,7 +30,7 @@
 .wg.wg-default-stub > .wg.wg-content > .wg.wg-table > .wg.wg-cell {
   flex: 0 0 auto;
   text-align: center;
-  color: rgba(52, 73, 94, 0.7);
+  color: #333333;
   font-weight: bold;
   font-size: 0.8em;
 }
