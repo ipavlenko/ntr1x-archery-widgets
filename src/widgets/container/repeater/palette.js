@@ -11,9 +11,17 @@
         props: [
             { name: 'fontSize', title: 'Font Size', type: 'string', tab: 'appearance' },
             { name: 'justify', title: 'Justify', type: 'select', tab: 'layout', options: [
-                { value: 'flex-start', text: 'Left' },
-                { value: 'flex-end', text: 'Right' },
+                { value: '', text: '' },
+                { value: 'flex-start', text: 'Start' },
+                { value: 'flex-end', text: 'End' },
                 { value: 'center', text: 'Center' },
+            ] },
+            { name: 'alignItems', title: 'Align Items', type: 'select', tab: 'layout', options: [
+                { value: '', text: '' },
+                { value: 'flex-start', text: 'Start' },
+                { value: 'flex-end', text: 'End' },
+                { value: 'center', text: 'Center' },
+                { value: 'stretch', text: 'Stretch' },
             ] },
             {
                 name: 'collection', title: 'Collection', type: 'multiple', tab: 'data',
@@ -28,7 +36,9 @@
     Widgets.RepeaterHorizontalWidgetFactory = function(justify) {
 
         return Widgets.build(Widgets.RepeaterHorizontalWidget, {
+            flex: { value: '1 1 auto' },
             justify: { value: justify },
+            alignItems: { value: 'stretch' },
         });
     }
 
@@ -39,8 +49,20 @@
         mixins: [ Widgets.WidgetMixin, Widgets.BoxMixin, Widgets.SizeMixin ],
         widgets: [],
         props: [
-            { name: 'spacing', title: 'Border Spacing', type: 'string', tab: 'appearance' },
-            { name: 'collapse', title: 'Border Collapse', type: 'string', tab: 'appearance' },
+            { name: 'fontSize', title: 'Font Size', type: 'string', tab: 'appearance' },
+            { name: 'justify', title: 'Justify', type: 'select', tab: 'layout', options: [
+                { value: '', text: '' },
+                { value: 'flex-start', text: 'Start' },
+                { value: 'flex-end', text: 'End' },
+                { value: 'center', text: 'Center' },
+            ] },
+            { name: 'alignItems', title: 'Align Items', type: 'select', tab: 'layout', options: [
+                { value: '', text: '' },
+                { value: 'flex-start', text: 'Start' },
+                { value: 'flex-end', text: 'End' },
+                { value: 'center', text: 'Center' },
+                { value: 'stretch', text: 'Stretch' },
+            ] },
             {
                 name: 'collection', title: 'Collection', type: 'multiple', tab: 'data',
                 tabs: [ T.Data ],
@@ -51,6 +73,15 @@
         ],
     }));
 
+    Widgets.RepeaterVerticalWidgetFactory = function(justify) {
+
+        return Widgets.build(Widgets.RepeaterVerticalWidget, {
+            flex: { value: '1 1 auto' },
+            justify: { value: justify },
+            alignItems: { value: 'stretch' },
+        });
+    }
+
     Widgets.Item(Widgets.RepeaterGroup, {
         name: 'repeater-horizontal',
         thumbnail: '/assets/vendor/ntr1x-archery-widgets/src/widgets/container/repeater/repeater-center.png',
@@ -60,7 +91,7 @@
     Widgets.Item(Widgets.RepeaterGroup, {
         name: 'repeater-vertical',
         thumbnail: '/assets/vendor/ntr1x-archery-widgets/src/widgets/container/repeater/repeater-vertical.png',
-        widget: Widgets.build(Widgets.RepeaterVerticalWidget, {}),
+        widget: Widgets.RepeaterVerticalWidgetFactory('center'),
     });
 
     Widgets.Item(Widgets.RepeaterGroup, {

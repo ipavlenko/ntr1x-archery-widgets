@@ -4,6 +4,7 @@
         'background': bindings.outer.background,
         'margin': bindings.outer.margin,
         'padding': bindings.outer.padding,
+        'font-size': bindings.fontSize,
     }">
         <div class="wg wg-content wg-sortable-content" :style="{
             'width': bindings.width,
@@ -18,10 +19,14 @@
             }">
                 <div class="wg wg-sortable-container"
                     :class="{ 'wg-sortable-editable': editable }"
-                    :style="{ 'height': bindings.height }"
+                    :style="{
+                        'height': bindings.height,
+                        'justify-content': bindings.justify,
+                        'align-items': bindings.alignItems,
+                    }"
                 >
                     <template v-for="(item, j) in bindings.collection">
-                        <default-repeater-item :item="item" :key="item" class="wg wg-sortable-item" v-for="(child, i) in children"
+                        <default-repeater-item class="wg wg-sortable-item" :item="item" :key="item" v-for="(child, i) in children"
                             :class="{ 'wg-sortable-editable': editable }"
                             :style="{ 'flex': ((child.params.flex && child.params.flex.value) ? child.params.flex.value : '0 0 auto') }"
                         >
@@ -48,7 +53,7 @@
                                         :stack="stack"
                                         :page="page"
                                         :model="child"
-                                        :editable="false"
+                                        :editable="editable"
                                     ></shell-widget>
                                 </div>
                             </div>

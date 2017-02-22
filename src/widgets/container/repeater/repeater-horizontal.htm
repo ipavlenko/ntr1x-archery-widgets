@@ -23,15 +23,14 @@
                         'wg-sortable-editable': editable
                     }"
                     :style="{
-                        'justify-content': bindings.justify
+                        'justify-content': bindings.justify,
+                        'align-items': bindings.alignItems,
                     }"
                 >
                     <template v-for="(item, j) in bindings.collection">
-                        <default-repeater-item :item="item" class="wg wg-sortable-item"
+                        <default-repeater-item class="wg wg-sortable-item" :item="item" :key="item" v-for="(child, i) in children"
                             :class="{ 'wg-sortable-editable': editable }"
-                            :style="{ 'flex': (bindings.flex ? bindings.flex : '0 0 auto') }"
-                            :key="item"
-                            v-for="(child, i) in children"
+                            :style="{ 'flex': ((child.params.flex && child.params.flex.value) ? child.params.flex.value : '0 0 auto') }"
                         >
                             <div class="wg wg-item-content" :key="child.uuid">
                                 <div class="wg wg-inner">
@@ -46,10 +45,9 @@
                         </default-repeater-item>
                     </template>
                     <template v-if="!(bindings.collection && bindings.collection.length) && $route.meta.private">
-                        <default-repeater-item class="wg wg-sortable-item"
+                        <default-repeater-item class="wg wg-sortable-item" v-for="(child, i) in children"
                             :class="{ 'wg-sortable-editable': editable }"
-                            :style="{ 'flex': (bindings.flex ? bindings.flex : '0 0 auto') }"
-                            v-for="(child, i) in children"
+                            :style="{ 'flex': ((child.params.flex && child.params.flex.value) ? child.params.flex.value : '0 0 auto') }"
                         >
                             <div class="wg wg-item-content wg-disabled" :key="child.uuid">
                                 <div class="wg wg-inner">

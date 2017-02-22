@@ -10,6 +10,7 @@
   align-items: stretch;
   flex: none;
   margin: auto;
+  width: 100%;
 }
 .wg.wg-default-stack.wg-default-stack-canvas > .wg.wg-sortable-content {
   display: flex;

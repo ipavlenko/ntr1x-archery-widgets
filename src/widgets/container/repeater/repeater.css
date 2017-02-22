@@ -1,31 +1,38 @@
 .wg.wg-default-repeater {
-  display: table;
-  width: 100%;
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  align-items: stretch;
 }
 .wg.wg-default-repeater.wg-default-repeater-vertical > .wg.wg-sortable-content {
-  position: relative;
-  overflow: visible;
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  align-items: stretch;
 }
 .wg.wg-default-repeater.wg-default-repeater-vertical > .wg.wg-sortable-content > .wg.wg-sortable-inner {
-  position: relative;
-  overflow: visible;
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  align-items: stretch;
 }
 .wg.wg-default-repeater.wg-default-repeater-vertical > .wg.wg-sortable-content > .wg.wg-sortable-inner > .wg.wg-sortable-container {
-  position: relative;
-  overflow: visible;
   display: flex;
+  flex: 1 1 auto;
   flex-direction: column;
-  width: 100%;
+  align-items: stretch;
 }
 .wg.wg-default-repeater.wg-default-repeater-vertical > .wg.wg-sortable-content > .wg.wg-sortable-inner > .wg.wg-sortable-container > .wg.wg-sortable-item {
-  flex: 0 0 1px;
-  vertical-align: top;
-  position: relative;
-  overflow: visible;
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  align-items: stretch;
 }
 .wg.wg-default-repeater.wg-default-repeater-vertical > .wg.wg-sortable-content > .wg.wg-sortable-inner > .wg.wg-sortable-container > .wg.wg-sortable-item > .wg.wg-item-content {
-  position: relative;
-  overflow: visible;
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  align-items: stretch;
 }
 .wg.wg-default-repeater.wg-default-repeater-vertical > .wg.wg-sortable-content > .wg.wg-sortable-inner > .wg.wg-sortable-container > .wg.wg-sortable-item > .wg.wg-item-content.wg-disabled {
   -webkit-filter: grayscale(100%);
@@ -35,7 +42,10 @@
   opacity: 0.7;
 }
 .wg.wg-default-repeater.wg-default-repeater-vertical > .wg.wg-sortable-content > .wg.wg-sortable-inner > .wg.wg-sortable-container > .wg.wg-sortable-item > .wg.wg-item-content > .wg.wg-inner {
-  position: relative;
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  align-items: stretch;
 }
 .wg.wg-default-repeater.wg-default-repeater-vertical > .wg.wg-sortable-content > .wg.wg-sortable-inner > .wg.wg-sortable-container > .wg.wg-sortable-item.dragged {
   position: absolute;
@@ -67,24 +77,34 @@
   border-right: none;
 }
 .wg.wg-default-repeater.wg-default-repeater-horizontal > .wg.wg-sortable-content {
-  position: relative;
-  overflow: visible;
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  align-items: stretch;
 }
 .wg.wg-default-repeater.wg-default-repeater-horizontal > .wg.wg-sortable-content > .wg.wg-sortable-inner {
-  display: table;
-  width: 100%;
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  align-items: stretch;
 }
 .wg.wg-default-repeater.wg-default-repeater-horizontal > .wg.wg-sortable-content > .wg.wg-sortable-inner > .wg.wg-sortable-container {
   display: flex;
-  flex-wrap: wrap;
+  flex: 1 1 auto;
+  flex-direction: row;
+  align-items: stretch;
 }
 .wg.wg-default-repeater.wg-default-repeater-horizontal > .wg.wg-sortable-content > .wg.wg-sortable-inner > .wg.wg-sortable-container > .wg.wg-sortable-item {
-  flex: 0 0 1px;
-  vertical-align: top;
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  align-items: stretch;
 }
 .wg.wg-default-repeater.wg-default-repeater-horizontal > .wg.wg-sortable-content > .wg.wg-sortable-inner > .wg.wg-sortable-container > .wg.wg-sortable-item > .wg.wg-item-content {
-  position: relative;
-  overflow: visible;
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  align-items: stretch;
 }
 .wg.wg-default-repeater.wg-default-repeater-horizontal > .wg.wg-sortable-content > .wg.wg-sortable-inner > .wg.wg-sortable-container > .wg.wg-sortable-item > .wg.wg-item-content.wg-disabled {
   -webkit-filter: grayscale(100%);
@@ -94,8 +114,10 @@
   opacity: 0.7;
 }
 .wg.wg-default-repeater.wg-default-repeater-horizontal > .wg.wg-sortable-content > .wg.wg-sortable-inner > .wg.wg-sortable-container > .wg.wg-sortable-item > .wg.wg-item-content > .wg.wg-inner {
-  position: relative;
-  overflow: visible;
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  align-items: stretch;
 }
 .wg.wg-default-repeater.wg-default-repeater-horizontal > .wg.wg-sortable-content > .wg.wg-sortable-inner > .wg.wg-sortable-container > .wg.wg-sortable-item.dragged {
   position: absolute;
