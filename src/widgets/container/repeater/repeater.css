@@ -92,6 +92,7 @@
   display: flex;
   flex: 1 1 auto;
   flex-direction: row;
+  flex-wrap: wrap;
   align-items: stretch;
 }
 .wg.wg-default-repeater.wg-default-repeater-horizontal > .wg.wg-sortable-content > .wg.wg-sortable-inner > .wg.wg-sortable-container > .wg.wg-sortable-item {
