@@ -13,7 +13,6 @@
   margin: 0px auto;
   width: 100%;
   padding: 5px;
-  overflow: auto;
 }
 .wg.wg-default-stack.wg-default-stack-canvas > .wg.wg-sortable-content {
   display: flex;
@@ -56,6 +55,7 @@
   flex: 1 1 auto;
   flex-direction: column;
   align-items: stretch;
+  overflow: hidden;
 }
 .wg.wg-default-stack.wg-default-stack-canvas > .wg.wg-sortable-content > .wg.wg-sortable-inner > .wg.wg-sortable-container > .wg.wg-sortable-item.dragged {
   position: absolute;
