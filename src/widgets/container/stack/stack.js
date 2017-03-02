@@ -5,7 +5,7 @@
         mixins: [ Core.WidgetMixin, Core.StackedMixin ],
         created() {
             this.$page.dispatch(this.bindings.load, this.$context)
-        },
+        }
     });
 
     Vue.component('default-stack-horizontal', {

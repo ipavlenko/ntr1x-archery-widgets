@@ -1,0 +1,31 @@
+<template id="default-layers-item">
+    <section class="wg wg-default-layers-item wg-sortable" :style="{
+        'background': bindings.background,
+        'transform': bindings.transform,
+        'transition': bindings.transition,
+    }">
+        <div class="wg wg-content wg-sortable-content">
+            <div class="wg wg-sortable-inner">
+                <div class="wg wg-sortable-container"
+                    :class="{
+                        'wg-sortable-editable': editable
+                    }"
+                >
+                <div class="wg wg-sortable-item wg-item" v-for="(child, i) in children"
+                    :class="{ 'wg-sortable-editable': editable }"
+                >
+                    <div class="wg wg-item-content" :key="child.uuid">
+                        <div class="wg wg-inner">
+                            <shell-widget
+                                :stack="stack"
+                                :page="page"
+                                :model="child"
+                                :editable="editable"
+                            ></shell-widget>
+                        </div>
+                    </div>
+                </default-repeater-item>
+            </div>
+        </div>
+    </section>
+</template>

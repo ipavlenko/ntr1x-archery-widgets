@@ -6,6 +6,9 @@
         tag: 'default-stack-canvas',
         mixins: [ Widgets.CanvasMixin, Widgets.SizeMixin ],
         widgets: [],
+        designer: {
+            unlocked: true
+        },
         props: [
             { name: 'load', title: '@Load', type: 'action', tab: 'events' },
             { name: 'fontSize', title: 'Font Size', type: 'string', tab: 'appearance' },

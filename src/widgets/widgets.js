@@ -7,10 +7,13 @@
     T.Appearance = { name: 'appearance', title: 'Appearance' };
     T.Layout = { name: 'layout', title: 'Layout' };
     T.Content = { name: 'content', title: 'Content' };
+    T.Effects = { name: 'effects', title: 'Effects' };
     T.Events = { name: 'events', title: 'Events' };
 
     P.Id = { name: 'id', title: 'ID', type: 'string', tab: 'data', placeholder: 'Unique ID' };
     P.CSSClass = { name: 'cssClass', title: 'CSS Class', type: 'string', tab: 'appearance' };
+    P.Transform = { name: 'transform', title: 'Transform', type: 'string', tab: 'appearance' };
+
     P.Flex = { name: 'flex', title: 'Flex', type: 'string', persistent: true, tab: 'layout' };
 
     P.Width = { name: 'width', title: 'Width', type: 'string', tab: 'layout' };
@@ -51,6 +54,8 @@
         { value: 'left', text: 'Left' },
     ]};
 
+    P.Transition = { name: 'transition', title: 'Transition', type: 'string', tab: 'effects' };
+
     P.Click = { name: 'click', title: '@Click', type: 'action', tab: 'events' };
 
     Widgets.CanvasMixin = {
@@ -60,7 +65,7 @@
 
     Widgets.WidgetMixin = {
         tabs: [ T.Data, T.Appearance, T.Layout, T.Content, T.Events ],
-        props: [ P.Id, P.CSSClass, P.Flex ],
+        props: [ P.Id, P.CSSClass, P.Transform, P.Flex ],
     };
 
     Widgets.BoxMixin = {
@@ -86,6 +91,11 @@
 
     Widgets.EventsMixin = {
         props: [ P.Click ],
+    };
+
+    Widgets.EffectsMixin = {
+        tabs: [ T.Effects ],
+        props: [ P.Transition ],
     };
 
 })(jQuery, Vue, Core, Widgets);

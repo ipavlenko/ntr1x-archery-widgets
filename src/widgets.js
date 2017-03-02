@@ -149,6 +149,12 @@ window.Widgets =
             tabs: [],
             props: [],
             params: {},
+            designer: Object.assign({
+                fill: false,
+                hidden: false,
+                editable: false,
+                unlocked: false,
+            }, config.designer)
         };
 
         if ('_action' in config) result._action = config._action;

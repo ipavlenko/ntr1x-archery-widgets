@@ -8,6 +8,9 @@
         tag: 'default-repeater-horizontal',
         mixins: [ Widgets.WidgetMixin, Widgets.BoxMixin, Widgets.SizeMixin ],
         widgets: [],
+        designer: {
+            fill: true
+        },
         props: [
             { name: 'fontSize', title: 'Font Size', type: 'string', tab: 'appearance' },
             { name: 'justify', title: 'Justify', type: 'select', tab: 'layout', options: [
@@ -48,6 +51,9 @@
         tag: 'default-repeater-vertical',
         mixins: [ Widgets.WidgetMixin, Widgets.BoxMixin, Widgets.SizeMixin ],
         widgets: [],
+        designer: {
+            fill: true
+        },
         props: [
             { name: 'fontSize', title: 'Font Size', type: 'string', tab: 'appearance' },
             { name: 'justify', title: 'Justify', type: 'select', tab: 'layout', options: [

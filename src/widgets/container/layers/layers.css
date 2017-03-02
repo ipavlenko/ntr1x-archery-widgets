@@ -1,0 +1,115 @@
+.wg.wg-default-layers {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  align-items: stretch;
+}
+.wg.wg-default-layers > .wg.wg-content {
+  display: flex;
+  position: relative;
+  width: 100%;
+  flex: 1 1 auto;
+  flex-direction: column;
+  align-items: stretch;
+}
+.wg.wg-default-layers > .wg.wg-content > .wg.wg-item {
+  display: block;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+}
+.wg.wg-default-layers > .wg.wg-content > .wg.wg-item > .wg.wg-item-content {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+}
+.wg.wg-default-layers > .wg.wg-content > .wg.wg-item > .wg.wg-item-content > .wg.wg-inner {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+}
+.wg.wg-default-layers > .wg.wg-content > .wg.wg-item > .wg.wg-item-content > .wg.wg-inner > .ge.ge-decorator {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+}
+.wg.wg-default-layers > .wg.wg-content > .wg.wg-item > .wg.wg-item-content > .wg.wg-inner > .ge.ge-decorator > .ge.ge-widget {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+}
+.wg.wg-default-layers > .wg.wg-content > .wg.wg-item > .wg.wg-item-content > .wg.wg-inner > .ge.ge-decorator > .ge.ge-widget > .ge.ge-content {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  overflow: hidden;
+}
+.wg.wg-default-layers-item {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  align-items: stretch;
+}
+.wg.wg-default-layers-item > .wg.wg-content {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+}
+.wg.wg-default-layers-item > .wg.wg-content > .wg.wg-sortable-inner {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+}
+.wg.wg-default-layers-item > .wg.wg-content > .wg.wg-sortable-inner > .wg.wg-sortable-container {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+}
+.wg.wg-default-layers-item > .wg.wg-content > .wg.wg-sortable-inner > .wg.wg-sortable-container > .wg.wg-item {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+}
+.wg.wg-default-layers-item > .wg.wg-content > .wg.wg-sortable-inner > .wg.wg-sortable-container > .wg.wg-item > .wg.wg-item-content {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+}
+.wg.wg-default-layers-item > .wg.wg-content > .wg.wg-sortable-inner > .wg.wg-sortable-container > .wg.wg-item > .wg.wg-item-content > .wg.wg-inner {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: center;
+}

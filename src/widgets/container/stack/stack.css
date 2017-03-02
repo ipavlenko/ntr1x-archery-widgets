@@ -6,44 +6,53 @@
 }
 .wg.wg-default-stack.wg-default-stack-canvas {
   display: flex;
+  position: relative;
   flex-direction: column;
   align-items: stretch;
-  flex: none;
-  margin: auto;
+  flex: 0 0 auto;
+  margin: 0px auto;
   width: 100%;
+  padding: 5px;
+  overflow: auto;
 }
 .wg.wg-default-stack.wg-default-stack-canvas > .wg.wg-sortable-content {
   display: flex;
+  position: relative;
   flex: 1 1 auto;
   flex-direction: column;
   align-items: stretch;
 }
 .wg.wg-default-stack.wg-default-stack-canvas > .wg.wg-sortable-content > .wg.wg-sortable-inner {
   display: flex;
+  position: relative;
   flex: 1 1 auto;
   flex-direction: column;
   align-items: stretch;
 }
 .wg.wg-default-stack.wg-default-stack-canvas > .wg.wg-sortable-content > .wg.wg-sortable-inner > .wg.wg-sortable-container {
   display: flex;
+  position: relative;
   flex: 1 1 auto;
   flex-direction: column;
   align-items: stretch;
 }
 .wg.wg-default-stack.wg-default-stack-canvas > .wg.wg-sortable-content > .wg.wg-sortable-inner > .wg.wg-sortable-container > .wg.wg-sortable-item {
   display: flex;
+  position: relative;
   flex: 1 1 auto;
   flex-direction: column;
   align-items: stretch;
 }
 .wg.wg-default-stack.wg-default-stack-canvas > .wg.wg-sortable-content > .wg.wg-sortable-inner > .wg.wg-sortable-container > .wg.wg-sortable-item > .wg.wg-item-content {
   display: flex;
+  position: relative;
   flex: 1 1 auto;
   flex-direction: column;
   align-items: stretch;
 }
 .wg.wg-default-stack.wg-default-stack-canvas > .wg.wg-sortable-content > .wg.wg-sortable-inner > .wg.wg-sortable-container > .wg.wg-sortable-item > .wg.wg-item-content > .wg.wg-inner {
   display: flex;
+  position: relative;
   flex: 1 1 auto;
   flex-direction: column;
   align-items: stretch;
