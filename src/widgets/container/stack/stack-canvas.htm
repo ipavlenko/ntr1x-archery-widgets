@@ -1,11 +1,15 @@
 <template id="default-stack-canvas">
     <section class="wg wg-default-stack wg-default-stack-canvas wg-sortable" :style="{
         'background': bindings.background,
-        'width': bindings.width,
-        'height': bindings.height,
+        'width': bindings.width || '100%',
+        'height': bindings.height || '100%',
         'font-size': bindings.fontSize,
-    }" v-scrollable>
-        <div class="wg wg-content wg-sortable-content">
+        'overflow': 'auto'
+    }">
+        <div class="wg wg-content wg-sortable-content" :style="{
+           'transform': ($store.state.designer && $store.state.designer.scale) ? ('scale(' + $store.state.designer.scale + ')') : null,
+           'transform-origin': 'top left'
+        }">
             <div class="wg wg-sortable-inner">
                 <div class="wg wg-sortable-container wg-sortable-vertical"
                     :class="{ 'wg-sortable-editable': editable }"
