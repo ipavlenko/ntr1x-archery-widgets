@@ -145,6 +145,8 @@ window.Widgets =
         var result = {
             name: config.name,
             tag: config.tag,
+            setup: config.setup,
+            overrides: config.overrides,
             widgets: config.widgets,
             tabs: [],
             props: [],
@@ -156,8 +158,6 @@ window.Widgets =
                 unlocked: false,
             }, config.designer)
         };
-
-        if ('_action' in config) result._action = config._action;
 
         function visit(w, m) {
 

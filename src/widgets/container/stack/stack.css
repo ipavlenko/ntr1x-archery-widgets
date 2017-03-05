@@ -55,7 +55,7 @@
   flex: 1 1 auto;
   flex-direction: column;
   align-items: stretch;
-  overflow: hidden;
+  overflow: visible;
 }
 .wg.wg-default-stack.wg-default-stack-canvas > .wg.wg-sortable-content > .wg.wg-sortable-inner > .wg.wg-sortable-container > .wg.wg-sortable-item.dragged {
   position: absolute;

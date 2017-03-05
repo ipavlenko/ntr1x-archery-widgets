@@ -13,6 +13,10 @@
     P.Id = { name: 'id', title: 'ID', type: 'string', tab: 'data', placeholder: 'Unique ID' };
     P.CSSClass = { name: 'cssClass', title: 'CSS Class', type: 'string', tab: 'appearance' };
     P.Transform = { name: 'transform', title: 'Transform', type: 'string', tab: 'appearance' };
+    P.Display = { name: 'display', title: 'Display', type: 'select', tab: 'layout', options: [
+        { value: 'none', text: 'none' },
+        { value: '', text: 'auto' },
+    ] };
 
     P.Flex = { name: 'flex', title: 'Flex', type: 'string', persistent: true, tab: 'layout' };
 
@@ -65,7 +69,7 @@
 
     Widgets.WidgetMixin = {
         tabs: [ T.Data, T.Appearance, T.Layout, T.Content, T.Events ],
-        props: [ P.Id, P.CSSClass, P.Transform, P.Flex ],
+        props: [ P.Id, P.CSSClass, P.Display, P.Transform, P.Flex ],
     };
 
     Widgets.BoxMixin = {

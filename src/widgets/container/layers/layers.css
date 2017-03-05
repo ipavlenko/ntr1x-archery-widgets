@@ -27,6 +27,13 @@
   right: 0px;
   bottom: 0px;
 }
+.wg.wg-default-layers > .wg.wg-content > .wg.wg-item > .wg.wg-item-content.wg-disabled {
+  -webkit-filter: grayscale(100%);
+  -mox-filter: grayscale(100%);
+  -ms-filter: grayscale(100%);
+  filter: grayscale(100%);
+  opacity: 0.7;
+}
 .wg.wg-default-layers > .wg.wg-content > .wg.wg-item > .wg.wg-item-content > .wg.wg-inner {
   position: absolute;
   top: 0px;

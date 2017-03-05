@@ -2,15 +2,18 @@
 
 .wg.wg-default-frame {
 
+    display: flex;
     position: relative;
-    width: 100%;
-    overflow: hidden;
-    box-sizing: border-box;
+    flex: 1 1 auto;
+    flex-direction: column;
+    align-items: stretch;
 
-    .wg.wg-content {
+    >.wg.wg-content {
 
-        box-sizing: border-box;
-        min-height: 100px;
-        min-width: 100px;
+        display: flex;
+        position: relative;
+        flex: 1 1 auto;
+        flex-direction: column;
+        align-items: stretch;
     }
 }

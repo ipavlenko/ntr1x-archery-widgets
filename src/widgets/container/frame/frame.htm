@@ -1,6 +1,7 @@
 <template id="default-frame">
-    <section class="wg wg-default-frame" :id="bindings.id"
+    <section class="wg wg-default-frame"
         :style="{
+            'display': bindings.display,
             'margin': bindings.outer.margin,
             'padding': bindings.outer.padding,
             'border': bindings.outer.border,
@@ -17,11 +18,11 @@
                 'background': bindings.inner.background,
             }"
         >
-            <div>
-                <a v-link="{ path: '/second' }">Second</a>
-                <a v-link="{ path: '/purchases' }">Purchases</a>
+            <div class="ge ge-shell ge-shell-public">
+                <shell-page
+                    :page.sync="frame"
+                    :items.sync="frame.widgets"
+                ></shell-page>
             </div>
-            <router-view></router-view>
-        </div>
     </section>
 </template>
