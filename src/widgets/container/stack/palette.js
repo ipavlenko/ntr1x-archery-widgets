@@ -31,10 +31,10 @@
     Widgets.Item(Widgets.StackGroup, {
         hidden: true,
         name: 'stack-canvas',
-        widget: Widgets.build(Widgets.StackCanvasWidget, {
+        widget: (context) => Promise.resolve(Widgets.build(Widgets.StackCanvasWidget, {
             justify: { value: 'flex-start' },
             alignItems: { value: 'stretch' },
-        }),
+        })),
     });
 
     Widgets.StackHorizontalWidget =
@@ -106,25 +106,25 @@
     Widgets.Item(Widgets.StackGroup, {
         name: 'stack-horizontal',
         thumbnail: '/assets/vendor/ntr1x-archery-widgets/src/widgets/container/stack/stack-center.png',
-        widget: Widgets.StackHorizontalWidgetFactory('center'),
+        widget: (context) => Promise.resolve(Widgets.StackHorizontalWidgetFactory('center')),
     });
 
     Widgets.Item(Widgets.StackGroup, {
         name: 'stack-vertical',
         thumbnail: '/assets/vendor/ntr1x-archery-widgets/src/widgets/container/stack/stack-vertical.png',
-        widget: Widgets.StackVerticalWidgetFactory('center'),
+        widget: (context) => Promise.resolve(Widgets.StackVerticalWidgetFactory('center')),
     });
 
     Widgets.Item(Widgets.StackGroup, {
         name: 'stack-horizontal-left',
         thumbnail: '/assets/vendor/ntr1x-archery-widgets/src/widgets/container/stack/stack-left.png',
-        widget: Widgets.StackHorizontalWidgetFactory('flex-start'),
+        widget: (context) => Promise.resolve(Widgets.StackHorizontalWidgetFactory('flex-start')),
     });
 
     Widgets.Item(Widgets.StackGroup, {
         name: 'stack-horizontal-right',
         thumbnail: '/assets/vendor/ntr1x-archery-widgets/src/widgets/container/stack/stack-right.png',
-        widget: Widgets.StackHorizontalWidgetFactory('flex-end'),
+        widget: (context) => Promise.resolve(Widgets.StackHorizontalWidgetFactory('flex-end')),
     });
 
 })(jQuery, Vue, Core, Widgets);

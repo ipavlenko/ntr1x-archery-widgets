@@ -72,37 +72,37 @@
     Widgets.Item(Widgets.DropdownsGroup, {
         name: 'dropdown-default',
         thumbnail: '/assets/vendor/ntr1x-archery-widgets/src/widgets/form/dropdown/dropdown-default.png',
-        widget: Widgets.DropdownWidgetFactory('default'),
+        widget: (context) => Promise.resolve(Widgets.DropdownWidgetFactory('default')),
     });
 
     Widgets.Item(Widgets.DropdownsGroup, {
         name: 'dropdown-primary',
         thumbnail: '/assets/vendor/ntr1x-archery-widgets/src/widgets/form/dropdown/dropdown-primary.png',
-        widget: Widgets.DropdownWidgetFactory('primary'),
+        widget: (context) => Promise.resolve(Widgets.DropdownWidgetFactory('primary')),
     });
 
     Widgets.Item(Widgets.DropdownsGroup, {
         name: 'dropdown-success',
         thumbnail: '/assets/vendor/ntr1x-archery-widgets/src/widgets/form/dropdown/dropdown-success.png',
-        widget: Widgets.DropdownWidgetFactory('success'),
+        widget: (context) => Promise.resolve(Widgets.DropdownWidgetFactory('success')),
     });
 
     Widgets.Item(Widgets.DropdownsGroup, {
         name: 'dropdown-info',
         thumbnail: '/assets/vendor/ntr1x-archery-widgets/src/widgets/form/dropdown/dropdown-info.png',
-        widget: Widgets.DropdownWidgetFactory('info'),
+        widget: (context) => Promise.resolve(Widgets.DropdownWidgetFactory('info')),
     });
 
     Widgets.Item(Widgets.DropdownsGroup, {
         name: 'dropdown-warning',
         thumbnail: '/assets/vendor/ntr1x-archery-widgets/src/widgets/form/dropdown/dropdown-warning.png',
-        widget: Widgets.DropdownWidgetFactory('warning'),
+        widget: (context) => Promise.resolve(Widgets.DropdownWidgetFactory('warning')),
     });
 
     Widgets.Item(Widgets.DropdownsGroup, {
         name: 'dropdown-danger',
         thumbnail: '/assets/vendor/ntr1x-archery-widgets/src/widgets/form/dropdown/dropdown-danger.png',
-        widget: Widgets.DropdownWidgetFactory('danger'),
+        widget: (context) => Promise.resolve(Widgets.DropdownWidgetFactory('danger')),
     });
 
 })(jQuery, Vue, Core, Widgets);

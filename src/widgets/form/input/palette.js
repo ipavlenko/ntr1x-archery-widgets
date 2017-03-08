@@ -32,7 +32,7 @@
     Widgets.Item(Widgets.InputsGroup, {
         name: 'input-text',
         thumbnail: '/assets/vendor/ntr1x-archery-widgets/src/widgets/form/input/text.png',
-        widget: Widgets.InputWidgetFactory('Input', 'text'),
+        widget: (context) => Promise.resolve(Widgets.InputWidgetFactory('Input', 'text')),
     });
 
     Widgets.TextareaWidget =
@@ -66,7 +66,7 @@
     Widgets.Item(Widgets.InputsGroup, {
         name: 'input-textarea',
         thumbnail: '/assets/vendor/ntr1x-archery-widgets/src/widgets/form/input/textarea.png',
-        widget: Widgets.TextareaWidgetFactory('Textarea', 'Type message here'),
+        widget: (context) => Promise.resolve(Widgets.TextareaWidgetFactory('Textarea', 'Type message here')),
     });
 
     Widgets.RadioInputWidget =
@@ -115,10 +115,10 @@
     Widgets.Item(Widgets.InputsGroup, {
         name: 'input-radio',
         thumbnail: '/assets/vendor/ntr1x-archery-widgets/src/widgets/form/input/radio.png',
-        widget: Widgets.RadioInputWidgetFactory('1', [
+        widget: (context) => Promise.resolve(Widgets.RadioInputWidgetFactory('1', [
             { value: '1', label: 'First' },
             { value: '2', label: 'Second' },
-        ]),
+        ])),
     });
 
     Widgets.CheckInputWidget =
@@ -167,10 +167,10 @@
     Widgets.Item(Widgets.InputsGroup, {
         name: 'input-check',
         thumbnail: '/assets/vendor/ntr1x-archery-widgets/src/widgets/form/input/checkbox.png',
-        widget: Widgets.CheckInputWidgetFactory([ '1' ], [
+        widget: (context) => Promise.resolve(Widgets.CheckInputWidgetFactory([ '1' ], [
             { value: '1', label: 'First' },
             { value: '2', label: 'Second' },
-        ]),
+        ])),
     });
 
 })(jQuery, Vue, Core, Widgets);

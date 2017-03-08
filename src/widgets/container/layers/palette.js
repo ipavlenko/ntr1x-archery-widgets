@@ -95,19 +95,19 @@
     Widgets.Item(Widgets.LayersGroup, {
         name: 'layers-item',
         hidden: true,
-        widget: Widgets.build(Widgets.LayersItemWidget, {})
+        widget: (context) => Promise.resolve(Widgets.build(Widgets.LayersItemWidget, {}))
     });
 
     Widgets.Item(Widgets.LayersGroup, {
         name: 'layers-repeater',
         thumbnail: '/assets/vendor/ntr1x-archery-widgets/src/widgets/container/layers/layers-repeater.png',
-        widget: Widgets.LayersRepeaterWidgetFactory(),
+        widget: (context) => Promise.resolve(Widgets.LayersRepeaterWidgetFactory()),
     });
 
     Widgets.Item(Widgets.LayersGroup, {
         name: 'layers-stack',
         thumbnail: '/assets/vendor/ntr1x-archery-widgets/src/widgets/container/layers/layers-stack.png',
-        widget: Widgets.LayersStackWidgetFactory(),
+        widget: (context) => Promise.resolve(Widgets.LayersStackWidgetFactory()),
     });
 
 })(jQuery, Vue, Core, Widgets);

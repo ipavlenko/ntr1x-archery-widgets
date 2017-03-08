@@ -27,12 +27,16 @@ window.Widgets =
             return this.category(segments[0]).group(segments[1]).widget(segments[2]);
         }
 
-        var item = function(path) {
+        var item = function(path, context) {
             var segments = path.split('/');
-            var w = $.extend(true, {}, this.category(segments[0]).group(segments[1]).item(segments[2]).widget);
-            delete w.props;
-            delete w.tabs;
-            return w;
+            return this.category(segments[0]).group(segments[1]).item(segments[2])
+                .widget(context)
+                .then(d => {
+                    var w = $.extend(true, {}, d);
+                    delete w.props;
+                    delete w.tabs;
+                    return w;
+                })
         }
 
         function generateId(prefix) {
@@ -254,7 +258,7 @@ window.Widgets =
         };
     }
 
-    Widgets.Param = function(value, binding, strategy) {
+    Widgets.Param = function(value) {
         return {
             value: value || undefined,
         }

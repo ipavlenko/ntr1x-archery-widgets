@@ -5,21 +5,41 @@
         name: 'default-frame',
         tag: 'default-frame',
         mixins: [ Widgets.WidgetMixin, Widgets.BoxMixin, Widgets.SizeMixin ],
-        setup: {
-            page: 'offer',
-        },
+        // setup: { page: 'offer' }
     }));
-
-    Widgets.FrameWidgetFactory = function() {
-
-        return Widgets.build(Widgets.FrameWidget, {
-        });
-    }
 
     Widgets.Item(Widgets.EmbeddedGroup, {
         name: 'default-frame',
         thumbnail: '/assets/vendor/ntr1x-archery-widgets/src/widgets/container/frame/frame.png',
-        widget: Widgets.FrameWidgetFactory(),
+        widget: ({ state, commit }) => new Promise((resolve, reject) => {
+
+            let composites = (state.designer.content.pages || [])
+                .filter(p => p.type == 'composite')
+                .map(p => p.name)
+
+            commit('modals/editor/show', {
+                name: 'factory-dialog',
+                context: {
+                    title: 'Create Frame',
+                    props: [
+                        { name: 'page', title: 'Composite', type: 'select', options: composites }
+                    ]
+                },
+                original: {
+                    page: composites.length ? composites[0] : null,
+                },
+                events: {
+                    submit: (current) => {
+                        let w = Widgets.build(Widgets.FrameWidget, {})
+                        w = Object.assign(w, { setup: { page: current.page } })
+                        resolve(w)
+                    },
+                    reset: () => {
+                        reject()
+                    }
+                }
+            })
+        }),
     });
 
 })(jQuery, Vue, Core, Widgets);

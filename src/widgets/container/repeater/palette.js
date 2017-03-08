@@ -91,25 +91,25 @@
     Widgets.Item(Widgets.RepeaterGroup, {
         name: 'repeater-horizontal',
         thumbnail: '/assets/vendor/ntr1x-archery-widgets/src/widgets/container/repeater/repeater-center.png',
-        widget: Widgets.RepeaterHorizontalWidgetFactory('center'),
+        widget: (context) => Promise.resolve(Widgets.RepeaterHorizontalWidgetFactory('center')),
     });
 
     Widgets.Item(Widgets.RepeaterGroup, {
         name: 'repeater-vertical',
         thumbnail: '/assets/vendor/ntr1x-archery-widgets/src/widgets/container/repeater/repeater-vertical.png',
-        widget: Widgets.RepeaterVerticalWidgetFactory('center'),
+        widget: (context) => Promise.resolve(Widgets.RepeaterVerticalWidgetFactory('center')),
     });
 
     Widgets.Item(Widgets.RepeaterGroup, {
         name: 'repeater-horizontal-left',
         thumbnail: '/assets/vendor/ntr1x-archery-widgets/src/widgets/container/repeater/repeater-left.png',
-        widget: Widgets.RepeaterHorizontalWidgetFactory('flex-start'),
+        widget: (context) => Promise.resolve(Widgets.RepeaterHorizontalWidgetFactory('flex-start')),
     });
 
     Widgets.Item(Widgets.RepeaterGroup, {
         name: 'repeater-horizontal-right',
         thumbnail: '/assets/vendor/ntr1x-archery-widgets/src/widgets/container/repeater/repeater-right.png',
-        widget: Widgets.RepeaterHorizontalWidgetFactory('flex-end'),
+        widget: (context) => Promise.resolve(Widgets.RepeaterHorizontalWidgetFactory('flex-end')),
     });
 
 })(jQuery, Vue, Core, Widgets);

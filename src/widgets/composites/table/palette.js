@@ -60,7 +60,7 @@
     Widgets.Item(Widgets.TablesGroup, {
         name: 'table-default',
         thumbnail: '/assets/vendor/ntr1x-archery-widgets/src/widgets/composites/table/table-default.png',
-        widget: Widgets.build(Widgets.TableWidget, {
+        widget: (context) => Promise.resolve(Widgets.build(Widgets.TableWidget, {
             outer: {
                 value: {
                     background: { value: '#FFFFFF' },
@@ -107,7 +107,7 @@
                     }
                 }
             },
-        }),
+        })),
     });
 
 })(jQuery, Vue, Core, Widgets);

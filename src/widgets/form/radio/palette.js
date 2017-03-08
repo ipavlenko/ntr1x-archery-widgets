@@ -47,55 +47,55 @@
     Widgets.Item(Widgets.RadiosGroup, {
         name: 'radio-default',
         thumbnail: '/assets/vendor/ntr1x-archery-widgets/src/widgets/form/radio/radio-default.png',
-        widget: Widgets.RadioWidgetFactory('default', '1', [
+        widget: (context) => Promise.resolve(Widgets.RadioWidgetFactory('default', '1', [
             { value: '1', label: 'On' },
             { value: '0', label: 'Off' },
-        ]),
+        ])),
     });
 
     Widgets.Item(Widgets.RadiosGroup, {
         name: 'radio-primary',
         thumbnail: '/assets/vendor/ntr1x-archery-widgets/src/widgets/form/radio/radio-primary.png',
-        widget: Widgets.RadioWidgetFactory('primary', '1', [
+        widget: (context) => Promise.resolve(Widgets.RadioWidgetFactory('primary', '1', [
             { value: '1', label: 'On' },
             { value: '0', label: 'Off' },
-        ]),
+        ])),
     });
 
     Widgets.Item(Widgets.RadiosGroup, {
         name: 'radio-success',
         thumbnail: '/assets/vendor/ntr1x-archery-widgets/src/widgets/form/radio/radio-success.png',
-        widget: Widgets.RadioWidgetFactory('success', '1', [
+        widget: (context) => Promise.resolve(Widgets.RadioWidgetFactory('success', '1', [
             { value: '1', label: 'On' },
             { value: '0', label: 'Off' },
-        ]),
+        ])),
     });
 
     Widgets.Item(Widgets.RadiosGroup, {
         name: 'radio-info',
         thumbnail: '/assets/vendor/ntr1x-archery-widgets/src/widgets/form/radio/radio-info.png',
-        widget: Widgets.RadioWidgetFactory('info', '1', [
+        widget: (context) => Promise.resolve(Widgets.RadioWidgetFactory('info', '1', [
             { value: '1', label: 'On' },
             { value: '0', label: 'Off' },
-        ]),
+        ])),
     });
 
     Widgets.Item(Widgets.RadiosGroup, {
         name: 'radio-warning',
         thumbnail: '/assets/vendor/ntr1x-archery-widgets/src/widgets/form/radio/radio-warning.png',
-        widget: Widgets.RadioWidgetFactory('warning', '1', [
+        widget: (context) => Promise.resolve(Widgets.RadioWidgetFactory('warning', '1', [
             { value: '1', label: 'On' },
             { value: '0', label: 'Off' },
-        ]),
+        ])),
     });
 
     Widgets.Item(Widgets.RadiosGroup, {
         name: 'radio-danger',
         thumbnail: '/assets/vendor/ntr1x-archery-widgets/src/widgets/form/radio/radio-danger.png',
-        widget: Widgets.RadioWidgetFactory('danger', '1', [
+        widget: (context) => Promise.resolve(Widgets.RadioWidgetFactory('danger', '1', [
             { value: '1', label: 'On' },
             { value: '0', label: 'Off' },
-        ]),
+        ])),
     });
 
 })(jQuery, Vue, Core, Widgets);

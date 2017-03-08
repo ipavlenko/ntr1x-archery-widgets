@@ -178,101 +178,101 @@
     Widgets.Item(Widgets.MicrosMainGroup, {
         name: 'default-micros-icon',
         thumbnail: '/assets/vendor/ntr1x-archery-widgets/src/widgets/micros/micros-icon.png',
-        widget: Widgets.MicrosIconWidgetFactory('fa fa-twitter'),
+        widget: (context) => Promise.resolve(Widgets.MicrosIconWidgetFactory('fa fa-twitter')),
     });
 
     Widgets.Item(Widgets.MicrosMainGroup, {
         name: 'default-micros-square',
         thumbnail: '/assets/vendor/ntr1x-archery-widgets/src/widgets/micros/micros-square.png',
-        widget: Widgets.MicrosTextWidgetFactory({ content: '10', color: '#FFFFFF', background: '#3F51B5', padding: '0.3em 0.2em', height: '1.4em', lineHeight: '1.4em', align: 'center', minWidth: '1.4em', fontSize: '0.6em' }),
+        widget: (context) => Promise.resolve(Widgets.MicrosTextWidgetFactory({ content: '10', color: '#FFFFFF', background: '#3F51B5', padding: '0.3em 0.2em', height: '1.4em', lineHeight: '1.4em', align: 'center', minWidth: '1.4em', fontSize: '0.6em' })),
     });
 
     Widgets.Item(Widgets.MicrosMainGroup, {
         name: 'default-micros-badge',
         thumbnail: '/assets/vendor/ntr1x-archery-widgets/src/widgets/micros/micros-badge.png',
-        widget: Widgets.MicrosTextWidgetFactory({ content: '23 OCT', color: '#FFFFFF', background: '#2196F3', padding: '0.3em 0.2em', height: '1.4em', lineHeight: '1.4em', borderRadius: '0.25em', fontSize: '0.6em' }),
+        widget: (context) => Promise.resolve(Widgets.MicrosTextWidgetFactory({ content: '23 OCT', color: '#FFFFFF', background: '#2196F3', padding: '0.3em 0.2em', height: '1.4em', lineHeight: '1.4em', borderRadius: '0.25em', fontSize: '0.6em' })),
     });
 
     Widgets.Item(Widgets.MicrosMainGroup, {
         name: 'default-micros-text',
         thumbnail: '/assets/vendor/ntr1x-archery-widgets/src/widgets/micros/micros-text.png',
-        widget: Widgets.MicrosTextWidgetFactory({ content: 'Regular Text', lineHeight: '1em' }),
+        widget: (context) => Promise.resolve(Widgets.MicrosTextWidgetFactory({ content: 'Regular Text', lineHeight: '1em' })),
     });
 
     Widgets.Item(Widgets.MicrosMainGroup, {
         name: 'default-micros-rich',
         thumbnail: '/assets/vendor/ntr1x-archery-widgets/src/widgets/micros/micros-rich.png',
-        widget: Widgets.MicrosRichWidgetFactory({ content: '<i>Rich</i> <b>Text</b>', lineHeight: '1em' }),
+        widget: (context) => Promise.resolve(Widgets.MicrosRichWidgetFactory({ content: '<i>Rich</i> <b>Text</b>', lineHeight: '1em' })),
     });
 
     Widgets.Item(Widgets.MicrosMainGroup, {
         name: 'default-micros-button',
         thumbnail: '/assets/vendor/ntr1x-archery-widgets/src/widgets/micros/micros-button.png',
-        widget: Widgets.MicrosButtonWidgetFactory({ content: 'Button', cssClass: 'btn btn-primary', padding: '0.2em 0.2em', height: '1.6em', lineHeight: '1.4em', borderRadius: '0.25em', fontSize: '0.8em' }),
+        widget: (context) => Promise.resolve(Widgets.MicrosButtonWidgetFactory({ content: 'Button', cssClass: 'btn btn-primary', padding: '0.2em 0.2em', height: '1.6em', lineHeight: '1.4em', borderRadius: '0.25em', fontSize: '0.8em' })),
     });
 
     Widgets.Item(Widgets.MicrosMainGroup, {
         name: 'default-micros-small',
         thumbnail: '/assets/vendor/ntr1x-archery-widgets/src/widgets/micros/micros-small.png',
-        widget: Widgets.MicrosRichWidgetFactory({ content: '<div>USD</div><div>250</div>', lineHeight: '0.8em', fontSize: '0.8em', align: 'center' }),
+        widget: (context) => Promise.resolve(Widgets.MicrosRichWidgetFactory({ content: '<div>USD</div><div>250</div>', lineHeight: '0.8em', fontSize: '0.8em', align: 'center' })),
     });
 
     Widgets.Item(Widgets.MicrosMainGroup, {
         name: 'default-micros-image',
         thumbnail: '/assets/vendor/ntr1x-archery-widgets/src/widgets/micros/micros-image.png',
-        widget: Widgets.MicrosImageWidgetFactory('/assets/vendor/ntr1x-archery-widgets/src/widgets/micros/grass.jpg'),
+        widget: (context) => Promise.resolve(Widgets.MicrosImageWidgetFactory('/assets/vendor/ntr1x-archery-widgets/src/widgets/micros/grass.jpg')),
     });
 
     Widgets.Item(Widgets.MicrosMainGroup, {
         name: 'default-micros-heading',
         thumbnail: '/assets/vendor/ntr1x-archery-widgets/src/widgets/micros/micros-heading.png',
-        widget: Widgets.MicrosTextWidgetFactory({ content: 'Heading', stereotype: 'h3' }),
+        widget: (context) => Promise.resolve(Widgets.MicrosTextWidgetFactory({ content: 'Heading', stereotype: 'h3' })),
     });
 
     Widgets.Item(Widgets.MicrosMainGroup, {
         name: 'default-micros-link',
         thumbnail: '/assets/vendor/ntr1x-archery-widgets/src/widgets/micros/micros-link.png',
-        widget: Widgets.MicrosTextWidgetFactory({ content: 'Link', stereotype: 'a' }),
+        widget: (context) => Promise.resolve(Widgets.MicrosTextWidgetFactory({ content: 'Link', stereotype: 'a' })),
     });
 
     Widgets.Item(Widgets.MicrosMainGroup, {
         name: 'default-micros-paragraph-left',
         thumbnail: '/assets/vendor/ntr1x-archery-widgets/src/widgets/micros/micros-paragraph-left.png',
-        widget: Widgets.MicrosTextWidgetFactory({
+        widget: (context) => Promise.resolve(Widgets.MicrosTextWidgetFactory({
             content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec id nibh massa. Nullam eu sodales mauris. Quisque justo tortor, sodales tristique dui sed, porta facilisis neque.',
             align: 'left',
             width: '300px'
-        }),
+        })),
     });
 
     Widgets.Item(Widgets.MicrosMainGroup, {
         name: 'default-micros-paragraph-right',
         thumbnail: '/assets/vendor/ntr1x-archery-widgets/src/widgets/micros/micros-paragraph-right.png',
-        widget: Widgets.MicrosTextWidgetFactory({
+        widget: (context) => Promise.resolve(Widgets.MicrosTextWidgetFactory({
             content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec id nibh massa. Nullam eu sodales mauris. Quisque justo tortor, sodales tristique dui sed, porta facilisis neque.',
             align: 'right',
             width: '300px'
-        }),
+        })),
     });
 
     Widgets.Item(Widgets.MicrosMainGroup, {
         name: 'default-micros-paragraph-center',
         thumbnail: '/assets/vendor/ntr1x-archery-widgets/src/widgets/micros/micros-paragraph-center.png',
-        widget: Widgets.MicrosTextWidgetFactory({
+        widget: (context) => Promise.resolve(Widgets.MicrosTextWidgetFactory({
             content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec id nibh massa. Nullam eu sodales mauris. Quisque justo tortor, sodales tristique dui sed, porta facilisis neque.',
             align: 'center',
             width: '300px'
-        }),
+        })),
     });
 
     Widgets.Item(Widgets.MicrosMainGroup, {
         name: 'default-micros-paragraph-justify',
         thumbnail: '/assets/vendor/ntr1x-archery-widgets/src/widgets/micros/micros-paragraph-justify.png',
-        widget: Widgets.MicrosTextWidgetFactory({
+        widget: (context) => Promise.resolve(Widgets.MicrosTextWidgetFactory({
             content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec id nibh massa. Nullam eu sodales mauris. Quisque justo tortor, sodales tristique dui sed, porta facilisis neque.',
             align: 'justify',
             width: '300px'
-        }),
+        })),
     });
 
 })(jQuery, Vue, Core, Widgets);
