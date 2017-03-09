@@ -59,7 +59,7 @@
 }
 .wg.wg-default-stack.wg-default-stack-canvas > .wg.wg-sortable-content > .wg.wg-sortable-inner > .wg.wg-sortable-container > .wg.wg-sortable-item.dragged {
   position: absolute;
-  display: table;
+  display: none;
   opacity: 0;
   z-index: 2000;
 }
@@ -124,7 +124,7 @@
 }
 .wg.wg-default-stack.wg-default-stack-vertical > .wg.wg-sortable-content > .wg.wg-sortable-inner > .wg.wg-sortable-container > .wg.wg-sortable-item.dragged {
   position: absolute;
-  display: table;
+  display: none;
   opacity: 0;
   z-index: 2000;
 }
@@ -190,7 +190,7 @@
 }
 .wg.wg-default-stack.wg-default-stack-horizontal > .wg.wg-sortable-content > .wg.wg-sortable-inner > .wg.wg-sortable-container > .wg.wg-sortable-item.dragged {
   position: absolute;
-  display: table;
+  display: none;
   opacity: 0;
   z-index: 2000;
 }

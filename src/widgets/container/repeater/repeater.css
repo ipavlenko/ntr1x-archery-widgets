@@ -49,8 +49,7 @@
 }
 .wg.wg-default-repeater.wg-default-repeater-vertical > .wg.wg-sortable-content > .wg.wg-sortable-inner > .wg.wg-sortable-container > .wg.wg-sortable-item.dragged {
   position: absolute;
-  display: table;
-  opacity: 0;
+  display: none;
   z-index: 2000;
 }
 .wg.wg-default-repeater.wg-default-repeater-vertical > .wg.wg-sortable-content > .wg.wg-sortable-inner > .wg.wg-sortable-container > .wg.wg-sortable-placeholder {
@@ -122,7 +121,7 @@
 }
 .wg.wg-default-repeater.wg-default-repeater-horizontal > .wg.wg-sortable-content > .wg.wg-sortable-inner > .wg.wg-sortable-container > .wg.wg-sortable-item.dragged {
   position: absolute;
-  display: table;
+  display: none;
   opacity: 0;
   z-index: 2000;
 }
@@ -172,7 +171,7 @@
 }
 .wg.wg-default-repeater > .wg.wg-content > .wg.wg-table > .wg.wg-row.dragged {
   position: absolute;
-  display: table;
+  display: none;
   opacity: 0;
   z-index: 2000;
 }
