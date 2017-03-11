@@ -23,6 +23,7 @@
         },
         created() {
             this.$context = Object.assign({}, this.$context, this.item)
+            console.log(this.$context)
         }
     })
 

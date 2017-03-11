@@ -30,8 +30,15 @@
                 },
                 events: {
                     submit: (current) => {
-                        let w = Widgets.build(Widgets.FrameWidget, {})
-                        w = Object.assign(w, { setup: { page: current.page } })
+                        let w = Widgets.build(Widgets.FrameWidget, {
+                            flex: {
+                                value: '1 1 auto'
+                            }
+                        })
+                        w = Object.assign(w, {
+                            setup: { page: current.page },
+                            overrides: {}
+                        })
                         resolve(w)
                     },
                     reset: () => {

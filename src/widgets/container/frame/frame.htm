@@ -20,8 +20,9 @@
         >
             <div class="ge ge-shell ge-shell-public ge-shell-frame">
                 <shell-page
-                    :page.sync="frame"
-                    :items.sync="frame.widgets"
+                    :page="frame"
+                    :settings="settings"
+                    :scalable="false"
                 ></shell-page>
             </div>
     </section>

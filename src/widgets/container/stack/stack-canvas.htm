@@ -7,7 +7,7 @@
         'overflow': 'auto'
     }">
         <div class="wg wg-content wg-sortable-content" :style="{
-           'transform': ($store.state.designer && $store.state.designer.scale) ? ('scale(' + $store.state.designer.scale + ')') : null,
+           'transform': (scalable && ($store.state.designer && $store.state.designer.scale)) ? ('scale(' + $store.state.designer.scale + ')') : null,
            'transform-origin': 'top left'
         }">
             <div class="wg wg-sortable-inner">

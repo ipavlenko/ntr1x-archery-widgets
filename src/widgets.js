@@ -150,11 +150,11 @@ window.Widgets =
             name: config.name,
             tag: config.tag,
             setup: config.setup,
-            overrides: config.overrides,
             widgets: config.widgets,
             tabs: [],
             props: [],
             params: {},
+            overrides: {},
             designer: Object.assign({
                 fill: false,
                 hidden: false,
