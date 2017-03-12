@@ -27,13 +27,13 @@
         { group: Widgets.SpaceGroup, names: [ 's1', 's2', 's3', 's4', 's5', 's6' ] },
     ];
 
-    for (var i = 0; i < images.length; i++) {
+    for (let i = 0; i < images.length; i++) {
 
         var settings = images[i];
 
-        for (var j = 0; j < settings.names.length; j++) {
+        for (let j = 0; j < settings.names.length; j++) {
 
-            var name = settings.names[j];
+            let name = settings.names[j];
 
             Widgets.Item(settings.group, {
                 name: name,
