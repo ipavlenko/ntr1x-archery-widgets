@@ -1,5 +1,5 @@
-<template id="default-form-textarea">
-    <section class="wg wg-default-form wg-default-form-textarea" :id="bindings.id"
+<template id="default-form-button">
+    <section class="wg wg-default-form wg-default-form-button" :id="bindings.id"
         :style="{
             'display': bindings.display,
             'margin': bindings.outer.margin,
@@ -14,11 +14,8 @@
                 'width': bindings.width,
             }"
         >
-            <textarea class="form-control"
+            <button
                 @click="$page.dispatch(bindings.click, $context)"
-                @input="$page.dispatch(bindings.input, $context)"
-                :placeholder="bindings.placeholder"
-                :value="bindings.value"
                 :class="bindings.cssClass"
                 :style="{
                     'min-height': bindings.minHeight,
@@ -35,7 +32,7 @@
                     'color': bindings.color,
                     'fontSize': bindings.fontSize,
                 }"
-            ></textarea>
+            >{{ bindings.title }}</button>
         </div>
     </section>
 </template>

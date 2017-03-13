@@ -1,0 +1,41 @@
+<template id="default-form-group">
+    <section class="wg wg-default-form wg-default-form-group" :id="bindings.id"
+        :style="{
+            'display': bindings.display,
+            'margin': bindings.outer.margin,
+            'padding': bindings.outer.padding,
+            'border': bindings.outer.border,
+            'border-radius': bindings.outer.borderRadius,
+            'background': bindings.outer.background,
+        }"
+    >
+        <div class="wg wg-content"
+            :style="{
+                'width': bindings.width,
+            }"
+        >
+            <div class="btn-group">
+                <button
+                    v-for="item in bindings.items"
+                    @click="$page.dispatch(item.click, $context)"
+                    :class="item.cssClass || bindings.cssClass"
+                    :style="{
+                        'min-height': bindings.minHeight,
+                        'min-width': bindings.minWidth,
+                        'height': bindings.height,
+                        'width': bindings.width,
+                        'margin': bindings.inner.margin,
+                        'padding': bindings.inner.padding,
+                        'border': bindings.inner.border,
+                        'border-radius': bindings.inner.borderRadius,
+                        'background': bindings.inner.background,
+                        'text-align': bindings.align,
+                        'line-height': bindings.lineHeight,
+                        'color': bindings.color,
+                        'fontSize': bindings.fontSize,
+                    }"
+                >{{ item.title }}</button>
+            </div>
+        </div>
+    </section>
+</template>

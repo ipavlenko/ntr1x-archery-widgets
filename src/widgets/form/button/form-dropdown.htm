@@ -1,0 +1,44 @@
+<template id="default-form-dropdown">
+    <section class="wg wg-default-form wg-default-form-dropdown" :id="bindings.id"
+        :style="{
+            'display': bindings.display,
+            'margin': bindings.outer.margin,
+            'padding': bindings.outer.padding,
+            'border': bindings.outer.border,
+            'border-radius': bindings.outer.borderRadius,
+            'background': bindings.outer.background,
+        }"
+    >
+        <div class="wg wg-content"
+            :style="{
+                'width': bindings.width,
+            }"
+        >
+            <div class="btn-group">
+                <button class="dropdown-toggle"
+                    data-toggle="dropdown"
+                    @click="$page.dispatch(bindings.click, $context)"
+                    :class="bindings.cssClass"
+                    :style="{
+                        'min-height': bindings.minHeight,
+                        'min-width': bindings.minWidth,
+                        'height': bindings.height,
+                        'width': bindings.width,
+                        'margin': bindings.inner.margin,
+                        'padding': bindings.inner.padding,
+                        'border': bindings.inner.border,
+                        'border-radius': bindings.inner.borderRadius,
+                        'background': bindings.inner.background,
+                        'text-align': bindings.align,
+                        'line-height': bindings.lineHeight,
+                        'color': bindings.color,
+                        'fontSize': bindings.fontSize,
+                    }"
+                >{{ bindings.title }} <span :class="bindings.icon"></span></button>
+                <ul class="dropdown-menu">
+                    <li v-for="item in bindings.items"><a href="#">{{ item.title }}</a></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+</template>

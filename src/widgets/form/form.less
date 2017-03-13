@@ -14,10 +14,7 @@
 
         position: relative;
         display: block;
-        // flex: 1 1 auto;
         box-sizing: border-box;
-        // font-size: 1em;
-        // height: 2em;
 
         >* {
             display: block;
@@ -27,26 +24,58 @@
 
     &.wg-default-form-text,
     &.wg-default-form-password,
-    &.wg-default-form-textarea {
+    &.wg-default-form-textarea,
+    &.wg-default-form-button,
+    &.wg-default-form-dropdown,
+    &.wg-default-form-group {
 
         >.wg.wg-content {
 
             >input,
-            >textarea {
-                border-radius: 0.25em;
+            >textarea,
+            >button,
+            >.btn-group >button{
                 padding: 0em 0.5em 0em 0.5em;
-                border: 0.1em solid #66AFE9;
                 width: 100%;
                 height: 2em;
                 font-size: 1em;
+                >.glyphicon {
+                    min-height: 1em;
+                    line-height: 1em;
+                    vertical-align: baseline;
+                    font-size: 0.6em;
+                }
 
                 -webkit-appearance: none;
                 -moz-appearance: none;
                 -ms-appearance: none;
             }
 
-            >input { height: 2em; }
-            >textarea { height: 4em; padding: 0.3em 0.5em; }
+            >.btn-group {
+                flex: 1 1 auto;
+                display: flex;
+                align-items: center;
+                box-sizing: border-box;
+                position: relative;
+                >.dropdown-menu {
+                    width: 100%;
+                }
+            }
+
+            >input { border: 0.1em solid #66AFE9; height: 2em; border-radius: 0.25em; }
+            >button { border: 1px solid transparent; height: 2em; border-radius: 0.25em; }
+            .btn-group >button {
+                border: 1px solid transparent; height: 2em;
+                &:first-of-type {
+                    border-top-left-radius: 0.25em;
+                    border-bottom-left-radius: 0.25em;
+                }
+                &:last-of-type {
+                    border-top-right-radius: 0.25em;
+                    border-bottom-right-radius: 0.25em;
+                }
+            }
+            >textarea { border: 0.1em solid #66AFE9; height: 4em; padding: 0.3em 0.5em; border-radius: 0.25em; }
         }
     }
 
