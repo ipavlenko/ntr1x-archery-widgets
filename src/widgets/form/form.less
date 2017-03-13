@@ -1,0 +1,97 @@
+// "out": "form.css"
+
+.wg.wg-default-form {
+
+    flex: 1 1 auto;
+    font-size: 1em;
+    margin: 0.2em;
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+    position: relative;
+
+    >.wg.wg-content {
+
+        position: relative;
+        display: block;
+        // flex: 1 1 auto;
+        box-sizing: border-box;
+        // font-size: 1em;
+        // height: 2em;
+
+        >* {
+            display: block;
+            vertical-align: middle;
+        }
+    }
+
+    &.wg-default-form-text,
+    &.wg-default-form-password,
+    &.wg-default-form-textarea {
+
+        >.wg.wg-content {
+
+            >input,
+            >textarea {
+                border-radius: 0.25em;
+                padding: 0em 0.5em 0em 0.5em;
+                border: 0.1em solid #66AFE9;
+                width: 100%;
+                height: 2em;
+                font-size: 1em;
+
+                -webkit-appearance: none;
+                -moz-appearance: none;
+                -ms-appearance: none;
+            }
+
+            >input { height: 2em; }
+            >textarea { height: 4em; padding: 0.3em 0.5em; }
+        }
+    }
+
+    &.wg-default-form-select {
+
+        >.wg.wg-content {
+
+            >select {
+                border-radius: 0.25em;
+                padding: 0em 1.5em 0em 0.5em;
+                border: 0.1em solid #66AFE9;
+                width: 100%;
+                height: 2em;
+                font-size: 1em;
+
+                -webkit-appearance: none;
+                -moz-appearance: none;
+                -ms-appearance: none;
+                text-indent: 0px;
+                text-overflow: '';
+
+                &::-moz-focus-inner {
+                    padding:0;
+                    border: 0;
+                }
+
+                &:-moz-focusring {
+                    color: transparent;
+                    text-shadow: 0 0 0 #000;
+                }
+            }
+
+            >.wg.wg-content-overlay {
+                position: absolute;
+                top: 50%;
+                right: 0.5em;
+                pointer-events: none;
+
+                >.glyphicon {
+                    font-size: 0.7em;
+                    margin-top: -50%;
+                    display: block;
+                    overflow: hidden;
+                }
+            }
+        }
+    }
+}

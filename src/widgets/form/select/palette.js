@@ -1,107 +1,48 @@
 (function($, Vue, Core, Widgets) {
 
-    Widgets.FormTextWidget =
+    Widgets.FormSelectWidget =
     Widgets.Widget(Widgets.InputsGroup, Widgets.create({
-        name: 'default-form-text',
-        tag: 'default-form-text',
+        name: 'default-form-select',
+        tag: 'default-form-select',
         mixins: [ Widgets.WidgetMixin, Widgets.BoxMixin, Widgets.FontMixin, Widgets.SizeMixin ],
         props: [
             { name: 'value', title: 'Value', type: 'string', tab: 'data' },
-            { name: 'input', title: '@Input', type: 'action', tab: 'events' },
+            { name: 'icon', title: 'Icon', type: 'string', tab: 'appearance' },
+            { name: 'change', title: '@Change', type: 'action', tab: 'events' },
             { name: 'placeholder', title: 'Placeholder', type: 'string', tab: 'content' },
+            {
+                name: 'options', type: 'multiple', title: 'Options', tab: 'data',
+                tabs: [
+                    { name: 'data', title: 'Data' },
+                ],
+                props: [
+                    { name: 'value', title: 'Value', type: 'string', tab: 'data' },
+                    { name: 'title', title: 'Title', type: 'string', tab: 'data' },
+                ]
+            },
         ],
     }));
 
-    Widgets.FormTextWidgetFactory = function(placeholder) {
+    Widgets.FormSelectWidgetFactory = function(placeholder) {
 
-        return Widgets.build(Widgets.FormTextWidget, {
+        return Widgets.build(Widgets.FormSelectWidget, {
             placeholder: { value: placeholder },
+            icon: { value: 'glyphicon glyphicon-triangle-bottom' },
+            options: {
+                value: [
+                    { value: { value: 1 }, title: { value: 'One' } },
+                    { value: { value: 2 }, title: { value: 'Two' } }
+                ]
+            }
         });
     };
 
     Widgets.Item(Widgets.InputsGroup, {
-        name: 'form-text',
-        thumbnail: '/assets/vendor/ntr1x-archery-widgets/src/widgets/form/input/form-text.png',
-        widget: () => Promise.resolve(Widgets.FormTextWidgetFactory('Text')),
+        name: 'form-select',
+        thumbnail: '/assets/vendor/ntr1x-archery-widgets/src/widgets/form/select/select.png',
+        widget: () => Promise.resolve(Widgets.FormSelectWidgetFactory('Select')),
     });
 
-    Widgets.FormPasswordWidget =
-    Widgets.Widget(Widgets.InputsGroup, Widgets.create({
-        name: 'default-form-password',
-        tag: 'default-form-password',
-        mixins: [ Widgets.WidgetMixin, Widgets.BoxMixin, Widgets.FontMixin, Widgets.SizeMixin ],
-        props: [
-            { name: 'value', title: 'Value', type: 'string', tab: 'data' },
-            { name: 'input', title: '@Input', type: 'action', tab: 'events' },
-            { name: 'placeholder', title: 'Placeholder', type: 'string', tab: 'content' },
-        ],
-    }));
-
-    Widgets.FormPasswordWidgetFactory = function(placeholder) {
-
-        return Widgets.build(Widgets.FormPasswordWidget, {
-            placeholder: { value: placeholder },
-        });
-    };
-
-    Widgets.Item(Widgets.InputsGroup, {
-        name: 'form-password',
-        thumbnail: '/assets/vendor/ntr1x-archery-widgets/src/widgets/form/input/form-password.png',
-        widget: () => Promise.resolve(Widgets.FormPasswordWidgetFactory('Password', 'password')),
-    });
-
-    Widgets.FormTextareaWidget =
-    Widgets.Widget(Widgets.InputsGroup, Widgets.create({
-        name: 'default-form-textarea',
-        tag: 'default-form-textarea',
-        mixins: [ Widgets.WidgetMixin, Widgets.BoxMixin, Widgets.FontMixin, Widgets.SizeMixin ],
-        props: [
-            { name: 'value', title: 'Value', type: 'string', tab: 'data' },
-            { name: 'input', title: '@Input', type: 'action', tab: 'events' },
-            { name: 'placeholder', title: 'Placeholder', type: 'string', tab: 'content' },
-        ],
-    }));
-
-    Widgets.FormTextareaWidgetFactory = function(placeholder) {
-
-        return Widgets.build(Widgets.FormTextareaWidget, {
-            placeholder: { value: placeholder },
-        });
-    };
-
-    Widgets.Item(Widgets.InputsGroup, {
-        name: 'form-textarea',
-        thumbnail: '/assets/vendor/ntr1x-archery-widgets/src/widgets/form/input/form-textarea.png',
-        widget: () => Promise.resolve(Widgets.FormTextareaWidgetFactory('Message')),
-    });
-
-    // Widgets.TextareaWidget =
-    // Widgets.Widget(Widgets.InputsGroup, Widgets.create({
-    //     name: 'default-input-textarea',
-    //     tag: 'default-input-textarea',
-    //     mixins: [ Widgets.WidgetMixin, Widgets.BoxMixin, Widgets.SizeMixin ],
-    //     props: [
-    //         { name: 'model', title: 'Model', type: 'var', tab: 'data', variable: true },
-    //         { name: 'label', title: 'Label', type: 'string', tab: 'data' },
-    //         { name: 'placeholder', title: 'Placeholder', type: 'string', tab: 'data' },
-    //     ],
-    // }));
-    //
-    // Widgets.TextareaWidgetFactory = function(label, placeholder) {
-    //
-    //     return Widgets.build(Widgets.TextareaWidget, {
-    //         model: {
-    //             value: { value: '' }
-    //         },
-    //         placeholder: { value: placeholder },
-    //         inner: {
-    //             value: {
-    //                 margin: { value: '15px 15px' },
-    //             }
-    //         },
-    //         label: { value: label },
-    //     });
-    // };
     //
     // Widgets.Item(Widgets.InputsGroup, {
     //     name: 'input-textarea',

@@ -1,0 +1,47 @@
+<template id="default-form-select">
+    <section class="wg wg-default-form wg-default-form-select" :id="bindings.id"
+        :style="{
+            'display': bindings.display,
+            'margin': bindings.outer.margin,
+            'padding': bindings.outer.padding,
+            'border': bindings.outer.border,
+            'border-radius': bindings.outer.borderRadius,
+            'background': bindings.outer.background,
+        }"
+    >
+        <div class="wg wg-content"
+            :class="bindings.cssClass"
+            :style="{
+                'width': bindings.width,
+            }"
+        >
+            <select class="form-control"
+                @click="$page.dispatch(bindings.click, $context)"
+                @change="$page.dispatch(bindings.change, $context)"
+                :placeholder="bindings.placeholder"
+                :value="bindings.value"
+                :class="bindings.cssClass"
+                :style="{
+                    'min-height': bindings.minHeight,
+                    'min-width': bindings.minWidth,
+                    'height': bindings.height,
+                    'width': bindings.width,
+                    'margin': bindings.inner.margin,
+                    'padding': bindings.inner.padding,
+                    'border': bindings.inner.border,
+                    'border-radius': bindings.inner.borderRadius,
+                    'background': bindings.inner.background,
+                    'text-align': bindings.align,
+                    'line-height': bindings.lineHeight,
+                    'color': bindings.color,
+                    'font-size': bindings.fontSize,
+                }"
+            >
+                <option v-for="o in bindings.options" :value="o.value">{{ o.title }}</option>
+            </select>
+            <span class="wg wg-content-overlay" :style="{
+                'font-size': bindings.fontSize,
+            }"><span :class="bindings.icon"></span></span>
+        </div>
+    </section>
+</template>

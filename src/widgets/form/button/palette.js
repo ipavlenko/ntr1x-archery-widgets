@@ -1,68 +1,9 @@
 (function($, Vue, Core, Widgets) {
 
-    Widgets.ButtonWidget =
-    Widgets.Widget(Widgets.ButtonsGroup, Widgets.create({
-        name: 'default-button',
-        tag: 'default-button',
-        mixins: [ Widgets.WidgetMixin, Widgets.BoxMixin, Widgets.SizeMixin, Widgets.EventsMixin ],
-        props: [
-            { name: 'test', title: 'Test', type: 'string', tab: 'content' },
-            { name: 'title', title: 'Title', type: 'string', tab: 'content' },
-            { name: 'type', title: 'Type', type: 'string', tab: 'data' },
-            { name: 'stereotype', title: 'Stereotype', type: 'string', tab: 'data' },
-        ],
-    }));
-
-    Widgets.ButtonWidgetFactory = function(title, stereotype) {
-
-        var w = Widgets.build(Widgets.ButtonWidget, {
-            inner: {
-                value:  {
-                    margin: { value: '15px 15px' },
-                }
-            },
-            type: { value: 'button' },
-            title: { value: title },
-            stereotype: { value: stereotype },
-        });
-
-        return w;
-    }
-
     Widgets.Item(Widgets.ButtonsGroup, {
-        name: 'button-default',
-        thumbnail: '/assets/vendor/ntr1x-archery-widgets/src/widgets/form/button/button-default.png',
-        widget: () => Promise.resolve(Widgets.ButtonWidgetFactory('Default', 'default')),
-    });
-
-    Widgets.Item(Widgets.ButtonsGroup, {
-        name: 'button-primary',
-        thumbnail: '/assets/vendor/ntr1x-archery-widgets/src/widgets/form/button/button-primary.png',
-        widget: () => Promise.resolve(Widgets.ButtonWidgetFactory('Primary', 'primary')),
-    });
-
-    Widgets.Item(Widgets.ButtonsGroup, {
-        name: 'button-success',
-        thumbnail: '/assets/vendor/ntr1x-archery-widgets/src/widgets/form/button/button-success.png',
-        widget: () => Promise.resolve(Widgets.ButtonWidgetFactory('Success', 'success')),
-    });
-
-    Widgets.Item(Widgets.ButtonsGroup, {
-        name: 'button-info',
-        thumbnail: '/assets/vendor/ntr1x-archery-widgets/src/widgets/form/button/button-info.png',
-        widget: () => Promise.resolve(Widgets.ButtonWidgetFactory('Info', 'info')),
-    });
-
-    Widgets.Item(Widgets.ButtonsGroup, {
-        name: 'button-warning',
-        thumbnail: '/assets/vendor/ntr1x-archery-widgets/src/widgets/form/button/button-warning.png',
-        widget: () => Promise.resolve(Widgets.ButtonWidgetFactory('Warning', 'warning')),
-    });
-
-    Widgets.Item(Widgets.ButtonsGroup, {
-        name: 'button-danger',
-        thumbnail: '/assets/vendor/ntr1x-archery-widgets/src/widgets/form/button/button-danger.png',
-        widget: () => Promise.resolve(Widgets.ButtonWidgetFactory('Danger', 'danger')),
+        name: 'form-button',
+        thumbnail: '/assets/vendor/ntr1x-archery-widgets/src/widgets/form/button/button.png',
+        widget: () => Promise.resolve(Widgets.MicrosButtonWidgetFactory({ content: 'Button', cssClass: 'btn btn-primary', padding: '0.2em 0.2em', height: '1.6em', lineHeight: '1.4em', borderRadius: '0.25em', fontSize: '0.8em' })),
     });
 
 })(jQuery, Vue, Core, Widgets);

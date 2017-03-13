@@ -1,0 +1,42 @@
+<template id="default-form-text">
+    <section class="wg wg-default-form wg-default-form-text" :id="bindings.id"
+        :style="{
+            'display': bindings.display,
+            'margin': bindings.outer.margin,
+            'padding': bindings.outer.padding,
+            'border': bindings.outer.border,
+            'border-radius': bindings.outer.borderRadius,
+            'background': bindings.outer.background,
+        }"
+    >
+        <div class="wg wg-content"
+            :class="bindings.cssClass"
+            :style="{
+                'width': bindings.width,
+            }"
+        >
+            <input type="text" class="form-control wg wg-content"
+                @click="$page.dispatch(bindings.click, $context)"
+                @input="$page.dispatch(bindings.input, $context)"
+                :placeholder="bindings.placeholder"
+                :value="bindings.value"
+                :class="bindings.cssClass"
+                :style="{
+                    'min-height': bindings.minHeight,
+                    'min-width': bindings.minWidth,
+                    'height': bindings.height,
+                    'width': bindings.width,
+                    'margin': bindings.inner.margin,
+                    'padding': bindings.inner.padding,
+                    'border': bindings.inner.border,
+                    'border-radius': bindings.inner.borderRadius,
+                    'background': bindings.inner.background,
+                    'text-align': bindings.align,
+                    'line-height': bindings.lineHeight,
+                    'color': bindings.color,
+                    'fontSize': bindings.fontSize,
+                }"
+            />
+        </div>
+    </section>
+</template>
