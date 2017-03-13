@@ -13,6 +13,7 @@
   margin: 0px auto;
   width: 100%;
   padding: 5px;
+  overflow: auto;
 }
 .wg.wg-default-stack.wg-default-stack-canvas > .wg.wg-sortable-content {
   display: flex;
