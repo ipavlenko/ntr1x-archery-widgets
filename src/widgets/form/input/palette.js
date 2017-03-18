@@ -75,6 +75,48 @@
         widget: () => Promise.resolve(Widgets.FormTextareaWidgetFactory('Message')),
     });
 
+    Widgets.FormCheckboxWidget =
+    Widgets.Widget(Widgets.InputsGroup, Widgets.create({
+        name: 'default-form-checkbox',
+        tag: 'default-form-checkbox',
+        mixins: [ Widgets.WidgetMixin, Widgets.BoxMixin, Widgets.FontMixin, Widgets.SizeMixin ],
+        props: [
+            { name: 'checked', title: 'Checked', type: 'string', tab: 'data' },
+        ],
+    }));
+
+    Widgets.FormCheckboxWidgetFactory = function() {
+
+        return Widgets.build(Widgets.FormCheckboxWidget, {});
+    };
+
+    Widgets.Item(Widgets.InputsGroup, {
+        name: 'form-checkbox',
+        thumbnail: '/assets/vendor/ntr1x-archery-widgets/src/widgets/form/input/form-checkbox.png',
+        widget: () => Promise.resolve(Widgets.FormCheckboxWidgetFactory()),
+    });
+
+    Widgets.FormRadioWidget =
+    Widgets.Widget(Widgets.InputsGroup, Widgets.create({
+        name: 'default-form-radio',
+        tag: 'default-form-radio',
+        mixins: [ Widgets.WidgetMixin, Widgets.BoxMixin, Widgets.FontMixin, Widgets.SizeMixin ],
+        props: [
+            { name: 'checked', title: 'Checked', type: 'string', tab: 'data' },
+        ],
+    }));
+
+    Widgets.FormRadioWidgetFactory = function() {
+
+        return Widgets.build(Widgets.FormRadioWidget, {});
+    };
+
+    Widgets.Item(Widgets.InputsGroup, {
+        name: 'form-radio',
+        thumbnail: '/assets/vendor/ntr1x-archery-widgets/src/widgets/form/input/form-radio.png',
+        widget: () => Promise.resolve(Widgets.FormRadioWidgetFactory()),
+    });
+
     // Widgets.TextareaWidget =
     // Widgets.Widget(Widgets.InputsGroup, Widgets.create({
     //     name: 'default-input-textarea',
