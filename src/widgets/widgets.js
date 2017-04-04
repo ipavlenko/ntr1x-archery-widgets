@@ -29,6 +29,7 @@
     P.Border = { name: 'border', title: 'Border', type: 'string', placeholder: '1px solid #000000', tab: 'appearance' };
     P.BorderRadius = { name: 'borderRadius', title: 'Border Radius', type: 'string', placeholder: '4px 4px', tab: 'appearance' };
     P.Background = { name: 'background', title: 'Background', type: 'string', tab: 'appearance' };
+    P.BackgroundSize = { name: 'backgroundSize', title: 'Background Size', type: 'string', tab: 'appearance' };
 
     P.Cols = { name: 'cols', title: 'Columns', type: 'string', tab: 'appearance' };
     P.Rows = { name: 'rows', title: 'Rows', type: 'string', tab: 'appearance' };
@@ -64,7 +65,7 @@
 
     Widgets.CanvasMixin = {
         tabs: [ T.Data, T.Appearance, T.Layout, T.Content, T.Events ],
-        props: [ P.Background ],
+        props: [ P.Background, P.BackgroundSize ],
     };
 
     Widgets.WidgetMixin = {
@@ -76,11 +77,11 @@
         props: [
             { name: 'inner', title: 'Inner Container', type: 'object', tab: 'appearance',
                 tabs: [ T.Appearance ],
-                props: [ P.Margin, P.Padding, P.Border, P.BorderRadius, P.Background ]
+                props: [ P.Margin, P.Padding, P.Border, P.BorderRadius, P.Background, P.BackgroundSize ]
             },
             { name: 'outer', title: 'Outer Container', type: 'object', tab: 'appearance',
                 tabs: [ T.Appearance ],
-                props: [ P.Margin, P.Padding, P.Border, P.BorderRadius, P.Background ]
+                props: [ P.Margin, P.Padding, P.Border, P.BorderRadius, P.Background, P.BackgroundSize ]
             },
         ],
     };

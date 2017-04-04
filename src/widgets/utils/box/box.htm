@@ -2,6 +2,7 @@
     <section :class="clazz" :id="bindings.id" :style="{
         'border': bindings.outer.border,
         'background': bindings.outer.background,
+        'background-size': bindings.outer.backgroundSize,
         'margin': bindings.outer.margin,
         'padding': bindings.outer.padding,
     }">
@@ -12,6 +13,7 @@
             'padding': bindings.inner.padding,
             'border': bindings.inner.border,
             'background': bindings.inner.background,
+            'background-size': bindings.inner.backgroundSize,
         }"><slot>Empty</slot></div>
     </section>
 </template>

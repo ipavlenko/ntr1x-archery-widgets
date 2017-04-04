@@ -13,7 +13,7 @@
         mixins: [ Widgets.WidgetMixin, Widgets.EffectsMixin ],
         widgets: [],
         props: [
-            P.Background
+            P.Background, P.BackgroundSize
         ]
     }));
 

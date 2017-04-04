@@ -3,6 +3,7 @@
         'display': bindings.display,
         'border': bindings.outer.border,
         'background': bindings.outer.background,
+        'background-size': bindings.outer.backgroundSize,
         'margin': bindings.outer.margin,
         'padding': bindings.outer.padding,
         'font-size': bindings.fontSize,
@@ -14,6 +15,7 @@
             'padding': bindings.inner.padding,
             'border': bindings.inner.border,
             'background': bindings.inner.background,
+            'background-size': bindings.inner.backgroundSize,
         }">
             <template v-for="(item, j) in bindings.collection">
                 <default-layers-repeater-item v-for="(child, i) in children" :key="child.uuid" :item="item">
