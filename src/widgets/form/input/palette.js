@@ -4,6 +4,7 @@
     Widgets.Widget(Widgets.InputsGroup, Widgets.create({
         name: 'default-form-text',
         tag: 'default-form-text',
+        title: 'Input',
         mixins: [ Widgets.WidgetMixin, Widgets.BoxMixin, Widgets.FontMixin, Widgets.SizeMixin ],
         props: [
             { name: 'value', title: 'Value', type: 'string', tab: 'data' },
@@ -29,6 +30,7 @@
     Widgets.Widget(Widgets.InputsGroup, Widgets.create({
         name: 'default-form-password',
         tag: 'default-form-password',
+        title: 'Password',
         mixins: [ Widgets.WidgetMixin, Widgets.BoxMixin, Widgets.FontMixin, Widgets.SizeMixin ],
         props: [
             { name: 'value', title: 'Value', type: 'string', tab: 'data' },
@@ -54,6 +56,7 @@
     Widgets.Widget(Widgets.InputsGroup, Widgets.create({
         name: 'default-form-textarea',
         tag: 'default-form-textarea',
+        title: 'Textarea',
         mixins: [ Widgets.WidgetMixin, Widgets.BoxMixin, Widgets.FontMixin, Widgets.SizeMixin ],
         props: [
             { name: 'value', title: 'Value', type: 'string', tab: 'data' },
@@ -79,6 +82,7 @@
     Widgets.Widget(Widgets.InputsGroup, Widgets.create({
         name: 'default-form-checkbox',
         tag: 'default-form-checkbox',
+        title: 'Checkbox',
         mixins: [ Widgets.WidgetMixin, Widgets.BoxMixin, Widgets.FontMixin, Widgets.SizeMixin ],
         props: [
             { name: 'checked', title: 'Checked', type: 'string', tab: 'data' },
@@ -100,6 +104,7 @@
     Widgets.Widget(Widgets.InputsGroup, Widgets.create({
         name: 'default-form-radio',
         tag: 'default-form-radio',
+        title: 'Radio',
         mixins: [ Widgets.WidgetMixin, Widgets.BoxMixin, Widgets.FontMixin, Widgets.SizeMixin ],
         props: [
             { name: 'checked', title: 'Checked', type: 'string', tab: 'data' },

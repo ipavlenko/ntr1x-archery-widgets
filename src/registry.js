@@ -39,6 +39,11 @@ window.Widgets =
                 })
         }
 
+        var descriptor = function(path) {
+            var segments = path.split('/');
+            return this.category(segments[0]).group(segments[1]).item(segments[2]);
+        }
+
         function generateId(prefix) {
             let rtn = Math.random().toString(36).substr(2, 9);
             return prefix ? prefix + rtn : rtn;
@@ -49,6 +54,7 @@ window.Widgets =
             category: category,
             widget: widget,
             item: item,
+            descriptor: descriptor,
             placeholder: function(content) { return Widgets.StubWidgetFactory(content) },
             generateId: generateId,
         };
@@ -148,6 +154,7 @@ window.Widgets =
 
         var result = {
             name: config.name,
+            title: config.title,
             tag: config.tag,
             setup: config.setup,
             widgets: config.widgets,

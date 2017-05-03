@@ -6,6 +6,7 @@
     Widgets.Widget(Widgets.MicrosMainGroup, Widgets.create({
         name: 'default-micros-text',
         tag: 'default-micros-text',
+        title: 'Text',
         mixins: [ Widgets.WidgetMixin, Widgets.BoxMixin, Widgets.SizeMixin, Widgets.FontMixin ],
         props: [
             { name: 'content', title: 'Content', type: 'string', tab: 'content' },
@@ -54,6 +55,7 @@
     Widgets.Widget(Widgets.MicrosMainGroup, Widgets.create({
         name: 'default-micros-rich',
         tag: 'default-micros-rich',
+        title: 'Rich',
         mixins: [ Widgets.WidgetMixin, Widgets.BoxMixin, Widgets.SizeMixin, Widgets.FontMixin ],
         props: [
             { name: 'content', title: 'Content', type: 'rich', tab: 'content' },
@@ -90,6 +92,7 @@
     Widgets.Widget(Widgets.MicrosMainGroup, Widgets.create({
         name: 'default-micros-button',
         tag: 'default-micros-button',
+        title: 'Button',
         mixins: [ Widgets.WidgetMixin, Widgets.BoxMixin, Widgets.SizeMixin, Widgets.FontMixin, Widgets.EventsMixin ],
         props: [
             { name: 'content', title: 'Content', type: 'string', tab: 'content' },
@@ -127,6 +130,7 @@
     Widgets.Widget(Widgets.MicrosMainGroup, Widgets.create({
         name: 'default-micros-icon',
         tag: 'default-micros-icon',
+        title: 'Icon',
         mixins: [ Widgets.WidgetMixin, Widgets.BoxMixin, Widgets.SizeMixin, Widgets.FontMixin ],
         props: [
             { name: 'icon', title: 'Icon', type: 'string', tab: 'content' },
@@ -159,6 +163,7 @@
     Widgets.Widget(Widgets.MicrosMainGroup, Widgets.create({
         name: 'default-micros-image',
         tag: 'default-micros-image',
+        title: 'Image',
         mixins: [ Widgets.WidgetMixin, Widgets.BoxMixin, Widgets.SizeMixin ],
         props: [
             { name: 'src', title: 'Content', type: 'string', tab: 'content' },

@@ -4,6 +4,7 @@
     Widgets.Widget(Widgets.StackGroup, Widgets.create({
         name: 'default-stack-canvas',
         tag: 'default-stack-canvas',
+        title: 'Canvas',
         mixins: [ Widgets.CanvasMixin, Widgets.SizeMixin ],
         widgets: [],
         designer: {
@@ -41,6 +42,7 @@
     Widgets.Widget(Widgets.StackGroup, Widgets.create({
         name: 'default-stack-horizontal',
         tag: 'default-stack-horizontal',
+        title: 'HStack',
         mixins: [ Widgets.WidgetMixin, Widgets.BoxMixin, Widgets.SizeMixin ],
         widgets: [],
         props: [
@@ -74,6 +76,7 @@
     Widgets.Widget(Widgets.StackGroup, Widgets.create({
         name: 'default-stack-vertical',
         tag: 'default-stack-vertical',
+        title: 'VStack',
         mixins: [ Widgets.WidgetMixin, Widgets.BoxMixin, Widgets.SizeMixin ],
         widgets: [],
         props: [

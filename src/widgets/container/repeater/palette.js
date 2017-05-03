@@ -6,6 +6,7 @@
     Widgets.Widget(Widgets.RepeaterGroup, Widgets.create({
         name: 'default-repeater-horizontal',
         tag: 'default-repeater-horizontal',
+        title: 'HRepeater',
         mixins: [ Widgets.WidgetMixin, Widgets.BoxMixin, Widgets.SizeMixin ],
         widgets: [],
         designer: {
@@ -49,6 +50,7 @@
     Widgets.Widget(Widgets.RepeaterGroup, Widgets.create({
         name: 'default-repeater-vertical',
         tag: 'default-repeater-vertical',
+        title: 'VRepeater',
         mixins: [ Widgets.WidgetMixin, Widgets.BoxMixin, Widgets.SizeMixin ],
         widgets: [],
         designer: {

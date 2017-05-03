@@ -4,6 +4,7 @@
     Widgets.Widget(Widgets.EmbeddedGroup, Widgets.create({
         name: 'default-frame',
         tag: 'default-frame',
+        title: 'Frame',
         mixins: [ Widgets.WidgetMixin, Widgets.BoxMixin, Widgets.SizeMixin ],
         // setup: { page: 'offer' }
     }));
