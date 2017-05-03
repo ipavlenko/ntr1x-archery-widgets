@@ -22,6 +22,8 @@
         >
             <div class="ge ge-shell ge-shell-public ge-shell-frame">
                 <shell-page
+                    :key="bindings.id"
+                    :id="bindings.id"
                     :page="frame"
                     :settings="settings"
                     :scalable="false"

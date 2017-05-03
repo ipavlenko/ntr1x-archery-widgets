@@ -10,7 +10,7 @@
             'background-size': bindings.outer.backgroundSize,
         }"
     >
-        <button class="wg wg-content"
+        <div class="wg wg-content"
             @click="$page.dispatch(bindings.click, $context)"
             :class="bindings.cssClass"
             :style="{
@@ -24,13 +24,13 @@
                 'border-radius': bindings.inner.borderRadius,
                 'background': bindings.inner.background,
                 'background-size': bindings.inner.backgroundSize,
-                'text-align': bindings.align,
                 'line-height': bindings.lineHeight,
                 'color': bindings.color
             }">
             <div v-text="bindings.content" :style="{
+                'text-align': bindings.align,
                 'font-size': bindings.fontSize,
             }"></div>
-        </button>
+        </div>
     </section>
 </template>

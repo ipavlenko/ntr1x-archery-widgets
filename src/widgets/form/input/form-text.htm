@@ -16,8 +16,8 @@
             }"
         >
             <input type="text" class="form-control"
-                @click="$page.dispatch(bindings.click, $context)"
-                @input="$page.dispatch(bindings.input, $context)"
+                @click="$page.dispatch(bindings.click, $context, $event)"
+                @input="$page.dispatch(bindings.input, $context, $event)"
                 :placeholder="bindings.placeholder"
                 :value="bindings.value"
                 :class="bindings.cssClass"
