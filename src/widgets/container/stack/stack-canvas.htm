@@ -19,7 +19,10 @@
                    }"
                 >
                     <div class="wg wg-sortable-item" v-for="child in children"
-                        :class="{ 'wg-sortable-editable': editable }"
+                        :class="{
+                            'wg-sortable-draggable': editable,
+                            'wg-sortable-stub': child.name == 'default-util/default-util-group/default-stub'
+                        }"
                         :style="{ 'flex': ((child.params.flex && child.params.flex.value) ? child.params.flex.value : '0 0 auto') }"
                     >
                         <div class="wg wg-item-content" :key="child.uuid">

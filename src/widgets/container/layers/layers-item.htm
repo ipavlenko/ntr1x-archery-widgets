@@ -10,11 +10,15 @@
             <div class="wg wg-sortable-inner">
                 <div class="wg wg-sortable-container"
                     :class="{
-                        'wg-sortable-editable': editable
+                        'wg-sortable-draggable': editable,
+                        'wg-sortable-stub': child.name == 'default-util/default-util-group/default-stub'
                     }"
                 >
                 <div class="wg wg-sortable-item wg-item" v-for="(child, i) in children"
-                    :class="{ 'wg-sortable-editable': editable }"
+                    :class="{
+                        'wg-sortable-draggable': editable,
+                        'wg-sortable-stub': child.name == 'default-util/default-util-group/default-stub'
+                    }"
                 >
                     <div class="wg wg-item-content" :key="child.uuid">
                         <div class="wg wg-inner">

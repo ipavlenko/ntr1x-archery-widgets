@@ -30,7 +30,10 @@
                 >
                     <template v-for="(item, j) in bindings.collection">
                         <default-repeater-item class="wg wg-sortable-item" :item="item" :key="item" v-for="(child, i) in children"
-                            :class="{ 'wg-sortable-editable': editable }"
+                            :class="{
+                                'wg-sortable-draggable': editable,
+                                'wg-sortable-stub': child.name == 'default-util/default-util-group/default-stub'
+                            }"
                             :style="{ 'flex': ((child.params.flex && child.params.flex.value) ? child.params.flex.value : '0 0 auto') }"
                         >
                             <div class="wg wg-item-content" :key="child.uuid">
@@ -47,7 +50,10 @@
                     </template>
                     <template v-if="!(bindings.collection && bindings.collection.length) && $route.meta.private">
                         <default-repeater-item class="wg wg-sortable-item" v-for="(child, i) in children"
-                            :class="{ 'wg-sortable-editable': editable }"
+                            :class="{
+                                'wg-sortable-draggable': editable,
+                                'wg-sortable-stub': child.name == 'default-util/default-util-group/default-stub'
+                            }"
                             :style="{ 'flex': ((child.params.flex && child.params.flex.value) ? child.params.flex.value : '0 0 auto') }"
                         >
                             <div class="wg wg-item-content wg-disabled" :key="child.uuid">
