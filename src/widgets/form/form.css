@@ -240,7 +240,6 @@
   border: 0.25em solid #2196f3;
   border-radius: 50%;
   background-color: #FFFFFF;
-  box-sizing: border-box;
 }
 .wg.wg-default-form.wg-default-form-radio > .wg.wg-content > label:after {
   position: absolute;

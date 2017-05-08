@@ -12,8 +12,7 @@
   flex: 0 0 auto;
   margin: 0px auto;
   width: 100%;
-  padding: 25px 15px;
-  overflow: auto;
+  overflow: visible;
 }
 .wg.wg-default-stack.wg-default-stack-canvas > .wg.wg-sortable-content {
   display: flex;
@@ -21,6 +20,7 @@
   flex: 1 1 auto;
   flex-direction: column;
   align-items: stretch;
+  background: #F3F7F7 url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PHBhdHRlcm4gaWQ9ImdyaWQiIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHBhdGggZD0iTSAwIDEwIEwgNDAgMTAgTSAxMCAwIEwgMTAgNDAgTSAwIDIwIEwgNDAgMjAgTSAyMCAwIEwgMjAgNDAgTSAwIDMwIEwgNDAgMzAgTSAzMCAwIEwgMzAgNDAiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2UwZTBlMCIgb3BhY2l0eT0iMC4yIiBzdHJva2Utd2lkdGg9IjEiLz48cGF0aCBkPSJNIDQwIDAgTCAwIDAgMCA0MCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZTBlMGUwIiBzdHJva2Utd2lkdGg9IjEiLz48L3BhdHRlcm4+PC9kZWZzPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JpZCkiLz48L3N2Zz4=") repeat;
 }
 .wg.wg-default-stack.wg-default-stack-canvas > .wg.wg-sortable-content > .wg.wg-sortable-inner {
   display: flex;
@@ -81,11 +81,23 @@
   position: absolute;
   width: 0;
   height: 0;
-  border: 5px solid transparent;
+  border: 6px solid transparent;
   border-left-color: red;
-  left: -5px;
-  margin-top: -5px;
+  margin-top: -6px;
   border-right: none;
+  z-index: 10000;
+}
+.wg.wg-default-stack.wg-default-stack-canvas > .wg.wg-sortable-content > .wg.wg-sortable-inner > .wg.wg-sortable-container > .wg.wg-sortable-placeholder > .wg.wg-placeholder-container > .wg.wg-placeholder-inner:after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  border: 6px solid transparent;
+  border-right-color: red;
+  right: 0px;
+  margin-top: -6px;
+  border-left: none;
+  z-index: 10000;
 }
 .wg.wg-default-stack.wg-default-stack-vertical > .wg.wg-sortable-content {
   display: flex;
@@ -146,11 +158,23 @@
   position: absolute;
   width: 0;
   height: 0;
-  border: 5px solid transparent;
+  border: 6px solid transparent;
   border-left-color: red;
-  left: -5px;
-  margin-top: -5px;
+  left: 0px;
+  margin-top: -6px;
   border-right: none;
+}
+.wg.wg-default-stack.wg-default-stack-vertical > .wg.wg-sortable-content > .wg.wg-sortable-inner > .wg.wg-sortable-container > .wg.wg-sortable-placeholder > .wg.wg-placeholder-container > .wg.wg-placeholder-inner:after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  border: 6px solid transparent;
+  border-right-color: red;
+  right: 0px;
+  margin-top: -6px;
+  border-left: none;
+  z-index: 10000;
 }
 .wg.wg-default-stack.wg-default-stack-horizontal > .wg.wg-sortable-content {
   display: flex;

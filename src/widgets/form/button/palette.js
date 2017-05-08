@@ -4,7 +4,7 @@
     Widgets.Widget(Widgets.ButtonsGroup, Widgets.create({
         name: 'default-form-button',
         tag: 'default-form-button',
-        mixins: [ Widgets.WidgetMixin, Widgets.BoxMixin, Widgets.FontMixin, Widgets.SizeMixin ],
+        mixins: [ Widgets.WidgetMixin, Widgets.BoxMixin, Widgets.FontMixin, Widgets.SizeMixin, Widgets.EventsMixin ],
         props: [
             { name: 'title', title: 'Title', type: 'string', tab: 'content' }
         ],

@@ -32,9 +32,9 @@
                 events: {
                     submit: (current) => {
                         let w = Widgets.build(Widgets.FrameWidget, {
-                            flex: {
-                                value: '1 1 auto'
-                            }
+                            flex: { value: '1 1 auto' },
+                            minHeight: { value: '200px' },
+                            minWidth: { value: '200px' },
                         })
                         w = Object.assign(w, {
                             setup: { page: current.page },
